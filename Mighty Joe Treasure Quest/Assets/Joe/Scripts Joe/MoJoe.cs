@@ -152,6 +152,12 @@ public class MoJoe : MonoBehaviour {
 
         }
 
+        if (!ensuelo) {
+
+            GetComponent<Animator>().SetBool("joe upper caminando", true);
+
+        }
+
    
 
 
