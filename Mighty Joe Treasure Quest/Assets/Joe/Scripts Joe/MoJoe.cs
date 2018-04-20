@@ -25,6 +25,7 @@ public class MoJoe : MonoBehaviour {
   
     // Use this for initialization  
     void Start() {
+
             
     }  
       
@@ -42,7 +43,7 @@ public class MoJoe : MonoBehaviour {
                         
         }
 
-        timer2 += 2f * Time.deltaTime;
+        timer2 += 2f *Time.deltaTime;
         if (timer2 >= 0.1f)
         {
             GetComponent<Animator>().SetBool("joe saltar", false);
