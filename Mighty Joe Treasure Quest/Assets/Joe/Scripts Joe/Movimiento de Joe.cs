@@ -8,6 +8,7 @@ public class MovimientodeJoe : MonoBehaviour {
 
 
     public Rigidbody2D rigid;
+    bool hola = false;
 
 
     void awake() {
