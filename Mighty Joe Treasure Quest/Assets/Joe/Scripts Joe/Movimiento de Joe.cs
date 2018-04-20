@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MovimientodeJoe : MonoBehaviour {
 
+    // Estamos volviendo a reescribir el codigo de movimiento de nuestro personaje (osea el script "Mojoe")
+    // para hacer mas ordenado, este script no estaba en la presentación del dia martes.
     [SerializeField] bool ensuelo = true;
 
 
@@ -36,7 +38,4 @@ public class MovimientodeJoe : MonoBehaviour {
 
     }
 
-    void saltar() { }
-
-    void agacharse() { }
 }
