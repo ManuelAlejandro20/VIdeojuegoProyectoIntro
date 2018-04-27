@@ -10,7 +10,7 @@ public class MovimientodeJoe : MonoBehaviour {
 
     float podersalto = 15f;
 
-    float xd = 2f;
+
     public Rigidbody2D rigid;
     public Animation anim;
 
