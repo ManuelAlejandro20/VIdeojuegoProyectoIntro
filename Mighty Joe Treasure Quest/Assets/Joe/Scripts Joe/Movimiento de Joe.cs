@@ -7,10 +7,13 @@ public class MovimientodeJoe : MonoBehaviour {
     [SerializeField] bool ensuelo = true;
     float tiemposalto = 0f;
     float podersalto = 15f;
+    float radiocirculoensuelo = 0.05f;
 
-
+    public Transform chequearsuelo;
+    public LayerMask capasuelo;
+    
     public Rigidbody2D rigid;
-    public Animation anim;
+    public Animator anim;
 
 
     void awake() {
@@ -36,7 +39,7 @@ public class MovimientodeJoe : MonoBehaviour {
             anim.SetBool("parado", false);
             anim.SetBool("saltar", true);
             rigid.velocity = new Vector2(rigid.velocity.x, 0f);
-            rigid.AddForce(new Vector2(0f, podersalto), ForceMode.Impulse);
+            rigid.AddForce(new Vector2(0f, podersalto), ForceMode2D.Impulse);
             ensuelo = false;
 
         }
@@ -47,7 +50,12 @@ public class MovimientodeJoe : MonoBehaviour {
             anim.SetBool("caer", false);
             tiemposalto = 0f;
 
+        }
 
+        if (!ensuelo && anim.GetBool("saltar")) {
+
+            ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculoensuelo, capasuelo);
+            anim.SetBool("caminando y salto", ensuelo);
 
         }
 

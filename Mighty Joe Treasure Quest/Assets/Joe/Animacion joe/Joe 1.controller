@@ -8,20 +8,14 @@ AnimatorController:
   m_Name: Joe 1
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: joe parado
+  - m_Name: parado
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
     m_Controller: {fileID: 0}
-  - m_Name: joe saltar
+  - m_Name: saltar
     m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Velx
-    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -32,19 +26,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: VelVer
-    m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: Joe caminando
+  - m_Name: caminando
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: joe caminando salto
+  - m_Name: caminando y salto
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -68,8 +56,14 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: joe upper caminando
+  - m_Name: 'upper caminando '
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: VelVer
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -202,10 +196,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: joe parado
+    m_ConditionEvent: parado
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: joe saltar
+    m_ConditionEvent: saltar
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102088701581053456}
@@ -229,10 +223,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: joe parado
+    m_ConditionEvent: parado
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: joe saltar
+    m_ConditionEvent: saltar
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: caer
@@ -283,10 +277,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: joe parado
+    m_ConditionEvent: parado
     m_EventTreshold: 0
   - m_ConditionMode: 2
-    m_ConditionEvent: Joe caminando
+    m_ConditionEvent: caminando
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102645885180036066}
@@ -334,7 +328,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: joe saltar
+    m_ConditionEvent: saltar
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102520713541498336}
@@ -382,10 +376,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 2
-    m_ConditionEvent: joe parado
+    m_ConditionEvent: parado
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: Joe caminando
+    m_ConditionEvent: caminando
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102973055651950292}
@@ -430,7 +424,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: joe parado
+    m_ConditionEvent: parado
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102645885180036066}
@@ -475,10 +469,10 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Joe caminando
+    m_ConditionEvent: caminando
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: joe caminando salto
+    m_ConditionEvent: caminando y salto
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: caer
@@ -643,7 +637,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Joe caminando
+    m_ConditionEvent: caminando
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: patada
@@ -820,7 +814,7 @@ AnimatorState:
   m_Motion: {fileID: 7400000, guid: aeb0f41b7f2f4784fbd396a323dec6ba, type: 2}
   m_Tag: 
   m_SpeedParameter: 
-  m_MirrorParameter: joe parado
+  m_MirrorParameter: parado
   m_CycleOffsetParameter: 
   m_TimeParameter: 
 --- !u!1102 &1102934123001424458
@@ -895,13 +889,13 @@ AnimatorStateMachine:
     m_Position: {x: 828, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102088701581053456}
-    m_Position: {x: 144, y: -144, z: 0}
+    m_Position: {x: 168, y: -120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102645885180036066}
-    m_Position: {x: 348, y: 132, z: 0}
+    m_Position: {x: 288, y: 24, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102934123001424458}
-    m_Position: {x: 756, y: 288, z: 0}
+    m_Position: {x: 720, y: 336, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102632654758739038}
     m_Position: {x: 276, y: 336, z: 0}
