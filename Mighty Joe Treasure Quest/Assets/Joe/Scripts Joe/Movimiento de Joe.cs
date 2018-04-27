@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class MovimientodeJoe : MonoBehaviour {
 
-    // Estamos volviendo a reescribir el codigo de movimiento de nuestro personaje (osea el script "Mojoe")
-    // para hacerlo más ordenado, este script no estaba en la presentación del dia martes.
     [SerializeField] bool ensuelo = true;
-
+    float tiemposalto = 0f;
     float podersalto = 15f;
 
 
@@ -32,18 +30,26 @@ public class MovimientodeJoe : MonoBehaviour {
 
     void salto() {
 
+        tiemposalto += Time.deltaTime;
+
         if (Input.GetKeyDown("z") && ensuelo) {
-            anim.SetBool("joe parado", false);
-            anim.SetBool("joe saltar", true);
+            anim.SetBool("parado", false);
+            anim.SetBool("saltar", true);
             rigid.velocity = new Vector2(rigid.velocity.x, 0f);
             rigid.AddForce(new Vector2(0f, podersalto), ForceMode.Impulse);
             ensuelo = false;
 
+        }
+
+        if (tiemposalto >= 0.05f) {
+
+            anim.SetBool("saltar", true);
+            anim.SetBool("caer", false);
+            tiemposalto = 0f;
 
 
 
         }
-
 
     }
 

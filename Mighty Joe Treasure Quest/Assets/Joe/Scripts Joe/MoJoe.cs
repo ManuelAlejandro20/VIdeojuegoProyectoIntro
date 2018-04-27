@@ -35,8 +35,8 @@ public class MoJoe : MonoBehaviour {
 
         if (ensuelo && Input.GetAxis("Jump")>0)
         {
-            GetComponent<Animator>().SetBool("joe parado", false);
-            GetComponent<Animator>().SetBool("joe saltar", true);
+            GetComponent<Animator>().SetBool("parado", false);
+            GetComponent<Animator>().SetBool("saltar", true);
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 0f);
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, JumpPower), ForceMode2D.Impulse);
             ensuelo = false;
