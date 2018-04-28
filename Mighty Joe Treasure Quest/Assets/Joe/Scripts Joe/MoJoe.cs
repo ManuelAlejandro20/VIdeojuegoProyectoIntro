@@ -46,20 +46,20 @@ public class MoJoe : MonoBehaviour {
         timer2 += 2f *Time.deltaTime;
         if (timer2 >= 0.1f)
         {
-            GetComponent<Animator>().SetBool("joe saltar", false);
+            GetComponent<Animator>().SetBool("saltar", false);
             GetComponent<Animator>().SetBool("caer", false);
             timer2 = 0;
         }
         
 
-        if (!ensuelo && !GetComponent<Animator>().GetBool("joe saltar"))
+        if (!ensuelo && !GetComponent<Animator>().GetBool("saltar"))
         {
             ensuelo = Physics2D.OverlapCircle(suelocheck.position, checkradius, sueloLayer);
-            GetComponent<Animator>().SetBool("joe caminando salto", ensuelo);
+            GetComponent<Animator>().SetBool("caminando y salto", ensuelo);
         }
         
         ensuelo = Physics2D.OverlapCircle(suelocheck.position, checkradius, sueloLayer);
-        GetComponent<Animator>().SetBool("joe parado", ensuelo);
+        GetComponent<Animator>().SetBool("parado", ensuelo);
 
         if (Input.GetKey(KeyCode.RightArrow) && !GetComponent<Animator>().GetBool("agacharse") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Patada"))
         {
@@ -67,14 +67,14 @@ public class MoJoe : MonoBehaviour {
             {
                 GetComponent<SpriteRenderer>().flipX = false;
             }
-            GetComponent<Animator>().SetBool("joe parado", false);
-            GetComponent<Animator>().SetBool("Joe caminando", true);
+            GetComponent<Animator>().SetBool("parado", false);
+            GetComponent<Animator>().SetBool("caminando", true);
             GetComponent<Rigidbody2D>().velocity = new Vector2(velocidad, GetComponent<Rigidbody2D>().velocity.y);
         }
         else if (Input.GetKeyUp(KeyCode.RightArrow) && ensuelo && !GetComponent<Animator>().GetBool("patada"))
         {
-            GetComponent<Animator>().SetBool("Joe caminando", false);
-            GetComponent<Animator>().SetBool("joe parado", true);
+            GetComponent<Animator>().SetBool("caminando", false);
+            GetComponent<Animator>().SetBool("parado", true);
         }
         if (Input.GetKey(KeyCode.LeftArrow) && !GetComponent<Animator>().GetBool("agacharse") && !GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Patada"))
         {
@@ -82,14 +82,14 @@ public class MoJoe : MonoBehaviour {
             {
                 GetComponent<SpriteRenderer>().flipX = true;
             }
-            GetComponent<Animator>().SetBool("joe parado", false);
-            GetComponent<Animator>().SetBool("Joe caminando", true);
+            GetComponent<Animator>().SetBool("parado", false);
+            GetComponent<Animator>().SetBool("caminando", true);
             GetComponent<Rigidbody2D>().velocity = new Vector2(-velocidad, GetComponent<Rigidbody2D>().velocity.y);
         }
         else if (Input.GetKeyUp(KeyCode.LeftArrow) && ensuelo && !GetComponent<Animator>().GetBool("patada"))
         {
-            GetComponent<Animator>().SetBool("Joe caminando", false);
-            GetComponent<Animator>().SetBool("joe parado", true);
+            GetComponent<Animator>().SetBool("caminando", false);
+            GetComponent<Animator>().SetBool("parado", true);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
@@ -111,8 +111,8 @@ public class MoJoe : MonoBehaviour {
                 else {
                     GetComponent<Rigidbody2D>().velocity = new Vector2(-8f, GetComponent<Rigidbody2D>().velocity.y);
                 }    
-                GetComponent<Animator>().SetBool("joe parado", true);
-                GetComponent<Animator>().SetBool("Joe caminando", false);
+                GetComponent<Animator>().SetBool("parado", true);
+                GetComponent<Animator>().SetBool("caminando", false);
                 GetComponent<Animator>().SetTrigger("patada");
                 disparo = true;
                 timer = 0.25f;
@@ -130,16 +130,16 @@ public class MoJoe : MonoBehaviour {
             GetComponent<Animator>().SetBool("caer", true);
 
         }
-        if (Input.GetKeyDown("c") && GetComponent<Animator>().GetBool("joe parado"))
+        if (Input.GetKeyDown("c") && GetComponent<Animator>().GetBool("parado"))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 15f);
             GetComponent<Animator>().SetTrigger("upper");
 
         }
 
-        else if (Input.GetKeyDown("c") && GetComponent<Animator>().GetBool("Joe caminando") && ensuelo)
+        else if (Input.GetKeyDown("c") && GetComponent<Animator>().GetBool("caminando") && ensuelo)
         {
-            GetComponent<Animator>().SetBool("joe upper caminando", true);
+            GetComponent<Animator>().SetBool("upper caminando", true);
             GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, 15f);
             GetComponent<Animator>().SetTrigger("upper");
 
@@ -149,7 +149,7 @@ public class MoJoe : MonoBehaviour {
  
 
         if (ensuelo) {
-            GetComponent<Animator>().SetBool("joe upper caminando", false);
+            GetComponent<Animator>().SetBool("upper caminando", false);
 
         }
 
