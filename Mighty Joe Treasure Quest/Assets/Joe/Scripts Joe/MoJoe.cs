@@ -11,15 +11,17 @@ public class MoJoe : MonoBehaviour {
     bool disparo = false;
     Rigidbody2D rigid;
     Animator anim;
-
-    public LayerMask capasuelo;
-    public GameObject proyectilprefab;
-
     float podersalto = 18f;
-    float velocidad = 6f;
+    float velocidad = 7f;
     float radiocirculosuelo = 0.05f;
     public float tiempodisparo = 0f;
     float tiemposalto = 0f;
+    float vidajoe = 100f;
+    public int contadorderecha = 0;
+    public int contadorizquierda = 0;
+ 
+    public LayerMask capasuelo;
+    public GameObject proyectilprefab;
 
 
     void Awake() {
@@ -71,24 +73,81 @@ public class MoJoe : MonoBehaviour {
         ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculosuelo, capasuelo);
         anim.SetBool("parado", ensuelo);
 
-        if (Input.GetKey(KeyCode.RightArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
+
+
+
+
+
+
+        if (contadorderecha != 2 && Input.GetKey(KeyCode.RightArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
         {
             if (GetComponent<SpriteRenderer>().flipX == true)
             {
                 GetComponent<SpriteRenderer>().flipX = false;
             }
+            anim.SetFloat("correr", 1f);
             anim.SetBool("parado", false);
             anim.SetBool("caminando", true);
             rigid.velocity = new Vector2(velocidad, rigid.velocity.y);
+            contadorizquierda = 0;
         }
 
-        else if (Input.GetKeyUp(KeyCode.RightArrow) && ensuelo && !anim.GetBool("patada"))
+        if (contadorderecha !=2 && Input.GetKeyUp(KeyCode.RightArrow) && ensuelo && !anim.GetBool("patada"))
         {
+            anim.SetFloat("correr", 0f);
+            contadorderecha++;
             anim.SetBool("caminando", false);
             anim.SetBool("parado", true);
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
+        if (contadorizquierda != 2 && Input.GetKey(KeyCode.LeftArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
+        {
+
+            if (GetComponent<SpriteRenderer>().flipX == false)
+            {
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+            anim.SetFloat("correr", 1f);
+            anim.SetBool("parado", false);
+            anim.SetBool("caminando", true);
+            rigid.velocity = new Vector2(-velocidad, rigid.velocity.y);
+            contadorderecha = 0;
+
+        }
+
+        if (contadorizquierda!=2 && Input.GetKeyUp(KeyCode.LeftArrow) && ensuelo && !anim.GetBool("patada"))
+        {
+            contadorizquierda++;
+            anim.SetFloat("correr", 0f);
+            anim.SetBool("caminando", false);
+            anim.SetBool("parado", true);
+        }
+
+        if (contadorderecha >= 2 && Input.GetKey(KeyCode.RightArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
+        {
+
+            if (GetComponent<SpriteRenderer>().flipX == true)
+            {
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            anim.SetFloat("correr", 2.0f);
+            anim.SetBool("parado", false);
+            anim.SetBool("caminando", true);
+            rigid.velocity = new Vector2(4 + velocidad, rigid.velocity.y);
+            contadorderecha++;
+        }
+
+        else if (contadorderecha > 2 && Input.GetKeyUp(KeyCode.RightArrow)) {
+
+            anim.SetFloat("correr", 0f);
+            anim.SetBool("caminando", false);
+            anim.SetBool("parado", true);
+            contadorderecha = 0;
+
+        }
+
+        if (contadorizquierda >= 2 && Input.GetKey(KeyCode.LeftArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
         {
             if (GetComponent<SpriteRenderer>().flipX == false)
             {
@@ -96,16 +155,22 @@ public class MoJoe : MonoBehaviour {
             }
 
             anim.SetBool("parado", false);
+            anim.SetFloat("correr", 2.0f);
             anim.SetBool("caminando", true);
-            rigid.velocity = new Vector2(-velocidad, rigid.velocity.y);
+            rigid.velocity = new Vector2(-4 + -velocidad, rigid.velocity.y);
+            contadorizquierda++;
 
         }
 
-        else if (Input.GetKeyUp(KeyCode.LeftArrow) && ensuelo && !anim.GetBool("patada"))
+        else if (contadorizquierda > 2 && Input.GetKeyUp(KeyCode.LeftArrow) && ensuelo && !anim.GetBool("patada"))
         {
             anim.SetBool("caminando", false);
+            anim.SetFloat("correr", 0f);
             anim.SetBool("parado", true);
+            contadorizquierda = 0;
         }
+
+
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
@@ -116,6 +181,9 @@ public class MoJoe : MonoBehaviour {
         {
             anim.SetBool("agacharse", false);
         }
+
+
+
 
         if (Input.GetKey("x") && !disparo && ensuelo)
         {
