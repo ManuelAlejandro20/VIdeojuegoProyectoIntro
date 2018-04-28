@@ -17,8 +17,8 @@ public class MoJoe : MonoBehaviour {
     public float tiempodisparo = 0f;
     float tiemposalto = 0f;
     float vidajoe = 100f;
-    public int contadorderecha = 0;
-    public int contadorizquierda = 0;
+    int contadorderecha = 0;
+    int contadorizquierda = 0;
  
     public LayerMask capasuelo;
     public GameObject proyectilprefab;
@@ -72,12 +72,6 @@ public class MoJoe : MonoBehaviour {
 
         ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculosuelo, capasuelo);
         anim.SetBool("parado", ensuelo);
-
-
-
-
-
-
 
         if (contadorderecha != 2 && Input.GetKey(KeyCode.RightArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
         {
