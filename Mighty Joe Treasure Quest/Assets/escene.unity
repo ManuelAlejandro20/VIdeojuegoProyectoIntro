@@ -3188,12 +3188,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ensuelo: 1
   chequearsuelo: {fileID: 725564154}
+  tiempodisparo: 0
   capasuelo:
     serializedVersion: 2
     m_Bits: 256
   proyectilprefab: {fileID: 1799162757971188, guid: aa4f1537f377acd43b7b58ff072f4eba,
     type: 2}
-  tiempodisparo: 0
 --- !u!95 &1971486492
 Animator:
   serializedVersion: 3

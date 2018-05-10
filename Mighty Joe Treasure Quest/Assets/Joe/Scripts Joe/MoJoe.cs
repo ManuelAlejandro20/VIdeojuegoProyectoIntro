@@ -13,15 +13,17 @@ public class MoJoe : MonoBehaviour {
     Animator anim;
     float podersalto = 18f;
     float velocidad = 7f;
-    float radiocirculosuelo = 0.05f;
+    float radiocirculosuelo = 0.5f;
     public float tiempodisparo = 0f;
     float tiemposalto = 0f;
     float vidajoe = 100f;
     int contadorderecha = 0;
     int contadorizquierda = 0;
+    public int contador = 0;
  
     public LayerMask capasuelo;
     public GameObject proyectilprefab;
+    public GameObject puñoprefab;
 
 
     void Awake() {
@@ -49,7 +51,7 @@ public class MoJoe : MonoBehaviour {
         if (ensuelo && Input.GetKeyDown("z"))
         {
             anim.SetBool("parado", false);
-            anim.SetBool("saltar", true);
+            anim.SetTrigger("salto");
             rigid.velocity = new Vector2(rigid.velocity.x, 0f);
             rigid.AddForce(new Vector2(0, podersalto), ForceMode2D.Impulse);
             ensuelo = false;
@@ -58,16 +60,15 @@ public class MoJoe : MonoBehaviour {
 
         if (tiemposalto >= 0.2f)
         {
-            anim.SetBool("saltar", false);
             anim.SetBool("caer", false);
             tiemposalto = 0;
         }
 
 
-        if (!ensuelo && !anim.GetBool("saltar"))
+        if (!ensuelo && !anim.GetCurrentAnimatorStateInfo(0).IsName("saltar"))
         {
             ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculosuelo, capasuelo);
-            anim.SetBool("caminando y salto", ensuelo);
+            anim.SetBool("auxiliar caminando/salto", ensuelo);
         }
 
         ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculosuelo, capasuelo);
@@ -86,7 +87,7 @@ public class MoJoe : MonoBehaviour {
             contadorizquierda = 0;
         }
 
-        if (contadorderecha !=2 && Input.GetKeyUp(KeyCode.RightArrow) && ensuelo && !anim.GetBool("patada"))
+        if (contadorderecha != 2 && Input.GetKeyUp(KeyCode.RightArrow) && ensuelo && !anim.GetBool("patada"))
         {
             anim.SetFloat("correr", 0f);
             contadorderecha++;
@@ -110,7 +111,7 @@ public class MoJoe : MonoBehaviour {
 
         }
 
-        if (contadorizquierda!=2 && Input.GetKeyUp(KeyCode.LeftArrow) && ensuelo && !anim.GetBool("patada"))
+        if (contadorizquierda != 2 && Input.GetKeyUp(KeyCode.LeftArrow) && ensuelo && !anim.GetBool("patada"))
         {
             contadorizquierda++;
             anim.SetFloat("correr", 0f);
@@ -132,7 +133,8 @@ public class MoJoe : MonoBehaviour {
             contadorderecha++;
         }
 
-        else if (contadorderecha > 2 && Input.GetKeyUp(KeyCode.RightArrow)) {
+        else if (contadorderecha > 2 && Input.GetKeyUp(KeyCode.RightArrow))
+        {
 
             anim.SetFloat("correr", 0f);
             anim.SetBool("caminando", false);
@@ -182,6 +184,7 @@ public class MoJoe : MonoBehaviour {
         if (Input.GetKey("x") && !disparo && ensuelo)
         {
             tiempodisparo += Time.deltaTime;
+            contador++;
             if (tiempodisparo >= 0.25f)
             {
                 if (GetComponent<SpriteRenderer>().flipX == false)
@@ -201,11 +204,16 @@ public class MoJoe : MonoBehaviour {
 
             }
 
+            else if (contador >= 4) {
+                anim.SetTrigger("puños");
+            }
+
         }
 
         else if (Input.GetKeyUp("x"))
         {
             disparo = false;
+            contador = 0;
         }
 
         if (!ensuelo)
@@ -243,6 +251,12 @@ public class MoJoe : MonoBehaviour {
     {
 
         Instantiate(proyectilprefab, transform.position, Quaternion.identity);
+
+    }
+
+    void puño() {
+
+        Instantiate(puñoprefab, transform.position, Quaternion.identity);
 
     }
 
