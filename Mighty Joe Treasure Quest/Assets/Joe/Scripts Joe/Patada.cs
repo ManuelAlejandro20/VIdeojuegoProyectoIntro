@@ -6,6 +6,7 @@ public class Patada : MonoBehaviour
 {
     private Rigidbody2D bala;
     private GameObject jugador;
+    bool esupper = false;
     public float bulletspeed;
     public float duracion;
     public static float daño;
@@ -16,26 +17,35 @@ public class Patada : MonoBehaviour
 
         daño = dañoref;
         jugador = GameObject.FindGameObjectWithTag("Player");
-
+        if (gameObject.tag == "Uppercut") {
+            esupper = true;
+        }
 
     }
 
     void Start()
     {
-        if (jugador.GetComponent<SpriteRenderer>().flipX == false)
+        if (!esupper)
         {
-            if (GetComponent<SpriteRenderer>().flipX == true)
+            if (jugador.GetComponent<SpriteRenderer>().flipX == false)
             {
-                GetComponent<SpriteRenderer>().flipX = false;
+                if (GetComponent<SpriteRenderer>().flipX == true)
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                }
+                GetComponent<Rigidbody2D>().velocity = new Vector2(bulletspeed, GetComponent<Rigidbody2D>().velocity.y);
+
             }
-            GetComponent<Rigidbody2D>().velocity = new Vector2(bulletspeed, GetComponent<Rigidbody2D>().velocity.y);
+            else
+            {
 
+                GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletspeed, GetComponent<Rigidbody2D>().velocity.y);
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
         }
-        else
-        {
 
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletspeed, GetComponent<Rigidbody2D>().velocity.y);
-            GetComponent<SpriteRenderer>().flipX = true;
+        else {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, bulletspeed);
         }
     }
 

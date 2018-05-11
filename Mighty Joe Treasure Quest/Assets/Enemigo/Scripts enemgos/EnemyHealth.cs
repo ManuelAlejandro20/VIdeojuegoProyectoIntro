@@ -9,7 +9,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D col) {
 
-        if (col.tag == "Bullet") {
+        if (col.tag == "Bullet" || col.tag == "Uppercut") {
 
             vidaenemigo -= Patada.daño;
             if (vidaenemigo <= 0)

@@ -9,6 +9,7 @@ public class MoJoe : MonoBehaviour {
     [SerializeField] Transform chequearsuelo;
 
     bool disparo = false;
+    bool ataque = false;
     Rigidbody2D rigid;
     Animator anim;
     float podersalto = 18f;
@@ -19,17 +20,19 @@ public class MoJoe : MonoBehaviour {
     float vidajoe = 100f;
     int contadorderecha = 0;
     int contadorizquierda = 0;
-    public int contador = 0;
+    AnimatorStateInfo animatorInfo;
  
     public LayerMask capasuelo;
     public GameObject proyectilprefab;
     public GameObject puñoprefab;
+    public GameObject uppercutprefab;
 
 
     void Awake() {
 
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
+ 
 
     }
   
@@ -40,6 +43,7 @@ public class MoJoe : MonoBehaviour {
       
 	void Update () {
 
+ 
         movimientos();
 
     }
@@ -73,6 +77,16 @@ public class MoJoe : MonoBehaviour {
 
         ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculosuelo, capasuelo);
         anim.SetBool("parado", ensuelo);
+
+        if (!ensuelo)
+        {
+
+            anim.SetBool("caer", true);
+
+        }
+
+        /*-----------------------------------------------------------------------------------------*/
+
 
         if (contadorderecha != 2 && Input.GetKey(KeyCode.RightArrow) && !anim.GetBool("agacharse") && !anim.GetCurrentAnimatorStateInfo(0).IsName("Patada"))
         {
@@ -178,22 +192,33 @@ public class MoJoe : MonoBehaviour {
             anim.SetBool("agacharse", false);
         }
 
+        /*----------------------------------------------------------------------*/
 
-
-
-        if (Input.GetKey("x") && !disparo && ensuelo)
+        if (Input.GetKey("x") && ensuelo)
         {
-            tiempodisparo += Time.deltaTime;
-            contador++;
-            if (tiempodisparo >= 0.25f)
+            ataque = true;
+            tiempodisparo += Time.deltaTime; ;
+            if (GetComponent<SpriteRenderer>().flipX == false)
             {
+                rigid.velocity = new Vector2(-0.1f, rigid.velocity.y);
+            }
+            else
+            {
+                rigid.velocity = new Vector2(0.1f, rigid.velocity.y);
+            }
+
+            anim.SetBool("parado", true);
+            anim.SetBool("caminando", false);
+            anim.SetTrigger("puños");
+
+            if (tiempodisparo >= 0.25f && !disparo) {
                 if (GetComponent<SpriteRenderer>().flipX == false)
                 {
-                    rigid.velocity = new Vector2(8f, rigid.velocity.y);
+                    rigid.velocity = new Vector2(2f, rigid.velocity.y);
                 }
                 else
                 {
-                    rigid.velocity = new Vector2(-8f, rigid.velocity.y);
+                    rigid.velocity = new Vector2(-2f, rigid.velocity.y);
                 }
 
                 anim.SetBool("parado", true);
@@ -201,43 +226,46 @@ public class MoJoe : MonoBehaviour {
                 anim.SetTrigger("patada");
                 disparo = true;
                 tiempodisparo = 0f;
-
             }
 
-            else if (contador >= 4) {
-                anim.SetTrigger("puños");
-            }
 
         }
+
+
 
         else if (Input.GetKeyUp("x"))
         {
             disparo = false;
-            contador = 0;
+            ataque = false;
+            tiempodisparo = 0;
         }
 
-        if (!ensuelo)
-        {
-
-            anim.SetBool("caer", true);
-
-        }
-
-        if (Input.GetKeyDown("c") && anim.GetBool("parado"))
-        {
-
-            rigid.velocity = new Vector2(rigid.velocity.x, 15f);
-            anim.SetTrigger("upper");
 
 
-        }
+        /*------------------------------------------------------*/
 
-        else if (Input.GetKeyDown("c") && anim.GetBool("caminando") && ensuelo)
+        if (Input.GetKeyDown("c") && anim.GetBool("parado") && !ataque)
         {
 
             rigid.velocity = new Vector2(rigid.velocity.x, 15f);
             anim.SetTrigger("upper");
 
+
+        }
+
+        if (Input.GetKeyDown("c") && anim.GetBool("caminando") && ensuelo && !ataque)
+        {
+
+            rigid.velocity = new Vector2(rigid.velocity.x, 15f);
+            anim.SetTrigger("upper");
+
+        }
+
+        animatorInfo = anim.GetCurrentAnimatorStateInfo(0);
+
+        if (animatorInfo.IsTag("Salto") && Input.GetKeyDown("c") && !ataque) {
+            rigid.velocity = new Vector2(rigid.velocity.x, 15f);
+            anim.SetTrigger("upper");
         }
 
 
@@ -257,6 +285,13 @@ public class MoJoe : MonoBehaviour {
     void puño() {
 
         Instantiate(puñoprefab, transform.position, Quaternion.identity);
+
+    }
+
+    void uppercut()
+    {
+
+        Instantiate(uppercutprefab, transform.position, Quaternion.identity);
 
     }
 
