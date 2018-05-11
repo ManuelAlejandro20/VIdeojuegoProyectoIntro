@@ -16,6 +16,7 @@ public class MoJoe : MonoBehaviour {
     float velocidad = 7f;
     float radiocirculosuelo = 0.5f;
     public float tiempodisparo = 0f;
+    public float tiempodisparo2 = 0f;
     float tiemposalto = 0f;
     float vidajoe = 100f;
     int contadorderecha = 0;
@@ -32,7 +33,7 @@ public class MoJoe : MonoBehaviour {
 
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
- 
+        
 
     }
   
@@ -194,7 +195,7 @@ public class MoJoe : MonoBehaviour {
 
         /*----------------------------------------------------------------------*/
 
-        if (Input.GetKey("x") && ensuelo)
+        if (Input.GetKey("x") && ensuelo && !disparo)
         {
             ataque = true;
             tiempodisparo += Time.deltaTime; ;
@@ -233,37 +234,41 @@ public class MoJoe : MonoBehaviour {
 
 
 
-        else if (Input.GetKeyUp("x"))
+        if (Input.GetKeyUp("x"))
         {
             disparo = false;
-            ataque = false;
-            tiempodisparo = 0;
+            tiempodisparo = 0f;
+            
+            
         }
+
 
 
 
         /*------------------------------------------------------*/
 
-        if (Input.GetKeyDown("c") && anim.GetBool("parado") && !ataque)
-        {
-
-            rigid.velocity = new Vector2(rigid.velocity.x, 15f);
-            anim.SetTrigger("upper");
-
-
-        }
-
-        if (Input.GetKeyDown("c") && anim.GetBool("caminando") && ensuelo && !ataque)
-        {
-
-            rigid.velocity = new Vector2(rigid.velocity.x, 15f);
-            anim.SetTrigger("upper");
-
-        }
-
         animatorInfo = anim.GetCurrentAnimatorStateInfo(0);
 
-        if (animatorInfo.IsTag("Salto") && Input.GetKeyDown("c") && !ataque) {
+        if (Input.GetKeyDown("c") && anim.GetBool("parado"))
+        {
+
+            rigid.velocity = new Vector2(rigid.velocity.x, 15f);
+            anim.SetTrigger("upper");
+
+
+        }
+
+        if (Input.GetKeyDown("c") && anim.GetBool("caminando") && ensuelo)
+        {
+
+            rigid.velocity = new Vector2(rigid.velocity.x, 15f);
+            anim.SetTrigger("upper");
+
+        }
+
+        
+
+        if (animatorInfo.IsTag("Salto") && Input.GetKeyDown("c")) {
             rigid.velocity = new Vector2(rigid.velocity.x, 15f);
             anim.SetTrigger("upper");
         }
