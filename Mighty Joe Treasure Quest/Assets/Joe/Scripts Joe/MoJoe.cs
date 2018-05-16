@@ -10,19 +10,18 @@ public class MoJoe : MonoBehaviour {
 
     bool disparo = false;
     bool ataque = false;
-    Rigidbody2D rigid;
-    Animator anim;
     float podersalto = 18f;
     float velocidad = 7f;
     float radiocirculosuelo = 0.5f;
-    public float tiempodisparo = 0f;
-    public float tiempodisparo2 = 0f;
+    float tiempodisparo = 0f;
     float tiemposalto = 0f;
     float vidajoe = 100f;
     int contadorderecha = 0;
     int contadorizquierda = 0;
     AnimatorStateInfo animatorInfo;
- 
+    Rigidbody2D rigid;
+    Animator anim;
+
     public LayerMask capasuelo;
     public GameObject proyectilprefab;
     public GameObject puñoprefab;
@@ -31,15 +30,17 @@ public class MoJoe : MonoBehaviour {
 
     void Awake() {
 
+
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
-        
+
 
     }
   
     void Start() {
 
-            
+        
+
     }  
       
 	void Update () {
@@ -305,6 +306,6 @@ public class MoJoe : MonoBehaviour {
 
     }
 
-
+    
 
 }

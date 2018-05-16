@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Cofre : MonoBehaviour
 {
-    public Transform cofre;
+    public Transform joe;
     float distancia;
 	public GameObject destello;
 	public float tiempo = 0.2f;
-    public float tiempo2 = 0f;
 
     void moneda() {
 
-        distancia = Vector3.Distance(cofre.position, transform.position);
+        distancia = Vector3.Distance(joe.position, transform.position);
         if (distancia <= 1.3f && !GetComponent<Animator>().GetBool("abierto") && Input.GetKeyDown(KeyCode.UpArrow)) {
 
             GetComponent<Animator>().SetBool("abierto", true);
