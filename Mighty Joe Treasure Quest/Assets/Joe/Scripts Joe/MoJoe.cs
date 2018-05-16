@@ -195,10 +195,9 @@ public class MoJoe : MonoBehaviour {
 
         /*----------------------------------------------------------------------*/
 
-        if (Input.GetKey("x") && ensuelo && !disparo)
+        if (Input.GetKeyDown("x") && ensuelo && !disparo)
         {
             ataque = true;
-            tiempodisparo += Time.deltaTime; ;
             if (GetComponent<SpriteRenderer>().flipX == false)
             {
                 rigid.velocity = new Vector2(-0.1f, rigid.velocity.y);
@@ -212,7 +211,15 @@ public class MoJoe : MonoBehaviour {
             anim.SetBool("caminando", false);
             anim.SetTrigger("puños");
 
-            if (tiempodisparo >= 0.25f && !disparo) {
+            
+
+
+        }
+
+        else if (Input.GetKey("x") && ensuelo && !disparo) {
+            tiempodisparo += Time.deltaTime;
+            if (tiempodisparo >= 0.25f && !disparo)
+            {
                 if (GetComponent<SpriteRenderer>().flipX == false)
                 {
                     rigid.velocity = new Vector2(2f, rigid.velocity.y);
@@ -228,8 +235,6 @@ public class MoJoe : MonoBehaviour {
                 disparo = true;
                 tiempodisparo = 0f;
             }
-
-
         }
 
 

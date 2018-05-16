@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletspeed: 30
   duracion: 0.25
-  "da\xF1oref": 25
+  "da\xF1oref": 40
 --- !u!212 &212020062472563628
 SpriteRenderer:
   m_ObjectHideFlags: 1
