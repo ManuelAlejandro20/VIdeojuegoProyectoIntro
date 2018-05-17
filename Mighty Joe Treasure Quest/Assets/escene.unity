@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4402250452914604, guid: a58c761cb325ac64e96cedb06d92398f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 15.14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4402250452914604, guid: a58c761cb325ac64e96cedb06d92398f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.2294
+      value: -4.23
       objectReference: {fileID: 0}
     - target: {fileID: 4402250452914604, guid: a58c761cb325ac64e96cedb06d92398f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -869,7 +869,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 11.986026
+  orthographic size: 9.4136
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2891,7 +2891,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7818742e8fc0a1c4284b75c39326185b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ewe: 0
 --- !u!114 &972356013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4178,6 +4177,10 @@ Prefab:
       propertyPath: joe
       value: 
       objectReference: {fileID: 1971486494}
+    - target: {fileID: 1895864064788788, guid: a58c761cb325ac64e96cedb06d92398f, type: 2}
+      propertyPath: m_TagString
+      value: Chest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a58c761cb325ac64e96cedb06d92398f, type: 2}
   m_IsPrefabParent: 0
@@ -5191,6 +5194,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1704399122}
+  - component: {fileID: 1704399124}
   m_Layer: 0
   m_Name: Cofres
   m_TagString: Untagged
@@ -5217,6 +5221,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704399124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1704399121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff15a357744f4094c8f22a47d1c51801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tesoros:
+  - 
+  - 
+  - 
 --- !u!1001 &1714347968
 Prefab:
   m_ObjectHideFlags: 0
@@ -5888,7 +5907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1941092281
 Transform:
   m_ObjectHideFlags: 0
@@ -6134,7 +6153,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1971486488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.91, y: 0.02, z: -1}
+  m_LocalPosition: {x: -6.01, y: 0.04, z: -1}
   m_LocalScale: {x: 6.4958973, y: 6.2920504, z: 0.99439377}
   m_Children:
   - {fileID: 725564154}
@@ -6250,7 +6269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4402250452914604, guid: a58c761cb325ac64e96cedb06d92398f, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114550627516686458, guid: a58c761cb325ac64e96cedb06d92398f,
         type: 2}

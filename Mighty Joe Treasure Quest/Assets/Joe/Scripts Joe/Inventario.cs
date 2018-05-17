@@ -6,23 +6,17 @@ using Tesoro;
 
  public class Inventario : MonoBehaviour
  {
-        private string nombre;
-        private Cofre cofre;
-        private ListaTesoros tesorosrecogidos;
+
         Canvas canvas;
 
-        public Inventario(int max) {
-               tesorosrecogidos = new ListaTesoros(max);
-        }
+   
 
 
 
         void Start()
         {
             canvas = GetComponent<Canvas>();
-            cofre = GetComponent<Cofre>();
             canvas.enabled = false;
-            Inventario inventario = new Inventario(3);
         }
 
         void Update()
@@ -42,8 +36,7 @@ using Tesoro;
                 }
             }
 
-            GetComponent<ListaTesoros>().agregartesoro(cofre.getnombre());
-         
+           
         
         }
  }

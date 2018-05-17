@@ -11,6 +11,7 @@ namespace Tesoro
         float distancia;
         public GameObject destello;
         public float tiempo = 0.2f;
+        public float tiempo2;
 
         public Cofre(string nombre)
         {
@@ -25,6 +26,7 @@ namespace Tesoro
 
                 GetComponent<Animator>().SetBool("abierto", true);
                 destello.GetComponent<Animator>().SetBool("brillo", true);
+                gameObject.tag = "OpenChest";
 
                 nombre = gameObject.ToString();
                 nombre = nombre.ToLower();
@@ -59,11 +61,17 @@ namespace Tesoro
                 }
 
             }
-        }
 
-        public string getnombre()
-        {
-            return nombre;
+            if (gameObject.tag.Equals("OpenChest")) {
+                tiempo2 += Time.deltaTime;
+                if (tiempo2 > 0.05) {
+                    gameObject.tag = "Chest";
+                    tiempo2 = 0;
+                }
+
+
+            }
+
         }
 
     }
