@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Tesoro;
 
 
- public class Inventario : MonoBehaviour, Tesoros, ListaTesoros
+ public class Inventario : MonoBehaviour
  {
-
+        private string nombre;
+        private Cofre cofre;
         private ListaTesoros tesorosrecogidos;
         Canvas canvas;
 
@@ -18,14 +20,13 @@ using UnityEngine;
         void Start()
         {
             canvas = GetComponent<Canvas>();
+            cofre = GetComponent<Cofre>();
             canvas.enabled = false;
             Inventario inventario = new Inventario(3);
         }
 
         void Update()
         {
-
-            Tesoro tesoro = new Tesoro(cofre.nombre);
 
             if (Input.GetKeyDown("space"))
             {
@@ -41,6 +42,8 @@ using UnityEngine;
                 }
             }
 
-            tesorosrecogidos.agregartesoro("Xd");
+            GetComponent<ListaTesoros>().agregartesoro(cofre.getnombre());
+         
+        
         }
  }

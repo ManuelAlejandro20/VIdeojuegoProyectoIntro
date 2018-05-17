@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+namespace Tesoro
+{
     public class Cofre : MonoBehaviour
     {
-        public string nombre;
         public Transform joe;
+        [SerializeField] string nombre;
         float distancia;
         public GameObject destello;
         public float tiempo = 0.2f;
@@ -26,7 +27,11 @@ using UnityEngine;
                 destello.GetComponent<Animator>().SetBool("brillo", true);
 
                 nombre = gameObject.ToString();
-                getnombre();
+                nombre = nombre.ToLower();
+                nombre = nombre.Remove(0, 6);
+
+           
+            
 
             }
 
@@ -62,3 +67,4 @@ using UnityEngine;
         }
 
     }
+}

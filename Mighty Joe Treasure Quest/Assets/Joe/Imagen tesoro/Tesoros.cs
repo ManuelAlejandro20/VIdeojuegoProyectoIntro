@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+namespace Tesoro
+{
     public class Tesoros : MonoBehaviour
     {
         private string[] tesoros = new string[6] { "brazalete", "moneda", "ocarina", "pluma", "tronco", "reloj" };
@@ -11,16 +12,28 @@ using UnityEngine;
         private string nombre;
         private int valor;
 
-        public Tesoros(string nombre) {
-            for (int i = 0; i < 6; i++) {
-                if (tesoros[i].Equals(nombre)) {
+        public Tesoros(string nombre)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                if (tesoros[i].Equals(nombre))
+                {
                     this.nombre = tesoros[i];
                     this.valor = valores[i];
                 }
             }
         }
-        
-        
+
+        public string getnombretesoro() {
+            return nombre;
+        }
+
+        public int getvalor() {
+            return valor;
+        }
+
+
+
         // Use this for initialization
         void Start()
         {
@@ -34,22 +47,5 @@ using UnityEngine;
         }
     }
 
-    public class ListaTesoros : MonoBehaviour
-    {
-        
-        private Tesoros[] tes;
-        private int canttesoros;
-
-        public ListaTesoros(int max)
-        {
-            tes = new Tesoros[max];
-        }
-
-        public void agregartesoro(string nombre) {
-            Tesoros tesoro = new Tesoros(nombre);
-
-        }
-
-
-
-    }
+    
+}
