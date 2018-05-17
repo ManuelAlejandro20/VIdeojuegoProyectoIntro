@@ -5236,6 +5236,8 @@ MonoBehaviour:
   - 
   - 
   - 
+  precio: 000000000000000000000000
+  contador: 0
 --- !u!1001 &1714347968
 Prefab:
   m_ObjectHideFlags: 0
