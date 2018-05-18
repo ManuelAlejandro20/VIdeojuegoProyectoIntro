@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Uppercut
   - OpenChest
+  - Imagen
   layers:
   - Default
   - TransparentFX

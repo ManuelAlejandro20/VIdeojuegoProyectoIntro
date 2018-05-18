@@ -14,16 +14,23 @@ public class Imagen : MonoBehaviour {
 	}
 	
 	void Update () {
-        if (cofre.GetComponent<Animator>().GetBool("abierto") && activa)
-        {
-            canvas.enabled = true;
-            Time.timeScale = 0;
-            if (Input.GetKeyDown("x"))
+
+        if (cofre != null) {
+            if (cofre.GetComponent<Animator>().GetBool("abierto") && activa)
             {
-                canvas.enabled = false;
-                Time.timeScale = 1;
-                activa = false;
+                canvas.enabled = true;
+                Time.timeScale = 0;
+                if (Input.GetKeyDown("x"))
+                {
+                    canvas.enabled = false;
+                    Time.timeScale = 1;
+                    activa = false;
+                }
             }
+
         }
+
+
+        
 	}
 }
