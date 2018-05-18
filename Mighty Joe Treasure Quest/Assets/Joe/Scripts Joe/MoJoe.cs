@@ -15,7 +15,6 @@ public class MoJoe : MonoBehaviour {
     float radiocirculosuelo = 0.5f;
     float tiempodisparo = 0f;
     float tiemposalto = 0f;
-    float vidajoe = 100f;
     int contadorderecha = 0;
     int contadorizquierda = 0;
     AnimatorStateInfo animatorInfo;
@@ -41,13 +40,13 @@ public class MoJoe : MonoBehaviour {
 
         
 
-    }  
-      
-	void Update () {
+    }
 
- 
+    void Update() {
+
+
         movimientos();
-
+        
     }
 
     void movimientos() {
