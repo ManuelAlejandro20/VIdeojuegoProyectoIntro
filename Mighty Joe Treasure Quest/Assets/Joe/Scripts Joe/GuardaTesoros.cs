@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GuardaTesoros : MonoBehaviour {
 
@@ -11,13 +12,15 @@ public class GuardaTesoros : MonoBehaviour {
     public int[] pos;
     public string[] tesoros;
     public int[] precio;
+    public Text[] textosvalores;
+    public Text[] textosnombres;
     public int preciototal;
 
+    float[] posx = new float[3] { 210f, 190f, 250f };
     int contador = 0;
     bool eliminar = false;
     bool agregar;
-    GameObject imagen;
-    GameObject cofre;
+    GameObject nombre, val, imagen, cofre;
     Canvas canvas1, canvas2, canvas3;
 
     void Start() {
@@ -103,23 +106,30 @@ public class GuardaTesoros : MonoBehaviour {
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    imagenestesoros[pos[i]].GetComponent<Canvas>().enabled = false;
-
+                    if (pos[i] != -1)
+                    {
+                        imagenestesoros[pos[i]].GetComponent<Canvas>().enabled = false;
+                    }
                 }
 
             }
-            else if (Time.timeScale == 0)
+            else if (Time.timeScale == 0 )
             {
                
                 for (int i = 0; i < 3; i++)
                 {
-                    imagenestesoros[pos[i]].GetComponent<Canvas>().enabled = true;
-                    /*imagen = GameObject.FindWithTag("Imagen");
-                    float x = -175.7f;
-                    float y = 34.3f;
-                    imagen.GetComponent<RectTransform>().position = new Vector2(x,y);*/
+                    if (pos[i] != -1)
+                    {
+                        Debug.Log(posx[i]);
+                        imagenestesoros[pos[i]].GetComponent<Canvas>().enabled = true;
+                        imagen = imagenestesoros[pos[i]].transform.Find("RawImage").gameObject;
+                        nombre = imagenestesoros[pos[i]].transform.Find("Text").gameObject;
+                        val = imagenestesoros[pos[i]].transform.Find("Valor").gameObject;
 
-
+                        imagen.GetComponent<RectTransform>().position = new Vector2(posx[i], 160f);
+                        nombre.GetComponent<RectTransform>().position = new Vector2(posx[i], 90f);
+                        val.GetComponent<RectTransform>().position = new Vector2(posx[i], 70f);
+                    }
 
                 }
             }
