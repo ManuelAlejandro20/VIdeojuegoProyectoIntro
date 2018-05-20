@@ -6,19 +6,44 @@ public class VidaJoe : MonoBehaviour {
 
     public float vidajoe = 100f;
 
+    Transform jugador;
+    SpriteRenderer sprite;
+    Rigidbody2D rigid;
+    Animator anim;
 
-    public void OnCollisionEnter(Collision col)
+
+    void Awake() {
+
+        jugador = GameObject.FindGameObjectWithTag("Player").transform;
+        rigid = jugador.GetComponent<Rigidbody2D>();
+        sprite = jugador.GetComponent<SpriteRenderer>();
+        anim = jugador.GetComponent<Animator>();
+    }
+
+    void Update() {
+        if (vidajoe <= 0) {
+            Destroy(gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
     {
 
-        if (col.collider.tag == "Enemy")
+        if (col.gameObject.tag == "Enemy")
         {
-
-            vidajoe -= 30f;
-            if (vidajoe <= 0)
+            anim.SetTrigger("daño");
+            if (sprite.flipX == false)
             {
-                Destroy(gameObject);
-            }
+                rigid.AddForce(new Vector2(-16f, 6f), ForceMode2D.Impulse);
 
+            }
+            else {
+
+                rigid.AddForce(new Vector2(16f, 6f), ForceMode2D.Impulse);
+            }
+            
+            Debug.Log("xdd");
+            vidajoe -= 10f;
         }
 
     }

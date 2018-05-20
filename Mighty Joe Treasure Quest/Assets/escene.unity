@@ -700,7 +700,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 122480187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.38, y: -1.57, z: 0}
+  m_LocalPosition: {x: 15.419999, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 363114632}
@@ -1215,6 +1215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personaje: {fileID: 1971486494}
   margen: 10
+  maxX: 0
+  x: 0
+  maxY: 0
+  y: 0
 --- !u!1001 &267804661
 Prefab:
   m_ObjectHideFlags: 0
@@ -1833,10 +1837,10 @@ GameObject:
   - component: {fileID: 351880323}
   - component: {fileID: 351880329}
   - component: {fileID: 351880328}
-  - component: {fileID: 351880327}
   - component: {fileID: 351880326}
   - component: {fileID: 351880325}
   - component: {fileID: 351880324}
+  - component: {fileID: 351880327}
   m_Layer: 0
   m_Name: Black Knight
   m_TagString: Enemy
@@ -1906,7 +1910,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 351880322}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1927,17 +1931,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 351880322}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7184f808e012b4342bb0ac540659064a, type: 3}
+  m_Script: {fileID: 11500000, guid: b93e01c4969d82b4cb5417b8d3d85c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidadenemigo: 8
   puntopartida: {fileID: 1100099452}
   puntofinal: {fileID: 460434048}
   localizador: {fileID: 2112883788}
-  velocidadenemigo: 5
-  jugador: {fileID: 1971486494}
-  distancia: 5
-  distanciaacercamiento: 10
-  persiguiendo: 0
+  distanciaacercamiento: 9
+  "da\xF1o": 25
 --- !u!114 &351880328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2004,7 +2006,7 @@ GameObject:
   - component: {fileID: 363114632}
   m_Layer: 0
   m_Name: Caballero
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2379,7 +2381,7 @@ GameObject:
   - component: {fileID: 452948131}
   m_Layer: 0
   m_Name: BlackKnight
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2423,7 +2425,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460434047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.76, y: -1.57, z: 0}
+  m_LocalPosition: {x: 19.39, y: 0.110000014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 452948131}
@@ -4111,7 +4113,7 @@ Canvas:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 972356011}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -4683,7 +4685,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1100099451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.59, y: -1.57, z: 0}
+  m_LocalPosition: {x: 12.25, y: 0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 452948131}
@@ -5474,7 +5476,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1303180120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.33, y: -3.02, z: 0}
+  m_LocalPosition: {x: -19.67, y: -3.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1437559402}
@@ -6389,7 +6391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1554137461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.99, y: -1.57, z: 0}
+  m_LocalPosition: {x: 4.81, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 363114632}
@@ -6650,9 +6652,9 @@ GameObject:
   - component: {fileID: 1665095734}
   - component: {fileID: 1665095740}
   - component: {fileID: 1665095739}
-  - component: {fileID: 1665095738}
   - component: {fileID: 1665095737}
   - component: {fileID: 1665095736}
+  - component: {fileID: 1665095738}
   - component: {fileID: 1665095735}
   m_Layer: 0
   m_Name: Plantilla king gorilla_0
@@ -6674,8 +6676,8 @@ Transform:
   m_Father: {fileID: 1437559402}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1665095735
-PolygonCollider2D:
+--- !u!61 &1665095735
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -6686,7 +6688,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -6696,37 +6698,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.545, y: 0.58}
-      - {x: 0.475, y: 0.65999997}
-      - {x: 0.48499998, y: 0.96999997}
-      - {x: 0.405, y: 1.18}
-      - {x: 0.355, y: 1.23}
-      - {x: 0.33499998, y: 1.23}
-      - {x: 0.305, y: 1.1999999}
-      - {x: 0.225, y: 1.27}
-      - {x: 0.095, y: 1.27}
-      - {x: -0.055, y: 1.22}
-      - {x: -0.155, y: 1.13}
-      - {x: -0.205, y: 0.96}
-      - {x: -0.345, y: 0.9}
-      - {x: -0.555, y: 0.78999996}
-      - {x: -0.555, y: 0.34}
-      - {x: -0.53499997, y: 0.22}
-      - {x: -0.555, y: 0.19}
-      - {x: -0.555, y: 0.089999996}
-      - {x: -0.525, y: 0.02}
-      - {x: -0.255, y: 0.07}
-      - {x: -0.185, y: 0}
-      - {x: 0.385, y: 0}
-      - {x: 0.515, y: 0.16}
-      - {x: 0.555, y: 0.25}
-      - {x: 0.555, y: 0.51}
-    - - {x: 0.105, y: 0.19999999}
-      - {x: 0.13499999, y: 0.26999998}
-      - {x: 0.16499999, y: 0.52}
-      - {x: 0.175, y: 0.31}
+  serializedVersion: 2
+  m_Size: {x: 1.11, y: 1.27}
+  m_EdgeRadius: 0
 --- !u!114 &1665095736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6764,17 +6738,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1665095733}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7184f808e012b4342bb0ac540659064a, type: 3}
+  m_Script: {fileID: 11500000, guid: b93e01c4969d82b4cb5417b8d3d85c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocidadenemigo: 3
   puntopartida: {fileID: 1303180121}
   puntofinal: {fileID: 1952776710}
   localizador: {fileID: 237436964}
-  velocidadenemigo: 4
-  jugador: {fileID: 1971486494}
-  distancia: 10
-  distanciaacercamiento: 10
-  persiguiendo: 0
+  distanciaacercamiento: 4
+  "da\xF1o": 50
 --- !u!50 &1665095739
 Rigidbody2D:
   serializedVersion: 4
@@ -6782,9 +6754,9 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1665095733}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -6793,8 +6765,8 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: bc7480780906ad44da70d914181942c3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_CollisionDetection: 1
+  m_Constraints: 6
 --- !u!212 &1665095740
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7827,11 +7799,11 @@ GameObject:
   - component: {fileID: 1941092281}
   m_Layer: 0
   m_Name: Enemigo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1941092281
 Transform:
   m_ObjectHideFlags: 0
@@ -7870,7 +7842,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952776709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.29, y: -3.02, z: 0}
+  m_LocalPosition: {x: -11.63, y: -3.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1437559402}
@@ -7929,6 +7901,7 @@ GameObject:
   - component: {fileID: 1971486492}
   - component: {fileID: 1971486490}
   - component: {fileID: 1971486489}
+  - component: {fileID: 1971486495}
   - component: {fileID: 1971486491}
   m_Layer: 0
   m_Name: Joe
@@ -7982,7 +7955,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 5e2880e63df64c84e9ff86dea14625bd, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1971486491
 MonoBehaviour:
@@ -8084,6 +8057,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1971486495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971486488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf2c8eed685062840820e5da1dc10b0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidajoe: 1000
 --- !u!1 &1975370451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8418,10 +8403,10 @@ GameObject:
   - component: {fileID: 2050635987}
   - component: {fileID: 2050635989}
   - component: {fileID: 2050635991}
-  - component: {fileID: 2050635988}
   - component: {fileID: 2050635990}
   - component: {fileID: 2050635993}
-  - component: {fileID: 2050635992}
+  - component: {fileID: 2050635994}
+  - component: {fileID: 2050635988}
   m_Layer: 0
   m_Name: Swordpng_1
   m_TagString: Enemy
@@ -8436,31 +8421,37 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050635986}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.32, y: -1.49, z: -0.52494895}
+  m_LocalPosition: {x: 1.64, y: -1.49, z: -0.52494895}
   m_LocalScale: {x: 9.059969, y: 8.719696, z: 1}
   m_Children: []
   m_Father: {fileID: 363114632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2050635988
-MonoBehaviour:
+--- !u!61 &2050635988
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050635986}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7184f808e012b4342bb0ac540659064a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puntopartida: {fileID: 1554137462}
-  puntofinal: {fileID: 122480188}
-  localizador: {fileID: 1565145032}
-  velocidadenemigo: 4
-  jugador: {fileID: 1971486494}
-  distancia: 10
-  distanciaacercamiento: 10
-  persiguiendo: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.42, y: 0.33}
+    newSize: {x: 0.42, y: 0.33}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.42, y: 0.33}
+  m_EdgeRadius: 0
 --- !u!212 &2050635989
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8529,7 +8520,7 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050635986}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8542,81 +8533,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!60 &2050635992
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2050635986}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.42, y: 0.33}
-    newSize: {x: 0.42, y: 0.33}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.18401219, y: 0.13389255}
-      - {x: 0.18208335, y: 0.13938686}
-      - {x: 0.15805595, y: 0.12886459}
-      - {x: 0.16605715, y: 0.092258826}
-      - {x: 0.14694045, y: 0.08003778}
-      - {x: 0.14480047, y: 0.042816453}
-      - {x: 0.12535323, y: 0.08091082}
-      - {x: 0.11219711, y: 0.11570935}
-      - {x: 0.094300605, y: 0.10437119}
-      - {x: 0.068255104, y: 0.06677997}
-      - {x: 0.057445705, y: 0.10239754}
-      - {x: 0.051131643, y: 0.16033389}
-      - {x: 0.03566691, y: 0.139206}
-      - {x: 0.004330075, y: 0.094707385}
-      - {x: -0.021810373, y: 0.0878496}
-      - {x: -0.041657392, y: 0.08717479}
-      - {x: -0.060572, y: 0.06257591}
-      - {x: -0.09840795, y: 0.0904284}
-      - {x: -0.10221928, y: 0.08855865}
-      - {x: -0.14609899, y: 0.1278244}
-      - {x: -0.15204778, y: 0.1129044}
-      - {x: -0.14776781, y: 0.089311585}
-      - {x: -0.16893125, y: 0.06586784}
-      - {x: -0.20700613, y: 0.06159964}
-      - {x: -0.20700613, y: 0.045871228}
-      - {x: -0.18847194, y: 0.025026074}
-      - {x: -0.18477976, y: -0.017673407}
-      - {x: -0.16648726, y: -0.04130333}
-      - {x: -0.16249782, y: -0.072473384}
-      - {x: -0.1507998, y: -0.10164581}
-      - {x: -0.18353367, y: -0.13855861}
-      - {x: -0.16425401, y: -0.16290851}
-      - {x: -0.05788907, y: -0.16157901}
-      - {x: -0.053735834, y: -0.14901082}
-      - {x: -0.04188581, y: -0.13025631}
-      - {x: -0.012582649, y: -0.13649811}
-      - {x: -0.00069452147, y: -0.1519462}
-      - {x: 0.033560608, y: -0.1536879}
-      - {x: 0.047056302, y: -0.16286473}
-      - {x: 0.1620974, y: -0.16188928}
-      - {x: 0.18612228, y: -0.13844861}
-      - {x: 0.17143543, y: -0.11424744}
-      - {x: 0.12987825, y: -0.09733174}
-      - {x: 0.16284013, y: -0.09215918}
-      - {x: 0.18273409, y: -0.06842874}
-      - {x: 0.19217044, y: -0.031741127}
-      - {x: 0.19178413, y: -0.0068374244}
-      - {x: 0.21125074, y: 0.030694647}
-      - {x: 0.20960738, y: 0.095768444}
-      - {x: 0.18455176, y: 0.1347022}
-      - {x: 0.17856401, y: 0.13722314}
 --- !u!114 &2050635993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8629,6 +8545,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vidaenemigo: 60
+--- !u!114 &2050635994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050635986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93e01c4969d82b4cb5417b8d3d85c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadenemigo: 7
+  puntopartida: {fileID: 1554137462}
+  puntofinal: {fileID: 122480188}
+  localizador: {fileID: 1565145032}
+  distanciaacercamiento: 8
+  "da\xF1o": 40
 --- !u!1001 &2054013343
 Prefab:
   m_ObjectHideFlags: 0
