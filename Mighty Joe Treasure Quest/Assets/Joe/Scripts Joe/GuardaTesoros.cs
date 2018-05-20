@@ -16,7 +16,7 @@ public class GuardaTesoros : MonoBehaviour {
     public Text[] textosnombres;
     public int preciototal;
 
-    float[] posx = new float[3] { 210f, 375f, 550f };
+    float[] posx = new float[3] { 250f, 700f, 1125f };
     int contador = 0;
     bool eliminar = false;
     bool agregar;
@@ -126,11 +126,11 @@ public class GuardaTesoros : MonoBehaviour {
                         nombre = imagenestesoros[pos[i]].transform.Find("Text").gameObject;
                         val = imagenestesoros[pos[i]].transform.Find("Valor").gameObject;
 
-                        imagen.GetComponent<RectTransform>().position = new Vector2(posx[i], 160f);
+                        imagen.GetComponent<RectTransform>().position = new Vector2(posx[i], 420f);
                         Debug.Log(imagen.GetComponent<RectTransform>().position);
-                        nombre.GetComponent<RectTransform>().position = new Vector2(posx[i], 90f);
+                        nombre.GetComponent<RectTransform>().position = new Vector2(posx[i], 240f);
                         Debug.Log(nombre.GetComponent<RectTransform>().position);
-                        val.GetComponent<RectTransform>().position = new Vector2(posx[i], 70f);
+                        val.GetComponent<RectTransform>().position = new Vector2(posx[i], 210f);
                         Debug.Log(val.GetComponent<RectTransform>().position);
                     }
 
