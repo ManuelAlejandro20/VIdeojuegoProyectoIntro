@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class CambioEscenario3 : MonoBehaviour {
+public class Vueltaescena1 : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,12 +13,12 @@ public class CambioEscenario3 : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "Limite")
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SceneManager.LoadScene("nivel 4 primer escenario", LoadSceneMode.Single);
+            SceneManager.LoadScene("Escenario 1 1er nivel", LoadSceneMode.Single);
         }
     }
 }

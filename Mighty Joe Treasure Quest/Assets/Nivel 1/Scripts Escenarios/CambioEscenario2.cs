@@ -13,12 +13,12 @@ public class CambioEscenario2 : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SceneManager.LoadScene("nivel 3 primer escenario", LoadSceneMode.Single);
+            SceneManager.LoadScene("Escenario 2 1er nivel", LoadSceneMode.Single);
         }
     }
 }
