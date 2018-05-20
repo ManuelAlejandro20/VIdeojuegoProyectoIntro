@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
+
 public class MoJoe : MonoBehaviour {
 
     [SerializeField] bool ensuelo = true;

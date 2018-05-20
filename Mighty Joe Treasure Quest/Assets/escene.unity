@@ -700,7 +700,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 122480187}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.419999, y: -1.57, z: 0}
+  m_LocalPosition: {x: -8.29, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 363114632}
@@ -1912,17 +1912,17 @@ Rigidbody2D:
   m_GameObject: {fileID: 351880322}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bc7480780906ad44da70d914181942c3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 6
 --- !u!114 &351880327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,7 +1939,7 @@ MonoBehaviour:
   puntofinal: {fileID: 460434048}
   localizador: {fileID: 2112883788}
   distanciaacercamiento: 9
-  "da\xF1o": 25
+  "da\xF1o": 5
 --- !u!114 &351880328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2385,7 +2385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452948131
 Transform:
   m_ObjectHideFlags: 0
@@ -2425,7 +2425,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 460434047}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 19.39, y: 0.110000014, z: 0}
+  m_LocalPosition: {x: 15.4, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 452948131}
@@ -4685,7 +4685,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1100099451}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.25, y: 0.11, z: 0}
+  m_LocalPosition: {x: 10.34, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 452948131}
@@ -5476,7 +5476,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1303180120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.67, y: -3.02, z: 0}
+  m_LocalPosition: {x: -19.67, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1437559402}
@@ -6391,7 +6391,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1554137461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.81, y: -1.57, z: 0}
+  m_LocalPosition: {x: -18.9, y: -1.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 363114632}
@@ -6670,7 +6670,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1665095733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.27, y: -3.07, z: -0.52494895}
+  m_LocalPosition: {x: -6.69, y: -0.78, z: -0.52494895}
   m_LocalScale: {x: 3.088694, y: 3.063668, z: 1}
   m_Children: []
   m_Father: {fileID: 1437559402}
@@ -6691,7 +6691,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.635}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1.11, y: 1.27}
     newSize: {x: 1.11, y: 1.27}
     adaptiveTilingThreshold: 0.5
@@ -6741,12 +6741,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93e01c4969d82b4cb5417b8d3d85c71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadenemigo: 3
+  velocidadenemigo: 5
   puntopartida: {fileID: 1303180121}
   puntofinal: {fileID: 1952776710}
   localizador: {fileID: 237436964}
-  distanciaacercamiento: 4
-  "da\xF1o": 50
+  distanciaacercamiento: 7
+  "da\xF1o": 20
 --- !u!50 &1665095739
 Rigidbody2D:
   serializedVersion: 4
@@ -6765,7 +6765,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: bc7480780906ad44da70d914181942c3, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 6
 --- !u!212 &1665095740
 SpriteRenderer:
@@ -7842,7 +7842,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1952776709}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.63, y: -3.02, z: 0}
+  m_LocalPosition: {x: -11.63, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1437559402}
@@ -8068,7 +8068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2c8eed685062840820e5da1dc10b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidajoe: 1000
+  vidajoe: 100
 --- !u!1 &1975370451
 GameObject:
   m_ObjectHideFlags: 0
@@ -8561,7 +8561,7 @@ MonoBehaviour:
   puntofinal: {fileID: 122480188}
   localizador: {fileID: 1565145032}
   distanciaacercamiento: 8
-  "da\xF1o": 40
+  "da\xF1o": 7
 --- !u!1001 &2054013343
 Prefab:
   m_ObjectHideFlags: 0

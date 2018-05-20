@@ -144,5 +144,7 @@ public class Movimientoenemigo : MonoBehaviour
 
     }
 
-    
+    public int getdaño() {
+        return daño;
+    }
 }
