@@ -10,6 +10,7 @@ TagManager:
   - Uppercut
   - OpenChest
   - Imagen
+  - Barrera
   layers:
   - Default
   - TransparentFX

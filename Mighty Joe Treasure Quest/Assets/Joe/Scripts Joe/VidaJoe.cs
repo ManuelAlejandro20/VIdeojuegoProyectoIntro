@@ -8,8 +8,13 @@ public class VidaJoe : MonoBehaviour {
 
     static int vidas = 50; 
     float tiempo;
+
     GameObject enemigo;
     Movimientoenemigo scriptenemigo;
+
+    GameObject barrera;
+    Barrera barreramuerte;
+
     Transform jugador;
     BoxCollider2D box;
     MoJoe script;
@@ -70,7 +75,7 @@ public class VidaJoe : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D col)
     {
 
-        if (col.gameObject.tag == "Enemy" && vidajoe>0)
+        if (col.gameObject.tag == "Enemy" && vidajoe > 0)
         {
             enemigo = col.gameObject;
             scriptenemigo = enemigo.GetComponent<Movimientoenemigo>();
@@ -86,8 +91,19 @@ public class VidaJoe : MonoBehaviour {
             }
 
             vidajoe -= scriptenemigo.getdaño();
-           
+
         }
 
+        else if (col.gameObject.tag == "Barrera" && vidajoe > 0) {
+            barrera = col.gameObject;
+            barreramuerte = barrera.GetComponent<Barrera>();
+            vidajoe -= barreramuerte.getdaño();
+        }
+        
+    }
+
+
+    public float getvida() {
+        return vidajoe;
     }
 }
