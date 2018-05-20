@@ -5,17 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class CambioEscena : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
 		
 	}
-    public void change(int level1){
-        SceneManager.LoadScene(level1);
+
+    public void primerescenario()
+    {
+
+        Application.LoadLevel(1);
     }
+
+    public void Salirdejuego()
+    {
+        Application.Quit();
+
+    }
+
+
 }
 
