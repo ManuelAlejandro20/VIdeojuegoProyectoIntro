@@ -81,7 +81,7 @@ public class VidaJoe : MonoBehaviour {
                 }
                 else {
 
-                    Application.LoadLevel(4);
+                    Application.LoadLevel(1);
 
                 }
             }
