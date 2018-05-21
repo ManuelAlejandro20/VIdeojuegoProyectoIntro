@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VidaJoe : MonoBehaviour {
 
     public float vidajoe = 100f;
+    public Text textovidas;
 
-    static int vidas = 50; 
+
+    static int vidas = 3; 
     float tiempo;
 
     GameObject enemigo;
@@ -31,6 +34,7 @@ public class VidaJoe : MonoBehaviour {
         script = jugador.GetComponent<MoJoe>();
         sprite = jugador.GetComponent<SpriteRenderer>();
         anim = jugador.GetComponent<Animator>();
+        textovidas.text = "x " + (vidas - 1);
     }
 
     void Update() {
@@ -38,6 +42,15 @@ public class VidaJoe : MonoBehaviour {
             anim.SetTrigger("muerto");
             anim.SetBool("muertosuelo",true);
             vidas--;
+            if (vidas == 0)
+            {
+                textovidas.text = "x " + 0;
+            }
+
+            else {
+                textovidas.text = "x " + (vidas - 1);
+            }
+            
             if (sprite.flipX == false)
             {
                 rigid.AddForce(new Vector2(-36f, 6f), ForceMode2D.Impulse);
@@ -58,12 +71,17 @@ public class VidaJoe : MonoBehaviour {
             if (tiempo >= 2.5f) {
                 if (vidas == 0)
                 {
-                    Destroy(gameObject);
                     Time.timeScale = 0;
+                    if (Input.GetKeyDown("x")) {
+
+                        Time.timeScale = 1;
+                        Application.LoadLevel(0);
+
+                    }
                 }
                 else {
 
-                    Application.LoadLevel(0);
+                    Application.LoadLevel(4);
 
                 }
             }
