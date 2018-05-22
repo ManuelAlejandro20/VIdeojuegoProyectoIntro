@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class VidaJoe : MonoBehaviour {
 
-    public float vidajoe = 100f;
+    public static float vidajoe = 100f;
+    float vidajoe2 = 100f;
+    public Canvas terminojuego;
     public Text textovidas;
 
 
@@ -35,6 +37,9 @@ public class VidaJoe : MonoBehaviour {
         sprite = jugador.GetComponent<SpriteRenderer>();
         anim = jugador.GetComponent<Animator>();
         textovidas.text = "x " + (vidas - 1);
+        terminojuego.GetComponent<Canvas>().enabled = false;
+
+        
     }
 
     void Update() {
@@ -72,8 +77,12 @@ public class VidaJoe : MonoBehaviour {
                 if (vidas == 0)
                 {
                     Time.timeScale = 0;
+                    terminojuego.GetComponent<Canvas>().enabled = true;
                     if (Input.GetKeyDown("x")) {
 
+                        vidajoe = vidajoe2;
+                        vidas = 3;
+                        terminojuego.GetComponent<Canvas>().enabled = false;
                         Time.timeScale = 1;
                         Application.LoadLevel(0);
 
@@ -81,6 +90,7 @@ public class VidaJoe : MonoBehaviour {
                 }
                 else {
 
+                    vidajoe = vidajoe2;
                     Application.LoadLevel(1);
 
                 }

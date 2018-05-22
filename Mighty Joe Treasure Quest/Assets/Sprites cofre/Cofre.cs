@@ -10,8 +10,8 @@ namespace Tesoro
         [SerializeField] string nombre;
         float distancia;
         public GameObject destello;
-        public float tiempo = 0.2f;
-        public float tiempo2;
+        float tiempo = 0.2f;
+        float tiempo2;
 
         public Cofre(string nombre)
         {

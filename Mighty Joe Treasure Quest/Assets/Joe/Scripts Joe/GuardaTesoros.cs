@@ -9,19 +9,27 @@ public class GuardaTesoros : MonoBehaviour {
     private int[] valores = new int[6] { 25000, 35000, 80000, 90000, 300000, 350000 };
     public Canvas[] imagenestesoros;
 
-    public int[] pos;
-    public string[] tesoros;
-    public int[] precio;
+    int[] pos;
+    string[] tesoros;
+    int[] precio;
+    public static int[] posstatic = new int[3] { -1, -1, -1 };
+    public static string[] tesorosstatic = new string[3] {"","","" };
+    public static int[] preciostatic = new int[3] {0,0,0};
+    public Canvas gameover;
+
     public Text[] textosvalores;
     public Text[] textosnombres;
-    public int preciototal;
+    public static int preciototal;
 
     float[] posx = new float[3] { 250f, 700f, 1125f };
-    int contador = 0;
+    static int contador = 0;
     bool eliminar = false;
     bool agregar;
     GameObject nombre, val, imagen, cofre;
     Canvas canvas1, canvas2, canvas3;
+
+
+
 
     void Start() {
 
@@ -29,7 +37,6 @@ public class GuardaTesoros : MonoBehaviour {
             imagenestesoros[i].GetComponent<Canvas>().enabled = false;
 
         }
-
 	}
 
     void Update() {
@@ -53,9 +60,9 @@ public class GuardaTesoros : MonoBehaviour {
                
                 for (int i = 0; i < 6; i++) {
                     if (tesorosposibles[i].Equals(nombre)) {
-                        pos[contador] = i; 
-                        tesoros[contador] = nombre;
-                        precio[contador] = valores[i];
+                        posstatic[contador] = i; 
+                        tesorosstatic[contador] = nombre;
+                        preciostatic[contador] = valores[i];
                         contador++;
                     }
                 }
@@ -76,8 +83,21 @@ public class GuardaTesoros : MonoBehaviour {
             contador = 0;
         }
 
+
+
         desplegarcanvas();
 
+        if (gameover.GetComponent<Canvas>().enabled) {
+            for (int i = 0; i < 3; i++) {
+                posstatic[i] = -1;
+                tesorosstatic[i] = "";
+                preciostatic[i] = 0;
+            }
+
+            contador = 0;
+
+
+        }
     }
 
     void eliminarcofre() {
@@ -93,7 +113,7 @@ public class GuardaTesoros : MonoBehaviour {
 
         }
 
-       
+        
 
     }
 
@@ -106,32 +126,28 @@ public class GuardaTesoros : MonoBehaviour {
             {
                 for (int i = 0; i < 3; i++)
                 {
-                    if (pos[i] != -1)
+                    if (posstatic[i] != -1)
                     {
-                        imagenestesoros[pos[i]].GetComponent<Canvas>().enabled = false;
+                        imagenestesoros[posstatic[i]].GetComponent<Canvas>().enabled = false;
                     }
                 }
 
             }
-            else if (Time.timeScale == 0 )
+            if (Time.timeScale == 0 )
             {
-               
+                Debug.Log("xd");
                 for (int i = 0; i < 3; i++)
                 {
-                    if (pos[i] != -1)
+                    if (posstatic[i] != -1)
                     {
-                        Debug.Log(posx[i]);
-                        imagenestesoros[pos[i]].GetComponent<Canvas>().enabled = true;
-                        imagen = imagenestesoros[pos[i]].transform.Find("RawImage").gameObject;
-                        nombre = imagenestesoros[pos[i]].transform.Find("Text").gameObject;
-                        val = imagenestesoros[pos[i]].transform.Find("Valor").gameObject;
+                        imagenestesoros[posstatic[i]].GetComponent<Canvas>().enabled = true;
+                        imagen = imagenestesoros[posstatic[i]].transform.Find("RawImage").gameObject;
+                        nombre = imagenestesoros[posstatic[i]].transform.Find("Text").gameObject;
+                        val = imagenestesoros[posstatic[i]].transform.Find("Valor").gameObject;
 
                         imagen.GetComponent<RectTransform>().position = new Vector2(posx[i], 420f);
-                        Debug.Log(imagen.GetComponent<RectTransform>().position);
                         nombre.GetComponent<RectTransform>().position = new Vector2(posx[i], 240f);
-                        Debug.Log(nombre.GetComponent<RectTransform>().position);
                         val.GetComponent<RectTransform>().position = new Vector2(posx[i], 210f);
-                        Debug.Log(val.GetComponent<RectTransform>().position);
                     }
 
                 }
