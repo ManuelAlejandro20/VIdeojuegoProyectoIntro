@@ -37,6 +37,8 @@ public class GuardaTesoros : MonoBehaviour {
             imagenestesoros[i].GetComponent<Canvas>().enabled = false;
 
         }
+
+        eliminar = false;
 	}
 
     void Update() {
@@ -75,12 +77,11 @@ public class GuardaTesoros : MonoBehaviour {
         eliminarcofre();
 
         if (contador >= 3) {
-            for (int i = 0; i < precio.Length; i++) {
-                preciototal += precio[i];
+            for (int i = 0; i < preciostatic.Length; i++) {
+                preciototal += preciostatic[i];
                 
 
             }
-            contador = 0;
         }
 
 
@@ -100,9 +101,11 @@ public class GuardaTesoros : MonoBehaviour {
         }
     }
 
-    void eliminarcofre() {
+    void eliminarcofre()
+    {
         int hijos = transform.childCount;
-        if (contador >= 3 && !eliminar) {
+        if (contador >= 3 && !eliminar)
+        {
 
             for (int i = hijos - 1; i > -1; i--)
             {
@@ -113,7 +116,7 @@ public class GuardaTesoros : MonoBehaviour {
 
         }
 
-        
+
 
     }
 

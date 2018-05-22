@@ -13,10 +13,7 @@ namespace Tesoro
         float tiempo = 0.2f;
         float tiempo2;
 
-        public Cofre(string nombre)
-        {
-            this.nombre = nombre;
-        }
+     
         void abrircofre()
         {
 
@@ -31,9 +28,6 @@ namespace Tesoro
                 nombre = gameObject.ToString();
                 nombre = nombre.ToLower();
                 nombre = nombre.Remove(0, 6);
-
-           
-            
 
             }
 
