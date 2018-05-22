@@ -11,51 +11,57 @@ public class Patada : MonoBehaviour
     public float duracion;
     public static float daño;
     public float dañoref;
+    SpriteRenderer sprite;
+    Rigidbody2D rigid;
 
     void Awake()
     {
-
+        rigid = GetComponent<Rigidbody2D>();
+        sprite = GetComponent<SpriteRenderer>();
         daño = dañoref;
         jugador = GameObject.FindGameObjectWithTag("Player");
+        /*Aqui se detecta si el ataque usado es el Uppercut*/
         if (gameObject.tag == "Uppercut") {
             esupper = true;
         }
 
     }
 
+    /*El proyectil se comporta de manera distinta si es un Uppercut o un ataque de patadas y puños*/
     void Start()
     {
         if (!esupper)
         {
             if (jugador.GetComponent<SpriteRenderer>().flipX == false)
             {
-                if (GetComponent<SpriteRenderer>().flipX == true)
+                if (sprite.flipX == true)
                 {
-                    GetComponent<SpriteRenderer>().flipX = false;
+                    sprite.flipX = false;
                 }
-                GetComponent<Rigidbody2D>().velocity = new Vector2(bulletspeed, GetComponent<Rigidbody2D>().velocity.y);
+                rigid.velocity = new Vector2(bulletspeed, rigid.velocity.y);
 
             }
             else
             {
 
-                GetComponent<Rigidbody2D>().velocity = new Vector2(-bulletspeed, GetComponent<Rigidbody2D>().velocity.y);
-                GetComponent<SpriteRenderer>().flipX = true;
+                rigid.velocity = new Vector2(-bulletspeed, rigid.velocity.y);
+                sprite.flipX = true;
             }
         }
 
         else {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, bulletspeed);
+            rigid.velocity = new Vector2(rigid.velocity.x, bulletspeed);
         }
     }
 
-    // Update is called once per frame
+    /*El proyectil se destruye pasado un tiempo*/
     void Update()
     {
 
         Destroy(gameObject, duracion);
     }
 
+    /*El proyectil se destruirá si choca con un enemigo*/
     public void OnTriggerEnter2D(Collider2D col)
     {
 

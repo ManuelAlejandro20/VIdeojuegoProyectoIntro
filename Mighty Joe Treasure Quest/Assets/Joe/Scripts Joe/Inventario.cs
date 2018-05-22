@@ -8,17 +8,16 @@ using Tesoro;
  {
 
         Canvas canvas;
-
-   
-
-
-
+        
+        /*La imagen del inventario inicia desactivada*/
         void Start()
         {
             canvas = GetComponent<Canvas>();
             canvas.enabled = false;
         }
 
+        
+        /*Cuando se aprete pausa la imagen del inventario va a aparecer o desaparecer dependiendo de las condiciones*/
         void Update()
         {
 
