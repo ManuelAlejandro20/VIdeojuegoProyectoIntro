@@ -47,7 +47,7 @@ public class Movimientoenemigo : MonoBehaviour
     }
 
     void Update()
-    {
+    {   //se activan los metodos del movimiento de enemigo
         acercamiento();
         IA();
     }
@@ -55,7 +55,7 @@ public class Movimientoenemigo : MonoBehaviour
     void IA() {
 
         switch (estadoprincipal){
-
+            //se definen los puntos de donde hasta donde se movera el enemigo dentro de la escena
             case states.caminata:
                 if (!persiguiendo)
                 {
@@ -83,6 +83,7 @@ public class Movimientoenemigo : MonoBehaviour
 
 
             case states.ataque:
+                //se activara la animacion de ataque de enemigo cuando el jugador se encuentre en el territorio del enemigo
                 if (distancia <= distanciaacercamiento) {
                     if ((jugador.position.x - transform.position.x) > 1)
                     {
@@ -110,6 +111,7 @@ public class Movimientoenemigo : MonoBehaviour
     }
 
     void acercamiento() {
+        //el enemigo se movera hacia el jugador si es que este esta a su alcance
         distancia = Vector3.Distance(jugador.position, transform.position);
         if (distancia <= distanciaacercamiento)
         {
@@ -143,7 +145,7 @@ public class Movimientoenemigo : MonoBehaviour
 
 
     }
-
+    //se retornara el daño ejercido por el enemigo
     public int getdaño() {
         return daño;
     }

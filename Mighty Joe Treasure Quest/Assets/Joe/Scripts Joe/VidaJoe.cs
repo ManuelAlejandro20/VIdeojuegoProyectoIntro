@@ -43,6 +43,7 @@ public class VidaJoe : MonoBehaviour {
     }
 
     void Update() {
+        //si es que joe llega a perder una vida, se reiniciara el juego con el descuento de una vida
         if (vidajoe <= 0 && !anim.GetBool("muertosuelo")) {
             anim.SetTrigger("muerto");
             anim.SetBool("muertosuelo",true);
@@ -71,6 +72,7 @@ public class VidaJoe : MonoBehaviour {
             Destroy(box);
         }
 
+        //si joe pierde todas las vidas se devolvera la pantalla inicial de juego
         if (anim.GetBool("muertosuelo")) {
             tiempo += Time.deltaTime;
             if (tiempo >= 2.5f) {
@@ -102,7 +104,7 @@ public class VidaJoe : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-
+        //si es que el enemigo ejecuta daño a Joe a este se le reducira la vida
         if (col.gameObject.tag == "Enemy" && vidajoe > 0)
         {
             enemigo = col.gameObject;
@@ -121,7 +123,7 @@ public class VidaJoe : MonoBehaviour {
             vidajoe -= scriptenemigo.getdaño();
 
         }
-
+        //la barra de vida sera reducida segun el daño
         else if (col.gameObject.tag == "Barrera" && vidajoe > 0) {
             barrera = col.gameObject;
             barreramuerte = barrera.GetComponent<Barrera>();
@@ -130,7 +132,7 @@ public class VidaJoe : MonoBehaviour {
         
     }
 
-
+    //se retorna la vida de joe
     public float getvida() {
         return vidajoe;
     }

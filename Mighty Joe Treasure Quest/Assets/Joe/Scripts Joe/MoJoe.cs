@@ -38,12 +38,12 @@ public class MoJoe : MonoBehaviour {
     }
  
     void Update() {
-        
+        //se llama al metodo "movimientos" el cual corresponde
         movimientos();
     }
 
     void movimientos() {
-
+        //al presionar la tecla "z" se ejecutara el salto del personaje
         tiemposalto += 2f * Time.deltaTime;
 
         if (ensuelo && Input.GetKeyDown("z"))
