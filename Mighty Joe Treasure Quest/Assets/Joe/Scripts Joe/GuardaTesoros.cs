@@ -28,7 +28,7 @@ public class GuardaTesoros : MonoBehaviour {
     public static int preciototal;
 
     /*Posiciones en las que se desplegaran las imagenes de los tesoros cuando se pulse pausa*/
-    float[] posx = new float[3] { 250f, 700f, 1125f };
+    float[] posx = new float[3] { 180f, 380f, 585f };
     /*Contador estatico que nos dice cuantos tesoros llevamos almacenados*/
     static int contador = 0;
     /*Booleanos auxiliares*/
@@ -166,9 +166,9 @@ public class GuardaTesoros : MonoBehaviour {
                         nombre = imagenestesoros[posstatic[i]].transform.Find("Text").gameObject;
                         val = imagenestesoros[posstatic[i]].transform.Find("Valor").gameObject;
 
-                        imagen.GetComponent<RectTransform>().position = new Vector2(posx[i], 420f);
-                        nombre.GetComponent<RectTransform>().position = new Vector2(posx[i], 240f);
-                        val.GetComponent<RectTransform>().position = new Vector2(posx[i], 210f);
+                        imagen.GetComponent<RectTransform>().position = new Vector2(posx[i], 190f);
+                        nombre.GetComponent<RectTransform>().position = new Vector2(posx[i], 100f);
+                        val.GetComponent<RectTransform>().position = new Vector2(posx[i], 80f);
                     }
 
                 }
