@@ -15,29 +15,27 @@ public class GuardaTesoros : MonoBehaviour {
      en "tesorosposibles") se almacenará en "posstatic",  "tesorosstatic" almacenará los nombres y "preciosstatic" guardará su 
      precio*/
     public static int[] posstatic = new int[3] { -1, -1, -1 };
-    public static string[] tesorosstatic = new string[3] {"","","" };
-    public static int[] preciostatic = new int[3] {0,0,0};
+    public static string[] tesorosstatic = new string[3] { "", "", "" };
+    public static int[] preciostatic = new int[3] { 0, 0, 0 };
     /*Pantalla de gameover*/
     public Canvas gameover;
-
-    /*Arreglos que se llenaran desde el inspector, contiene todos los textos a utilizar al mostrar el inventario*/
-    public Text[] textosvalores;
-    public Text[] textosnombres;
 
     /*Suma de todos los valores de los tesoros*/
     public static int preciototal;
 
-    /*Posiciones en las que se desplegaran las imagenes de los tesoros cuando se pulse pausa*/
-    float[] posx = new float[3] { 180f, 380f, 585f };
     /*Contador estatico que nos dice cuantos tesoros llevamos almacenados*/
     static int contador = 0;
     /*Booleanos auxiliares*/
     bool eliminar = false;
     bool agregar;
 
-    GameObject nombre, val, imagen, cofre;
+    GameObject imagen, cofre;
 
+    public Image[] slots;
 
+    RectTransform posimagen;
+    RectTransform posnombre;
+    RectTransform posval;
 
 
     void Start() {
@@ -163,12 +161,9 @@ public class GuardaTesoros : MonoBehaviour {
                     {
                         imagenestesoros[posstatic[i]].GetComponent<Canvas>().enabled = true;
                         imagen = imagenestesoros[posstatic[i]].transform.Find("RawImage").gameObject;
-                        nombre = imagenestesoros[posstatic[i]].transform.Find("Text").gameObject;
-                        val = imagenestesoros[posstatic[i]].transform.Find("Valor").gameObject;
 
-                        imagen.GetComponent<RectTransform>().position = new Vector2(posx[i], 190f);
-                        nombre.GetComponent<RectTransform>().position = new Vector2(posx[i], 100f);
-                        val.GetComponent<RectTransform>().position = new Vector2(posx[i], 80f);
+                        imagen.GetComponent<RectTransform>().position = new Vector2(slots[i].GetComponent<RectTransform>().position.x, slots[i].GetComponent<RectTransform>().position.y);
+                        
                     }
 
                 }
