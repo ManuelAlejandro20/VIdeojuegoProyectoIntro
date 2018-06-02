@@ -17,3 +17,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Nivel 1/escenas nivel 1/Escenario 3 1er nivel.unity
     guid: 4e72c03bf7cc6624096a2d984969ce72
+  - enabled: 1
+    path: Assets/Nivel 2/Escenas/Escenario 1 2do nivel.unity
+    guid: e3551f5847d72994296d66530076e269
+  - enabled: 1
+    path: Assets/Nivel 2/Escenas/Escenario 2 2do nivel.unity
+    guid: 436572ec51d82cd479aa929994f87818
+  - enabled: 1
+    path: Assets/Nivel 2/Escenas/Escenario 3 2do nivel.unity
+    guid: 07cedf7801fe55a46a3acc6c091c2c55
+  - enabled: 1
+    path: Assets/Nivel 2/Escenas/Escenario 4 2do nivel.unity
+    guid: 04db98776d88b6948bbcb66b1b461092
+  - enabled: 1
+    path: Assets/Nivel 2/Escenas/Escenario 5 2do nivel.unity
+    guid: ac05338c8d1613a4dafb2a3b79ad43a9
+  - enabled: 1
+    path: Assets/Nivel 2/Escenas/Escenario 6 2do nivel.unity
+    guid: 7ac5446c3978bf34d86369e2f5e2f2c3
