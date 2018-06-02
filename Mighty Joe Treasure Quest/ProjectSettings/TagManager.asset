@@ -11,6 +11,7 @@ TagManager:
   - OpenChest
   - Imagen
   - Barrera
+  - SistemaGuardaTesoros
   layers:
   - Default
   - TransparentFX

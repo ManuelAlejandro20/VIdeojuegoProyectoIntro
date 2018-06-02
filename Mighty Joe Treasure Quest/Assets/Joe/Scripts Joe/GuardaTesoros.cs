@@ -170,5 +170,13 @@ public class GuardaTesoros : MonoBehaviour {
             }
         }
     }
-   
+
+    public bool verificartesoro(string nombre) {
+        for (int i=0; i<3; i++) {
+            if (tesorosstatic[i].Equals(nombre)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

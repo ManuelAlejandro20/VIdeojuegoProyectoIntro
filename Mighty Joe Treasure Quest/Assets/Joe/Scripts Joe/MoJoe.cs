@@ -236,6 +236,7 @@ public class MoJoe : MonoBehaviour {
 
         if (animatorInfo.IsTag("Salto") && Input.GetKeyDown("c")) {
             rigid.velocity = new Vector2(rigid.velocity.x, 15f);
+            Debug.Log("estyo aqui");
             anim.SetTrigger("upper");
         }
     }
