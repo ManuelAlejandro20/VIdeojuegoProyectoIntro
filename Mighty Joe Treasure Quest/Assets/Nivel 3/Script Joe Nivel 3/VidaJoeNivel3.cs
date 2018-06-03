@@ -101,7 +101,7 @@ public class VidaJoeNivel3 : MonoBehaviour {
                 {
 
                     vidajoe = vidajoe2;
-                    Application.LoadLevel(1);
+                    Application.LoadLevel(10);
 
                 }
             }
