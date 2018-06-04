@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class VidaJoe : MonoBehaviour {
 
@@ -86,14 +87,14 @@ public class VidaJoe : MonoBehaviour {
                         vidas = 3;
                         terminojuego.GetComponent<Canvas>().enabled = false;
                         Time.timeScale = 1;
-                        Application.LoadLevel(0);
+                        SceneManager.LoadScene(0);
 
                     }
                 }
                 else {
 
                     vidajoe = vidajoe2;
-                    Application.LoadLevel(1);
+                    SceneManager.LoadScene(1);
 
                 }
             }

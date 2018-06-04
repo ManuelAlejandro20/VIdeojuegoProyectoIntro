@@ -14,7 +14,7 @@ public class CambioEscena : MonoBehaviour {
     public void primerescenario()
     {
 
-        Application.LoadLevel(1);
+        SceneManager.LoadScene(1);
     }
 
     public void Salirdejuego()

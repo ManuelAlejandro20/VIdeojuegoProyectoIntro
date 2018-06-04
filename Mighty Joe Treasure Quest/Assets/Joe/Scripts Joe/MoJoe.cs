@@ -9,7 +9,6 @@ public class MoJoe : MonoBehaviour {
     [SerializeField] Transform chequearsuelo;
 
     bool disparo = false;
-    bool ataque = false;
     float podersalto = 18f;
     float velocidad = 7f;
     float radiocirculosuelo = 0.5f;
@@ -174,9 +173,9 @@ public class MoJoe : MonoBehaviour {
 
         /*----------------------------------------------------------------------*/
 
+
         if (Input.GetKeyDown("x") && ensuelo && !disparo)
         {
-            ataque = true;
             if (sprite.flipX == false)
             {
                 rigid.velocity = new Vector2(-0.1f, rigid.velocity.y);

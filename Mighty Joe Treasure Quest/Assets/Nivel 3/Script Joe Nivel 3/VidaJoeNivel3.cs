@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class VidaJoeNivel3 : MonoBehaviour {
 
@@ -93,7 +94,7 @@ public class VidaJoeNivel3 : MonoBehaviour {
                         vidas = 3;
                         terminojuego.GetComponent<Canvas>().enabled = false;
                         Time.timeScale = 1;
-                        Application.LoadLevel(0);
+                        SceneManager.LoadScene(0);
 
                     }
                 }
@@ -101,7 +102,7 @@ public class VidaJoeNivel3 : MonoBehaviour {
                 {
 
                     vidajoe = vidajoe2;
-                    Application.LoadLevel(10);
+                    SceneManager.LoadScene(10);
 
                 }
             }

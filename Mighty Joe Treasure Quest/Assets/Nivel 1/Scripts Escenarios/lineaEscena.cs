@@ -17,12 +17,13 @@ public class lineaEscena : MonoBehaviour {
 	}
     private void OnDrawGizmosSelected()
     {
-        if (desde != null && hasta != null) ;
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawLine(desde.position, hasta.position);
-        Gizmos.DrawSphere(desde.position, 1f);
-        Gizmos.DrawSphere(hasta.position, 1f);
-
+        if (desde != null && hasta != null)
+        {
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawLine(desde.position, hasta.position);
+            Gizmos.DrawSphere(desde.position, 1f);
+            Gizmos.DrawSphere(hasta.position, 1f);
+        }
 
     }
 }
