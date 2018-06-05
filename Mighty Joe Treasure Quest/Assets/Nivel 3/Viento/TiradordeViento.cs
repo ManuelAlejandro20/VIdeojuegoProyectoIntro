@@ -8,8 +8,10 @@ public class TiradordeViento : MonoBehaviour {
     public GameObject arriba;
     public GameObject abajo;
 
-    bool abajobool = true;
-    bool arribabool = false;
+    GameObject clon;
+
+    bool abajobool;
+    bool arribabool;
 
     RectTransform recttran;
     RectTransform recttranarriba;
@@ -24,7 +26,21 @@ public class TiradordeViento : MonoBehaviour {
     }
 	void Start () {
 
-        recttran.position = recttranarriba.position;
+        string nombre = this.name;
+
+        if (nombre.Equals("Lanzaviento arriba"))
+        {
+
+            recttran.position = recttranarriba.position;
+            abajobool = true;
+            arribabool = false;
+
+        }
+        else {
+            abajobool = false;
+            arribabool = true;
+        }
+        
 
 
     }
@@ -34,7 +50,7 @@ public class TiradordeViento : MonoBehaviour {
         if (arribabool)
         {
 
-            recttran.position = Vector3.MoveTowards(recttran.position, recttranarriba.position, 0.5f);
+            recttran.position = Vector3.MoveTowards(recttran.position, recttranarriba.position, 0.1f);
             if (recttran.position == recttranarriba.position)
             {
                 abajobool = true;
@@ -47,7 +63,7 @@ public class TiradordeViento : MonoBehaviour {
         {
 
 
-            recttran.position = Vector3.MoveTowards(recttran.position, recttranabajo.position, 0.5f);
+            recttran.position = Vector3.MoveTowards(recttran.position, recttranabajo.position, 0.1f);
             if (recttran.position == recttranabajo.position)
             {
                 abajobool = false;
@@ -63,6 +79,13 @@ public class TiradordeViento : MonoBehaviour {
 
     void funcionviento()
     {
-        Instantiate(vientoprefab, transform.position, Quaternion.identity);
+        if (clon == null)
+        {
+            clon = Instantiate(vientoprefab, transform.position, Quaternion.identity) as GameObject;
+            clon.transform.position = new Vector3(transform.position.x, transform.position.y, -9f);
+            clon.GetComponent<Rigidbody2D>().velocity = new Vector2(-40f, GetComponent<Rigidbody2D>().velocity.y);
+            Destroy(clon, 1f);
+        }
+
     }
 }
