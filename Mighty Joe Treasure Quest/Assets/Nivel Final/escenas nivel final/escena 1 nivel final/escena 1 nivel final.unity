@@ -719,6 +719,17 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.23999998, y: 0}
   - {x: 0.23999998, y: 0}
+--- !u!114 &834607559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 834607555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9733f1443aacd1d4dbd664967b63ef80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &915917462
 Prefab:
   m_ObjectHideFlags: 0
