@@ -28,11 +28,10 @@ public class Viento : MonoBehaviour {
 
             if (!direccion)
             {
-                this.direccionviento = Random.Range(0, 2);
+                this.direccionviento = Random.Range(1, 3);
                 direccion = true;
-                Debug.Log(direccionviento);
             }
-            if (direccionviento == 0)
+            if (direccionviento == 2)
             {
                 if (rigid != null) {
                     rigid.AddForce(new Vector2(-cantidad, 0.2f), ForceMode2D.Impulse);
@@ -58,9 +57,19 @@ public class Viento : MonoBehaviour {
 
 
             }
+
+            if (tiempo == 0) {
+                this.direccionviento = 0;
+
+            }
+
         }
 
        
 
 	}
+
+    public int getdireccionviento() {
+        return direccionviento;
+    }
 }
