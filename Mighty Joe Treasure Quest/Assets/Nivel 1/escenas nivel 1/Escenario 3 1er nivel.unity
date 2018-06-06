@@ -346,6 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 97993782}
   - component: {fileID: 97993783}
+  - component: {fileID: 97993784}
   m_Layer: 8
   m_Name: Objetivo
   m_TagString: Untagged
@@ -379,6 +380,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desde: {fileID: 149459322}
   hasta: {fileID: 97993782}
+--- !u!50 &97993784
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 97993781}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &102940130
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,11 +820,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 149459321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4d5ea36632e3741b0084ff2f9b448c, type: 3}
+  m_Script: {fileID: 11500000, guid: a377c2c0361d2264eb48c414dea75a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 97993782}
-  speed: 3
+  objetivo: {fileID: 97993781}
+  velocidad: 0.09
 --- !u!61 &149459325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1865,11 +1886,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 347898344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4d5ea36632e3741b0084ff2f9b448c, type: 3}
+  m_Script: {fileID: 11500000, guid: a377c2c0361d2264eb48c414dea75a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 588754286}
-  speed: 3
+  objetivo: {fileID: 588754285}
+  velocidad: 0.09
 --- !u!114 &347898347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3317,6 +3338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588754286}
   - component: {fileID: 588754287}
+  - component: {fileID: 588754288}
   m_Layer: 8
   m_Name: Objetivo
   m_TagString: Untagged
@@ -3350,6 +3372,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desde: {fileID: 347898345}
   hasta: {fileID: 588754286}
+--- !u!50 &588754288
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 588754285}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &589180459
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,6 +4456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 986433185}
   - component: {fileID: 986433186}
+  - component: {fileID: 986433187}
   m_Layer: 8
   m_Name: Objetivo
   m_TagString: Untagged
@@ -4447,6 +4490,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desde: {fileID: 1334505380}
   hasta: {fileID: 986433185}
+--- !u!50 &986433187
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 986433184}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &997866254
 GameObject:
   m_ObjectHideFlags: 0
@@ -6052,11 +6115,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1334505379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4d5ea36632e3741b0084ff2f9b448c, type: 3}
+  m_Script: {fileID: 11500000, guid: a377c2c0361d2264eb48c414dea75a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 986433185}
-  speed: 3
+  objetivo: {fileID: 986433184}
+  velocidad: 0.09
 --- !u!114 &1334505382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8362,11 +8425,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1732778464}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a4d5ea36632e3741b0084ff2f9b448c, type: 3}
+  m_Script: {fileID: 11500000, guid: a377c2c0361d2264eb48c414dea75a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 2052078756}
-  speed: 5
+  objetivo: {fileID: 2052078755}
+  velocidad: 0.09
 --- !u!61 &1732778468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9344,6 +9407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2052078756}
   - component: {fileID: 2052078757}
+  - component: {fileID: 2052078758}
   m_Layer: 8
   m_Name: Objetivo
   m_TagString: Untagged
@@ -9377,6 +9441,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   desde: {fileID: 1732778465}
   hasta: {fileID: 2052078756}
+--- !u!50 &2052078758
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2052078755}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2074224469 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1459065527044860, guid: 3639d128cb83a484f887997d3a23ca0c,

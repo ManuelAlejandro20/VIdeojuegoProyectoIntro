@@ -27,9 +27,11 @@ public class Platfmovil : MonoBehaviour {
         {
             transform.position = Vector3.MoveTowards(transform.position, objetivo.position, Fixedspeed);
         }
-        if(transform.position == objetivo.position)
+        if (transform.position == objetivo.position)
         {
-            objetivo.position = (objetivo.position == principio)? fin : principio;
+            Debug.Log("xdddd");
+            objetivo.position = (objetivo.position == principio) ? fin : principio;
         }
+        
     }
 }

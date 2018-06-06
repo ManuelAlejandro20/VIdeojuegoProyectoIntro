@@ -253,7 +253,6 @@ public class MoJoe : MonoBehaviour {
     { 
         Instantiate(uppercutprefab, transform.position, Quaternion.identity);
     }
-
-    
+		
 
 }
