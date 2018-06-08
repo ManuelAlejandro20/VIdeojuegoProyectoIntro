@@ -28,22 +28,19 @@ public class Pmovil : MonoBehaviour {
         fin = rigid_objetivo.position;
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+		
     void FixedUpdate()
     {
-
 
 
 
         if (rigid != null)
         {
             rigid.position = Vector3.MoveTowards(rigid.position, rigid_objetivo.position, velocidad);
-        }
+
+			
+		
+		}
         if (rigid.position == rigid_objetivo.position)
         {
             rigid_objetivo.position = (rigid_objetivo.position == principio) ? fin : principio;
@@ -54,7 +51,7 @@ public class Pmovil : MonoBehaviour {
     }
 
 	public void OnCollisionStay2D(Collision2D col){
-	
+
 		if(col.gameObject.tag == "Player"){
 			rigidjug.transform.parent = rigid.transform;
 
@@ -65,7 +62,7 @@ public class Pmovil : MonoBehaviour {
 		if(col.gameObject.tag == "Player"){
 			rigidjug.transform.parent = null;
 		}
-	
+
 	}
 
 
