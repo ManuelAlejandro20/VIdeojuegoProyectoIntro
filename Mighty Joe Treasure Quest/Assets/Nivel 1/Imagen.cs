@@ -15,7 +15,7 @@ public class Imagen : MonoBehaviour {
 
         scriptcofre = cofre.GetComponent<Cofre>();
         animcofre = cofre.GetComponent<Animator>();
-    }
+	}
 
 
 	void Start () {

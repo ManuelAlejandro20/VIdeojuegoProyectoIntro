@@ -21,14 +21,15 @@ public class GuardaTesoros : MonoBehaviour {
     public Canvas gameover;
 
     /*Suma de todos los valores de los tesoros*/
-    public static int preciototal;
+    static int preciototal;
 
     /*Contador estatico que nos dice cuantos tesoros llevamos almacenados*/
-    static int contador = 0;
+    static int contador = 0 ;
     /*Booleanos auxiliares*/
     bool eliminar = false;
     bool agregar;
-
+	static bool precios = false
+		;
     GameObject imagen, cofre;
 
     public Image[] slots;
@@ -78,7 +79,7 @@ public class GuardaTesoros : MonoBehaviour {
                         posstatic[contador] = i; 
                         tesorosstatic[contador] = nombre;
                         preciostatic[contador] = valores[i];
-                        contador++;
+						contador++;
                     }
                 }
                 
@@ -91,10 +92,10 @@ public class GuardaTesoros : MonoBehaviour {
 
         /*Si el contador es mayor o igual a 3 quiere decir que ya recolectamos todos los objetos, por lo que se procedera a sumar
          todos sus valores*/
-        if (contador >= 3) {
+        if (contador >= 3 && !precios) {
             for (int i = 0; i < preciostatic.Length; i++) {
                 preciototal += preciostatic[i];
-                
+				precios = true;
 
             }
         }
@@ -179,4 +180,16 @@ public class GuardaTesoros : MonoBehaviour {
         }
         return false;
     }
+
+	public int getcantidadtotal(){
+		return preciototal;
+	
+	
+	}
+
+	public int getcontador(){
+		return contador;
+	
+	}
+
 }

@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 
 public class VueltaEscena2 : MonoBehaviour {
-    public Transform jugador;
 	// Use this for initialization
 	void Start () {
 		
