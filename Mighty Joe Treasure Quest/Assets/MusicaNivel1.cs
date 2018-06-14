@@ -35,7 +35,7 @@ public class MusicaNivel1 : MonoBehaviour {
 
 		if (!loop) {
 
-			aus [1].PlayDelayed (audios[0].length-0.034f);
+			aus [1].PlayDelayed (audios[0].length+0.0008f);
 			loop = true;
 		}
 
