@@ -13,6 +13,7 @@ TagManager:
   - Barrera
   - SistemaGuardaTesoros
   - Viento
+  - Plataforma
   layers:
   - Default
   - TransparentFX

@@ -39,6 +39,7 @@ public class MoJoe : MonoBehaviour {
     void Update() {
         //se llama al metodo "movimientos" el cual corresponde
         movimientos();
+
     }
 
     void movimientos() {
@@ -253,6 +254,8 @@ public class MoJoe : MonoBehaviour {
     { 
         Instantiate(uppercutprefab, transform.position, Quaternion.identity);
     }
+		
+
 		
 
 }

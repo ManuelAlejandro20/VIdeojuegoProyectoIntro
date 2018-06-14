@@ -1,39 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicaNivel1 : MonoBehaviour {
 
 	public AudioClip[] audios;
-	AudioSource fuente;
-	AudioSource[] ñe;
-	bool ñes = false;
-	bool ñes2 = false;
+	VidaJoe vida;
+	GameObject jugador;
+	AudioSource[] aus;
+	bool intro = false;
+	bool loop = false;
 	void Awake(){
 
-		ñe = GetComponents<AudioSource> ();
-	
+		int escena = SceneManager.GetActiveScene ().buildIndex;
+		if(escena <= 3 || escena >= 1 ){
+			jugador = GameObject.FindGameObjectWithTag ("Player");	
+			vida = jugador.GetComponent<VidaJoe> ();
+			aus = GetComponents<AudioSource> ();
+			DontDestroyOnLoad (gameObject);
+		}
+
+
+		
+		
+
+		
 	}
 
 	void Start () {
-		
 	}
-	
-	// Update is called once per frame
+
 	void FixedUpdate () {
 
-		if (!ñes) {
-			ñe [0].clip = audios [0];
-			ñe [0].Play ();
-			ñes = true;
+		if (!loop) {
+
+			aus [1].PlayDelayed (audios[0].length-0.034f);
+			loop = true;
 		}
-		if (!ñe [0].isPlaying && !ñes2) {
-			ñe [1].clip = audios [1];
-			ñe [1].Play ();
-			ñe [1].loop = true;
-			ñes2 = true;
+
+		if(vida.getvida() <= 0){
+			Destroy (gameObject);
+
+		}
 		
-		}
 			
 	}
+		
+
+
+
 }
