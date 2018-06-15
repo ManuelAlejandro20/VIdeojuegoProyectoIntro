@@ -8,6 +8,11 @@ public class VidaJoe : MonoBehaviour {
 
     public static float vidajoe = 100f;
     float vidajoe2 = 100f;
+
+
+	AudioSource au;
+	AudioSource[] aus;
+	public AudioClip[] efectos;
     public Canvas terminojuego;
     public Text textovidas;
 
@@ -28,26 +33,33 @@ public class VidaJoe : MonoBehaviour {
     Rigidbody2D rigid;
     Animator anim;
 
+	Canvas canvasgameover;
 
+	bool musica_gameover;
+	bool boolaux = true;
     void Awake() {
 
         jugador = GameObject.FindGameObjectWithTag("Player").transform;
-        rigid = jugador.GetComponent<Rigidbody2D>();
+		au = GetComponent<AudioSource> ();
+		aus = GetComponents<AudioSource> ();
+		rigid = jugador.GetComponent<Rigidbody2D>();
         box = jugador.GetComponent<BoxCollider2D>();
         script = jugador.GetComponent<MoJoe>();
         sprite = jugador.GetComponent<SpriteRenderer>();
         anim = jugador.GetComponent<Animator>();
         textovidas.text = "x " + (vidas - 1);
-        terminojuego.GetComponent<Canvas>().enabled = false;
+		canvasgameover = terminojuego.GetComponent<Canvas> ();
 
         
     }
 
     void Update() {
         //si es que joe llega a perder una vida, se reiniciara el juego con el descuento de una vida
-        if (vidajoe <= 0 && !anim.GetBool("muertosuelo")) {
+		if (vidajoe <= 0 && !anim.GetBool("muertosuelo")) {
             anim.SetTrigger("muerto");
             anim.SetBool("muertosuelo",true);
+			au.clip = efectos [1];
+			au.Play ();
             vidas--;
             if (vidas == 0)
             {
@@ -72,20 +84,22 @@ public class VidaJoe : MonoBehaviour {
             Destroy(script);
             Destroy(box);
         }
+			
 
         //si joe pierde todas las vidas se devolvera la pantalla inicial de juego
-        if (anim.GetBool("muertosuelo")) {
+		if (anim.GetBool("muertosuelo")) {
             tiempo += Time.deltaTime;
             if (tiempo >= 2.5f) {
                 if (vidas == 0)
-                {
+				{
+					musica_gameover = true;
                     Time.timeScale = 0;
-                    terminojuego.GetComponent<Canvas>().enabled = true;
+					canvasgameover.enabled = true;
                     if (Input.GetKeyDown("x")) {
 
                         vidajoe = vidajoe2;
                         vidas = 3;
-                        terminojuego.GetComponent<Canvas>().enabled = false;
+						canvasgameover.enabled = false;
                         Time.timeScale = 1;
                         SceneManager.LoadScene(0);
 
@@ -101,7 +115,20 @@ public class VidaJoe : MonoBehaviour {
 
         }
 
+		if (musica_gameover && boolaux) {
+			aus [1].Play ();
+			boolaux = false;
+
+		}
+
+
+
+
     }
+
+	void FixedUpdate(){
+		
+	}
 
     void OnCollisionEnter2D(Collision2D col)
     {
@@ -110,6 +137,8 @@ public class VidaJoe : MonoBehaviour {
         {
             enemigo = col.gameObject;
             scriptenemigo = enemigo.GetComponent<Movimientoenemigo>();
+			au.clip = efectos [0];
+			au.Play ();
             anim.SetTrigger("daño");
             if (sprite.flipX == false)
             {

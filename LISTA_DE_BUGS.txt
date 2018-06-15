@@ -1,0 +1,72 @@
+1)Si se deja un cofre sin abrir en una escena al volver a ella en otra oportunidad ocurre que el destello se queda atascado infinitamente, no se recolecta el tesoro.
+2)Pasa exactamente lo mismo al presionar el invenatario mientras el juego muestra la descricpion del tesoro.
+3)Joe no avanza con las plataformas cuando este se posiciona sobre ellas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				 `dddddddddd.  odddddd                             `dddddddddd.         
+                       ......-hhhyyyyhhh:..oyyyyyy:......         `............-hhhyyyyhhh:..`      
+                       sddddddyss/---osshdd+---///ddddddo         /ddddddddddddhsss/--/ssshdd-      
+                .oooooossso++++++///////oss+///---osssyysooo.  :oosyyysssyyyysso///+ooo++++++ooooooo
+                /ddddddo//:---://+ss+---://osso---///+ssyddd-  +ddysss///osso//:---odds///---sdddddd
+                 ...hddhhhy:::------:ooo:--:///ooo---://+sssyyyysso///ooo////---+oo+//:---+oo+//oddd
+                `---yyyyyys++/://:---+++:--::::+++---:::/oooyhhyyyo///oss/:::---+oo/:::///ooo+++shhh
+                /hhh///////sssyhho//:---://-------///:---///ossyddy///oss/---//////:--+hhh///yhhh```
+                `///ssso++++++oooosso:::::::::-----::----:::ossyddy++++++:---//::::://+ooo+++yddh   
+                    yhhhsso//////ohhy///---::::-------------ossyddysss/::----:::---/sso///osshhhh   
+                    ```yhhhhhh+/////+ooo/::----:::----:::---://+ooysss----------:::+sssooo//////ohhh
+                    :::yhhhyyyo++////ooo+//----///----:::---://+++ssss----------///ossoooo///+++syyy
+                    hddhsso///yhhs//////oss:---///----------://:::+ooo----------+ssssso///osshhhh```
+                    :::yyyy+++ooossss///+++::::---:::-------://-..:///-------:::osso++++++yyy+:::   
+                       sddhsso///sddy/////////:---///:------://.``.:::-------///sss+//+ssshdd-      
+                       `..:hhhsooyddyooo//////:---///:------+ooossohhh/::----///sssoooshhh:..`      
+                          `sssyyyhddy+++//////:---////------ossoooohhho++:--://+ssssyyssss.         
+                             `dddddds```+ss///////sss+//////syy:``.yyyhhho///ssssssydd+             
+hhhhhhhhhh-     -hhhhhhhhhhhhhNNNdsso------/oooooo///:......shho///yyydddo::/ooo---yNNs             
+MMMMMMMMMM/`````sMMMMMMMMMMMMMMMMhooo///`  :oooooo:::-     `shhhyyyyyyhhho::/ooo```yMMs             
+MMMmhhhdddmmmmmmNdddhhhhhhhddddddyoooooo-..---:sss:::-      ://shhhhhh+//:::/ooo:--yMMs             
+MMMmyyyyhhdmmmmmmhhhyyyhhhdmmmmmmyooosss/::-..-+++///-      .--+ssssss::::::/ooo:::yMMh///`         
+MMMNhhhyyyyyyyyyyyyyhhhmMMMMMMMMMdooossssoo/...---sss-         ```````::::::/ooo:::yMMMMMM-         
++++ymmmhhhhhhhhhhsssmmmmmmdoooooosyyysss++++///...yyys++ossso+++++++++ossyyyhyyyssshmmhooosss.      
+   /mmmdddddddhhhoooNMMNhhy------ohhysss///oooo...yhhhhhdNNNmdddhhhhhhdddNNNNhhhdddhhho--:mMM:      
+   `../MMMMMMhsss:::NMMh//+yyyyyyo//+hhh+//////...ssso//+yyyNMMhssssssNMMdyys//+hddysso::/NMM:      
+   .++shyyyyys++ooooNMMh//+ddddddy++ohhhooo+//:...ooo+::/oooyyysooooooyyys+++///yddyooo++oNMM:      
+   /MMd`     -::+MMMMMMhsssddhhmmdddyssshdds//:...///:..-//:`  -//////`  ...-///ydd+//odddNMM:      
+   .//oyyyyyyhhhd//////dmmd++++oosssyhhhhddsoo+:::----..-///syy+//////yyy/..---:yddsoo+++oyhhyyys   
+      :NNNNNNNNNN   ...dNNd::::::/oosyyyhhhysso///......-///mMMs//////NMMo.....-yhhyss+:::+oodNNm...
+      `----------   mNNs//:``````-//-...ydds///---......---:mMMo------NMMo.....-sssyhh+```://///oNNN
+                    NMMo--.      .::-   hmmy++/......----::/mMMo......NMMs:::---oooshh+  `://---+MMM
+                    NMMo         .::-   hmmdsso......-//+sssNMMo......NMMhsso//////+ss/  .+oo.  :MMM
+                    NMMo         ```.://dmmdhhy:::...-:::::/+oo:......+oo/::::::oooshhs//////.  :MMM
+                    NMMo```         .+oodmmdddh///----------..........----------sssyddyoo+:::.``:MMM
+                    NMMo---         .:::yhhdmmmhhhooo+::::::-.........::::::/ooohhhdmms``````---+MMM
+                    dmms++/.........-+++syyhddddddssso++++++::::::::::++++++ossshhhmmms....../++smmm
+                       dMMm:::::::::+hhhssssssshhhmmmmddhsssssssssssssssshdddmmmmmmmmmy::::::dMMN   
+                       /+++hhhhhhyyyyhhhsssssssyyyddddhhhyyyyyyyyyyyyyyyyhhhhdddmmmmmmdhhhhhho++/   
+                          -NNNNNNNNNdhhhyssssssssshhhhhhhhhhhhhhhhhhhhhhhhhhhhhhmmmmNNNNNNNNN:      
+                          `------yMMNmmmhhhhhhhhhhhhhdmmNMMMMMMNmmdhhhhhhhhhhmmmmmmNMMh------`      
+                              +oohMMmooosssydddddddddmNNmddddddmNNmdddyyyyssyNNNdyyhdd+             
+                             .MMMMMMh```-::sMMMMMMMMMMMMh      sMMMMMMsoo/::+MMM+                   
+                          .hhhNNNmddho++hddh::::::::::::-      sMMMNNNdddhhhdMMMdhhhhhhhhh.         
+                       `..:MMMNmmdhhhhhhNMMm...             ...yMMNmmmmmmmmmNMMMMMMMMMMMMM/.....`   
+                       hMMNhhhyyysssssssmNNMMMN            -NMMNNNdhhhhhhmmmmNNNNNNNNNNNNNMMMMMMm   
+                    ://mmmdyyysooooooooohdddhhh///      `//ommmhyyyssssssyyyyyyyyyyysssssshhhdmmd///
+                    NMMmooossso+++++++++sss/::/MMM      :MMMyoo/:::::::::::::::::::.      -::+oosMMM
+                    NMMy///----.....-//////+++oMMM      :MMMmddhhhhhhhhhhhhhhhhhhhhyyyyyyyhhhdddmMMM
+                    NMMs::-         .::::::+oosMMM      :MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM

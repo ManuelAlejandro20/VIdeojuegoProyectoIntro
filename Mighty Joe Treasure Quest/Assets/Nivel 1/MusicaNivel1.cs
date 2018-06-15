@@ -9,12 +9,11 @@ public class MusicaNivel1 : MonoBehaviour {
 	VidaJoe vida;
 	GameObject jugador;
 	AudioSource[] aus;
-	bool intro = false;
 	bool loop = false;
 	void Awake(){
 
 		int escena = SceneManager.GetActiveScene ().buildIndex;
-		if(escena <= 3 || escena >= 1 ){
+		if(escena <= 3 && escena >= 1 ){
 			jugador = GameObject.FindGameObjectWithTag ("Player");	
 			vida = jugador.GetComponent<VidaJoe> ();
 			aus = GetComponents<AudioSource> ();
