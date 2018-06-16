@@ -1,6 +1,7 @@
 1)Si se deja un cofre sin abrir en una escena al volver a ella en otra oportunidad ocurre que el destello se queda atascado infinitamente, no se recolecta el tesoro.
 2)Pasa exactamente lo mismo al presionar el invenatario mientras el juego muestra la descricpion del tesoro.
-3)Joe no avanza con las plataformas cuando este se posiciona sobre ellas.
+3)Al buildear el juego pasa exactamente lo mismo en 4 cofres.
+4)Joe no avanza con las plataformas cuando este se posiciona sobre ellas.
 
 
 

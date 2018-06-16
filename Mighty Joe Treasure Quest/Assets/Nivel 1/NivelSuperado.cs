@@ -7,7 +7,8 @@ public class NivelSuperado : MonoBehaviour {
 
 	Canvas canvas;
 	AudioSource au;
-
+	GameObject cofre;
+	GuardaTesoros script;
 	bool sonido = true;
 
 	GameObject gameobject_musica;
@@ -15,6 +16,9 @@ public class NivelSuperado : MonoBehaviour {
 
 	void Awake(){
 	
+		cofre = GameObject.Find ("Cofres");
+		script = cofre.GetComponent<GuardaTesoros> ();
+
 		gameobject_musica = GameObject.Find ("Música");
 		au_gameobject_musica = gameobject_musica.GetComponents<AudioSource> ();
 
@@ -29,6 +33,7 @@ public class NivelSuperado : MonoBehaviour {
 	void Update () {
 
 		if (canvas.enabled && sonido) {
+			script.eliminartesoros ();
 			au.Play ();
 			if (au_gameobject_musica [0].isPlaying) {
 				au_gameobject_musica [0].Pause ();

@@ -192,4 +192,18 @@ public class GuardaTesoros : MonoBehaviour {
 	
 	}
 
+	public void eliminartesoros(){
+		for(int i=0; i<3; i++){
+			posstatic [i] = -1;
+			tesorosstatic [i] = "";
+			preciostatic [i] = 0;
+			contador = 0;
+
+
+		}
+	
+	
+	}
+
+
 }

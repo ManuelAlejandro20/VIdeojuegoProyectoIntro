@@ -7,7 +7,9 @@ public class Movimientoenemigo : MonoBehaviour
 
     private enum states { caminata, ataque }
     private states estadoprincipal;
-
+	AudioSource au;
+	EnemyHealth script;
+	AudioClip[] efectos;
 
     public float velocidadenemigo;
     public Transform puntopartida;
@@ -24,6 +26,9 @@ public class Movimientoenemigo : MonoBehaviour
 
     void Awake()
     {
+		au = GetComponent<AudioSource> ();
+		script = GetComponent<EnemyHealth> ();
+		efectos = script.getefectos ();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         estadoprincipal = states.caminata;
@@ -85,6 +90,10 @@ public class Movimientoenemigo : MonoBehaviour
             case states.ataque:
                 //se activara la animacion de ataque de enemigo cuando el jugador se encuentre en el territorio del enemigo
                 if (distancia <= distanciaacercamiento) {
+					au.clip = efectos[1];
+					if (!au.isPlaying) {
+						au.Play ();
+					}
                     if ((jugador.position.x - transform.position.x) > 1)
                     {
                         sprite.flipX = false;
@@ -104,6 +113,9 @@ public class Movimientoenemigo : MonoBehaviour
 
                 }
                 break;
+
+
+
 
             default:
                 break;

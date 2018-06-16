@@ -6,6 +6,16 @@ public class EnemyHealth : MonoBehaviour {
 
     /*Todos los enemigos empiezan con la misma vida */
     public float vidaenemigo = 100f;
+	public AudioClip[] efectos;
+	AudioSource au;
+
+	void Awake(){
+	
+		au = GetComponent<AudioSource> ();
+	
+	}
+
+
 
     /*Se detecta cuando el enemigo recibe un golpe o el Uppercut*/
     public void OnTriggerEnter2D(Collider2D col) {
@@ -13,6 +23,10 @@ public class EnemyHealth : MonoBehaviour {
         if (col.tag == "Bullet" || col.tag == "Uppercut") {
 
             vidaenemigo -= Patada.daño;
+			au.clip = efectos [0];
+			if (!au.isPlaying) {
+				au.Play ();
+			}
             if (vidaenemigo <= 0)
             {
                 Destroy(gameObject);
@@ -21,4 +35,10 @@ public class EnemyHealth : MonoBehaviour {
         }
 
     }
+
+	public AudioClip[] getefectos(){
+		return efectos;
+	
+	}
+
 }
