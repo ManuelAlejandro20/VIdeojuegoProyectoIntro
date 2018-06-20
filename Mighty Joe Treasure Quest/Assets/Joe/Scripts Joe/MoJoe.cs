@@ -11,7 +11,7 @@ public class MoJoe : MonoBehaviour {
     bool disparo = false;
     float podersalto = 18f;
     float velocidad = 7f;
-    float radiocirculosuelo = 0.5f;
+    float radiocirculosuelo = 1f;
     float tiempodisparo = 0f;
     float tiemposalto = 0f;
     int contadorderecha = 0;
