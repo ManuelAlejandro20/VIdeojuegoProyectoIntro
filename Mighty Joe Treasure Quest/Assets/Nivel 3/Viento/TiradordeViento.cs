@@ -27,10 +27,13 @@ public class TiradordeViento : MonoBehaviour {
 
     float tiempos;
 
+	AudioSource au;
+
     Viento scriptviento;
 
     void Awake() {
 
+		au = GetComponent<AudioSource> ();
         recttran = GetComponent<RectTransform>();
         recttranarribader = arribaderecha.GetComponent<RectTransform>();
         recttranabajoder = abajoderecha.GetComponent<RectTransform>();
@@ -129,6 +132,13 @@ public class TiradordeViento : MonoBehaviour {
         if (tiempos>=0.2f && cuenta < 6 && scriptviento.getdireccionviento()!=0)
         {
             int num = Random.Range(0, 5);
+			if (!au.isPlaying) {
+				
+				au.Play ();
+
+			}
+
+
             clon = Instantiate(vientoprefab, new Vector3(transform.position.x, transform.position.y, -9f), Quaternion.identity) as GameObject;
             if (scriptviento.getdireccionviento() == 2)
             {

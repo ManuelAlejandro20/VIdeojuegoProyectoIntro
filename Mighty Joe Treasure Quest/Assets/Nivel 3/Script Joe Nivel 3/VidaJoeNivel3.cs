@@ -11,6 +11,9 @@ public class VidaJoeNivel3 : MonoBehaviour {
     public Canvas terminojuego;
     public Text textovidas;
 
+	AudioSource au;
+	AudioSource[] aus;
+	public AudioClip[] efectos; 
 
     static int vidas = 3;
     float tiempo;
@@ -28,10 +31,13 @@ public class VidaJoeNivel3 : MonoBehaviour {
     Rigidbody2D rigid;
     Animator anim;
 
+	bool musica_gameover;
+	bool boolaux = true;
 
     void Awake()
     {
-
+		au = GetComponent<AudioSource> ();
+		aus = GetComponents<AudioSource> ();
         jugador = GameObject.FindGameObjectWithTag("Player").transform;
         rigid = jugador.GetComponent<Rigidbody2D>();
         box = jugador.GetComponent<BoxCollider2D>();
@@ -51,7 +57,9 @@ public class VidaJoeNivel3 : MonoBehaviour {
         {
             anim.SetTrigger("muerto");
             anim.SetBool("muertosuelo", true);
-            vidas--;
+			au.clip = efectos [1];
+			au.Play ();
+			vidas--;
             if (vidas == 0)
             {
                 textovidas.text = "x " + 0;
@@ -85,6 +93,7 @@ public class VidaJoeNivel3 : MonoBehaviour {
             {
                 if (vidas == 0)
                 {
+					musica_gameover = true;
                     Time.timeScale = 0;
                     terminojuego.GetComponent<Canvas>().enabled = true;
                     if (Input.GetKeyDown("x"))
@@ -109,6 +118,12 @@ public class VidaJoeNivel3 : MonoBehaviour {
 
         }
 
+		if (musica_gameover && boolaux) {
+			aus [1].Play ();
+			boolaux = false;
+
+		}
+
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -118,7 +133,9 @@ public class VidaJoeNivel3 : MonoBehaviour {
         {
             enemigo = col.gameObject;
             scriptenemigo = enemigo.GetComponent<Movimientoenemigo>();
-            anim.SetTrigger("daño");
+			au.clip = efectos [0];
+			au.Play ();
+			anim.SetTrigger("daño");
             if (sprite.flipX == false)
             {
                 rigid.AddForce(new Vector2(-16f, 6f), ForceMode2D.Impulse);
