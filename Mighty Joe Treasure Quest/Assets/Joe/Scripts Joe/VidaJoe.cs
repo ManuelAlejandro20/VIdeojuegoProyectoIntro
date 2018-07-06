@@ -166,4 +166,19 @@ public class VidaJoe : MonoBehaviour {
     public float getvida() {
         return vidajoe;
     }
+
+	public int getvida1up(){
+		return vidas;
+		
+	}
+
+	public void setvida(float vidanueva){
+		vidajoe = vidanueva;
+	}
+
+	public void setvida1up(int numvidas){
+		
+		vidas = numvidas;
+
+	}
 }

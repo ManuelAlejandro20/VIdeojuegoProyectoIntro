@@ -36,6 +36,7 @@ public class VidaJoeNivel3 : MonoBehaviour {
 
     void Awake()
     {
+		
 		au = GetComponent<AudioSource> ();
 		aus = GetComponents<AudioSource> ();
         jugador = GameObject.FindGameObjectWithTag("Player").transform;
