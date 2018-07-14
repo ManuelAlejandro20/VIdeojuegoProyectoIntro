@@ -15,6 +15,7 @@ TagManager:
   - Viento
   - Plataforma
   - SueloInclinado
+  - Musica lvl3
   layers:
   - Default
   - TransparentFX
