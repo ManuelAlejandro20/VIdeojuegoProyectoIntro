@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MusicaNivel3 : MonoBehaviour {
 
 	VidaJoeNivel3 vida;
-	AudioSource au;
 	GameObject jugador;
 	GameObject[] gmb_musica;
 	void Awake(){
@@ -15,7 +14,6 @@ public class MusicaNivel3 : MonoBehaviour {
 		if(escena <= 15 && escena >= 10 ){
 			jugador = GameObject.FindGameObjectWithTag ("Player");	
 			vida = jugador.GetComponent<VidaJoeNivel3> ();
-			au = GetComponent<AudioSource> ();
 			DontDestroyOnLoad (this);
 			if(FindObjectsOfType(GetType()).Length > 1){
 				Destroy (gameObject);
