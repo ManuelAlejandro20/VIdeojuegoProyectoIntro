@@ -35,7 +35,16 @@ public class VidaJoe : MonoBehaviour {
 
 	Canvas canvasgameover;
 
-	bool musica_gameover;
+    int escenaactual;
+
+    /*GameObject NS;
+    NivelSuperado scriptNS;
+    Canvas canvasNS;
+    int escenaactual;
+    float tiempocanvas = 0;
+    bool pasonivel = false;*/
+
+    bool musica_gameover;
 	bool boolaux = true;
     void Awake() {
 
@@ -49,7 +58,12 @@ public class VidaJoe : MonoBehaviour {
         anim = jugador.GetComponent<Animator>();
         textovidas.text = "x " + (vidas - 1);
 		canvasgameover = terminojuego.GetComponent<Canvas> ();
-
+        escenaactual = SceneManager.GetActiveScene().buildIndex;
+        /*if (SceneManager.GetActiveScene().buildIndex == 3) {
+            NS = GameObject.Find("NivelSuperado");
+            scriptNS = NS.GetComponent<NivelSuperado>();
+            canvasNS = scriptNS.GetComponent<Canvas>();
+        }*/
         
     }
 
@@ -91,24 +105,43 @@ public class VidaJoe : MonoBehaviour {
             tiempo += Time.deltaTime;
             if (tiempo >= 2.5f) {
                 if (vidas == 0)
-				{
-					musica_gameover = true;
+                {
+                    musica_gameover = true;
                     Time.timeScale = 0;
-					canvasgameover.enabled = true;
-                    if (Input.GetKeyDown("x")) {
+                    canvasgameover.enabled = true;
+                    if (Input.GetKeyDown("x"))
+                    {
 
                         vidajoe = vidajoe2;
                         vidas = 3;
-						canvasgameover.enabled = false;
+                        canvasgameover.enabled = false;
                         Time.timeScale = 1;
                         SceneManager.LoadScene(0);
 
                     }
                 }
-                else {
+                else
+                {
 
                     vidajoe = vidajoe2;
-                    SceneManager.LoadScene(1);
+                    if (escenaactual >= 1 && escenaactual <= 3)
+                    {
+                        SceneManager.LoadScene(1);
+                    }
+                    else if (escenaactual >= 4 && escenaactual <= 9)
+                    {
+                        SceneManager.LoadScene(4);
+                    }
+                    else if (escenaactual >= 10 && escenaactual <= 15) {
+                        SceneManager.LoadScene(10);
+                    }
+                    else if (escenaactual >= 16 && escenaactual <= 17) {
+                        SceneManager.LoadScene(16);
+                    }
+
+
+                       
+                    
 
                 }
             }
@@ -121,7 +154,18 @@ public class VidaJoe : MonoBehaviour {
 
 		}
 
+        /*if (canvasNS.enabled) {
+            pasonivel = true;
+            DontDestroyOnLoad(this);
+            
+        }
 
+        if (pasonivel) {
+            tiempocanvas += Time.deltaTime;
+            if (tiempocanvas > 1f) {
+                Destroy(this);
+            }
+        }*/
 
 
     }

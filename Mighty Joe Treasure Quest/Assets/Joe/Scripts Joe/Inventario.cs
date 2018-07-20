@@ -17,14 +17,14 @@ using UnityEngine;
 	void Awake(){
 
 		au = GetComponent<AudioSource> ();
-
-	}
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
+    }
 
     /*La imagen del inventario inicia desactivada*/
     void Start()
     {
-        canvas = GetComponent<Canvas>();
-        canvas.enabled = false;
+        
     }
 
     
@@ -60,7 +60,7 @@ using UnityEngine;
 			au.clip = efectos [1];
 			au.Play ();
 			despausa = false;
-
+            
 		}
 
     

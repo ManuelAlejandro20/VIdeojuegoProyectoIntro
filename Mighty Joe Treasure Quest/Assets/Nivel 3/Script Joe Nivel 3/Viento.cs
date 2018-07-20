@@ -8,7 +8,9 @@ public class Viento : MonoBehaviour {
     public int direccionviento;
     public float tiempo;
     public float cantidad;
-    bool direccion;
+	public float tiempolimite;
+	bool direccion;
+
     void Awake() {
 
         rigid = GetComponent<Rigidbody2D>();
@@ -24,7 +26,7 @@ public class Viento : MonoBehaviour {
 
 
         tiempo += Time.deltaTime;
-        if (tiempo >= 15f) {
+		if (tiempo >= tiempolimite) {
 
             if (!direccion)
             {
@@ -36,7 +38,7 @@ public class Viento : MonoBehaviour {
                 if (rigid != null) {
                     rigid.AddForce(new Vector2(-cantidad, 0.2f), ForceMode2D.Impulse);
                 }
-                if (tiempo >= 19f)
+                if (tiempo >= tiempolimite + 4f)
                 {
                     tiempo = 0;
                     direccion = false;
@@ -47,7 +49,7 @@ public class Viento : MonoBehaviour {
                 {
                     rigid.AddForce(new Vector2(cantidad, 0.2f), ForceMode2D.Impulse);
                 }
-                if (tiempo >= 19f)
+                if (tiempo >= tiempolimite + 4f)
                 {
                     tiempo = 0;
                     direccion = false;
