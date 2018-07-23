@@ -4673,6 +4673,7 @@ MonoBehaviour:
   principio: {fileID: 834344023}
   final: {fileID: 1746885361}
   velocidad: 0.35
+  rango: 50
 --- !u!50 &955655881
 Rigidbody2D:
   serializedVersion: 4

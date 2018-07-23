@@ -23,6 +23,7 @@ public class Camara : MonoBehaviour
         Vector3 posicionpersonaje = personaje.position + fase;
         transform.position = Vector3.Lerp(transform.position, posicionpersonaje, margen * Time.deltaTime);
 
+
         Vector3 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x, -maxX, x * maxX);
         transform.position = pos;

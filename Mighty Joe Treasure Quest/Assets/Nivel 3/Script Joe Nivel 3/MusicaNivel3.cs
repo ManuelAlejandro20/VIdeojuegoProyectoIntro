@@ -14,7 +14,7 @@ public class MusicaNivel3 : MonoBehaviour {
 		if(escena <= 15 && escena >= 10 ){
 			jugador = GameObject.FindGameObjectWithTag ("Player");	
 			vida = jugador.GetComponent<VidaJoe> ();
-			DontDestroyOnLoad (this);
+			DontDestroyOnLoad (gameObject);
 			if(FindObjectsOfType(GetType()).Length > 1){
 				Destroy (gameObject);
 			}

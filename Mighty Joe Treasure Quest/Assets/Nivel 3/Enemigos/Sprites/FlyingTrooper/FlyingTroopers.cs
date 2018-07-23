@@ -7,7 +7,12 @@ public class FlyingTroopers : MonoBehaviour {
     public GameObject principio;
     public GameObject final;
     public float velocidad;
+    public float rango;
+
     float tiempo; 
+
+
+
 
     Rigidbody2D rigid;
     Rigidbody2D rigidinicio;
@@ -44,7 +49,7 @@ public class FlyingTroopers : MonoBehaviour {
                 tiempo += Time.deltaTime;
                 if (tiempo >= 5.5f)
                 {
-                    rigidinicio.position = new Vector2(rigidinicio.position.x, Random.Range(-50f, 50f));
+                    rigidinicio.position = new Vector2(rigidinicio.position.x, Random.Range(-rango, rango));
                     haciafinal = false;
                     haciainicio = true;
                     tiempo = 0;
@@ -61,7 +66,7 @@ public class FlyingTroopers : MonoBehaviour {
                 tiempo += Time.deltaTime;
                 if (tiempo >= 5.5f)
                 {
-                    rigidfinal.position = new Vector2(rigidfinal.position.x, Random.Range(-50f, 50f));
+                    rigidfinal.position = new Vector2(rigidfinal.position.x, Random.Range(-rango, rango));
                     haciafinal = true;
                     haciainicio = false;
                     tiempo = 0;

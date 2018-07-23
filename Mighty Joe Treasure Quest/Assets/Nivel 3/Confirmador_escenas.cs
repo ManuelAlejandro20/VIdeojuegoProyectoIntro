@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Confirmador_escenas : MonoBehaviour {
 
     GameObject jugador;
+    VidaJoe scriptvida;
     Rigidbody2D rigid;
     GameObject camara;
     RectTransform rect;
@@ -32,9 +33,11 @@ public class Confirmador_escenas : MonoBehaviour {
 
         escena_actual = SceneManager.GetActiveScene().buildIndex;
 
+
         if (jugador == null) {
             jugador = GameObject.FindGameObjectWithTag("Player");
             rigid = jugador.GetComponent<Rigidbody2D>();
+            scriptvida = jugador.GetComponent<VidaJoe>();
             camara = GameObject.Find("Main Camera");
             rect = camara.GetComponent<RectTransform>();
         }
@@ -51,8 +54,17 @@ public class Confirmador_escenas : MonoBehaviour {
             cambiar_escena = false;
         }
 
+        if (scriptvida.getvida() <= 0)
+        {
+            cambiar_escena = false;
+        }
+
         posicionjoe();
 
+        if (scriptvida.getvida1up() == 0)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -97,11 +109,7 @@ public class Confirmador_escenas : MonoBehaviour {
 
             
         }
-        else {
-
-            Destroy(gameObject);
-
-        }
+        
 
 
     }
