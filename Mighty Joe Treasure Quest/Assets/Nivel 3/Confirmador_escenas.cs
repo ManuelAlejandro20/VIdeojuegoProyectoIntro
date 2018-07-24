@@ -87,11 +87,12 @@ public class Confirmador_escenas : MonoBehaviour {
                     rigid.position = new Vector2(60.649f, 21.865f);
                     rect.position = new Vector3(52f, 22f, -10f);
                 }
-                /*else if (escena_actual == 12)
+                else if (escena_actual == 12)
                 {
-
+                    rigid.position = new Vector2(234.64f, 15.2704f);
+                    rect.position = new Vector3(223.6f, 15.27049f, -10f);
                 }
-                else if (escena_actual == 13)
+                /*else if (escena_actual == 13)
                 {
 
 
