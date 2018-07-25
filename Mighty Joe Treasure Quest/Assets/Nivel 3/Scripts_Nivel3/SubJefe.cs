@@ -10,18 +10,23 @@ public class SubJefe : MonoBehaviour {
     public float vibracion;
 
 
-    float tiempo;
+    public float tiempo;
     float tiempocamara = 0.6f;
     Rigidbody2D rigid;
+    Rigidbody2D rigidjug;
     PolygonCollider2D[] pol;
     GameObject ft;
     GameObject camara;
+    GameObject jugador;
     RectTransform rect;
 
+    SpriteRenderer sprite;
     bool ensuelo;
     bool subir = false;
     bool temblar = false;
     bool aux = false;
+    bool aux2 = false;
+    bool aux3 = false;
 
     void Awake() {
         camara = GameObject.Find("Main Camera");
@@ -29,19 +34,25 @@ public class SubJefe : MonoBehaviour {
         ft = GameObject.Find("FlyingTroopers");
         pol = ft.GetComponents<PolygonCollider2D>();
         rigid = ft.GetComponent<Rigidbody2D>();
+        jugador = GameObject.FindGameObjectWithTag("Player");
+        rigidjug = jugador.GetComponent<Rigidbody2D>();
+        sprite = ft.GetComponent<SpriteRenderer>();
+        gameObject.SetActive(false);
 
     }
 
 
     void Update() {
 
-        ensuelo = Physics2D.OverlapCircle(Circulo.position,  1f, capasuelo);
+        ensuelo = Physics2D.OverlapCircle(Circulo.position,  0.3f, capasuelo);
         
         if (ensuelo && !subir) {
             tiempo += Time.deltaTime;
+            rigid.bodyType = RigidbodyType2D.Static;
             if (tiempo >= 4f) {
                 tiempo = 0f;
                 subir = true;
+                rigid.bodyType = RigidbodyType2D.Dynamic;
             }
             
         }
@@ -56,11 +67,46 @@ public class SubJefe : MonoBehaviour {
         if (subir) {
             tiempo += Time.deltaTime;
             rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y + velocidad);
-            if (tiempo >= 0.6f) {
+            if (tiempo >= 1.1f) {
                 tiempo = 0f;
                 subir = false;
                 aux = false;
+                aux3 = true;
+                rigid.bodyType = RigidbodyType2D.Static;
             }
+        }
+
+        if (aux3 && !aux2) {
+            if (rigidjug != null)
+            {
+                float posx = rigidjug.position.x;
+                int posxint = Mathf.RoundToInt(posx);
+                if (posx < rigid.position.x)
+                {
+                    rigid.position = new Vector2(rigid.position.x - 0.4f, rigid.position.y);
+                    sprite.flipX = true;
+                }
+                else
+                {
+                    rigid.position = new Vector2(rigid.position.x + 0.4f, rigid.position.y);
+                    sprite.flipX = false;
+                }
+
+                int rigidint = Mathf.RoundToInt(rigid.position.x);
+
+                if (rigidint == posxint)
+                {
+                    aux2 = true;
+                }
+            }
+                
+            
+        }
+
+        if (aux2) {
+            rigid.bodyType = RigidbodyType2D.Dynamic;
+            aux2 = false;
+            aux3 = false;
         }
 
     }
@@ -83,6 +129,8 @@ public class SubJefe : MonoBehaviour {
             }
         }
     }
+
+    
 
 
 

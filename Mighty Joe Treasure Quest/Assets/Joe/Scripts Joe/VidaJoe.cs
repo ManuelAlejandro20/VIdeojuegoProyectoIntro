@@ -194,8 +194,9 @@ public class VidaJoe : MonoBehaviour {
                 rigid.AddForce(new Vector2(16f, 6f), ForceMode2D.Impulse);
             }
 
-            vidajoe -= scriptenemigo.getdaño();
-
+			if (scriptenemigo != null) { 
+				vidajoe -= scriptenemigo.getdaño ();
+			}
         }
         //la barra de vida sera reducida segun el daño
         else if (col.gameObject.tag == "Barrera" && vidajoe > 0) {
