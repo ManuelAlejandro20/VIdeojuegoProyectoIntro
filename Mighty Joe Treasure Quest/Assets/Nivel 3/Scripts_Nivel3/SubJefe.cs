@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubJefe : MonoBehaviour {
+public class SubJefe : MonoBehaviour
+{
 
     public LayerMask capasuelo;
     public Transform Circulo;
     public float velocidad;
     public float vibracion;
+    public GameObject prefabbomba;
+    public Transform izquierda;
+    public Transform derecha;
 
 
-    public float tiempo;
+    public float tiemposuelo;
+    public float tiemposubida;
     float tiempocamara = 0.6f;
     Rigidbody2D rigid;
     Rigidbody2D rigidjug;
@@ -19,16 +24,23 @@ public class SubJefe : MonoBehaviour {
     GameObject camara;
     GameObject jugador;
     RectTransform rect;
+    Viento scriptviento;
+    AudioSource[] au;
 
     SpriteRenderer sprite;
+    int numeroataque = 0;
+    bool sonidotiembla = false;
     bool ensuelo;
-    bool subir = false;
-    bool temblar = false;
-    bool aux = false;
-    bool aux2 = false;
-    bool aux3 = false;
+    bool estaarriba = true;
+    public bool subir = false;
+    bool haciajoe = false; 
 
-    void Awake() {
+    bool temblar = false;
+    bool ataque = false;
+    bool aux = false;
+
+    void Awake()
+    {
         camara = GameObject.Find("Main Camera");
         rect = camara.GetComponent<RectTransform>();
         ft = GameObject.Find("FlyingTroopers");
@@ -38,45 +50,70 @@ public class SubJefe : MonoBehaviour {
         rigidjug = jugador.GetComponent<Rigidbody2D>();
         sprite = ft.GetComponent<SpriteRenderer>();
         gameObject.SetActive(false);
-
+        au = GetComponents<AudioSource>();
     }
 
 
-    void Update() {
-
-        ensuelo = Physics2D.OverlapCircle(Circulo.position,  0.3f, capasuelo);
+    void FixedUpdate()
+    {
         
-        if (ensuelo && !subir) {
-            tiempo += Time.deltaTime;
-            rigid.bodyType = RigidbodyType2D.Static;
-            if (tiempo >= 4f) {
-                tiempo = 0f;
-                subir = true;
-                rigid.bodyType = RigidbodyType2D.Dynamic;
+        ensuelo = Physics2D.OverlapCircle(Circulo.position, 0.3f, capasuelo);
+
+        if (estaarriba)
+        {
+            rigid.bodyType = RigidbodyType2D.Dynamic;
+            if (!au[0].isPlaying)
+            {
+                au[0].Play();
             }
-            
+            if (ensuelo)
+            {
+                rigid.bodyType = RigidbodyType2D.Static;
+                estaarriba = false;
+            }
         }
 
-        if (ensuelo && !aux) {
+        if (ensuelo && !subir)
+        {
+            tiemposuelo += Time.fixedDeltaTime;
+            ataque = true;
+            if (tiemposuelo >= 4f)
+            {
+                ataque = false;
+                numeroataque = 0;
+                tiemposuelo = 0f;
+                subir = true;
+                
+            }
+
+        }
+
+        if (ensuelo && !aux)
+        {
             temblar = true;
             aux = true;
         }
 
         camaratiembla();
 
-        if (subir) {
-            tiempo += Time.deltaTime;
-            rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y + velocidad);
-            if (tiempo >= 1.1f) {
-                tiempo = 0f;
+        if (subir)
+        {
+            aux = false;
+            rigid.bodyType = RigidbodyType2D.Dynamic;
+            tiemposubida += Time.fixedDeltaTime;
+            rigid.velocity = new Vector2(rigid.velocity.x, rigid.velocity.y + 0.6f);
+            if (tiemposubida >= 1.5f)
+            {
+                tiemposubida = 0f;
                 subir = false;
-                aux = false;
-                aux3 = true;
+                haciajoe = true;
                 rigid.bodyType = RigidbodyType2D.Static;
+
             }
         }
 
-        if (aux3 && !aux2) {
+        if (haciajoe && !ensuelo)
+        {
             if (rigidjug != null)
             {
                 float posx = rigidjug.position.x;
@@ -96,62 +133,126 @@ public class SubJefe : MonoBehaviour {
 
                 if (rigidint == posxint)
                 {
-                    aux2 = true;
+                    estaarriba = true;
+                    haciajoe = false;
                 }
             }
-                
-            
+
+
         }
 
-        if (aux2) {
-            rigid.bodyType = RigidbodyType2D.Dynamic;
-            aux2 = false;
-            aux3 = false;
+
+        if (ataque)
+        {
+
+            if (numeroataque == 0)
+            {
+                numeroataque = Random.Range(1, 4);
+            }
+
+            Bomba[] bombas = FindObjectsOfType<Bomba>();
+            int cuenta = bombas.Length;
+            int num = Random.Range(1, 4);
+            int potencia = Random.Range(2,16);
+
+            if (numeroataque == 1)
+            {
+
+                if (cuenta < 3)
+                {
+                    if (num == 1)
+                    {
+                        GameObject clon = Instantiate(prefabbomba, izquierda.position, Quaternion.identity);
+                        Rigidbody2D rigidbomba = clon.GetComponentInChildren<Rigidbody2D>();
+                        rigidbomba.AddForce(new Vector2(-potencia, 2f), ForceMode2D.Impulse);
+                    }
+                    else
+                    {
+                        GameObject clon = Instantiate(prefabbomba, derecha.position, Quaternion.identity);
+                        Rigidbody2D rigidbomba = clon.GetComponentInChildren<Rigidbody2D>();
+                        rigidbomba.AddForce(new Vector2(potencia, 2f), ForceMode2D.Impulse);
+
+                    }
+                }
+            }
+            else if (numeroataque == 2)
+            {
+
+                if (cuenta < 1)
+                {
+                    if (num == 1)
+                    {
+                        GameObject clon = Instantiate(prefabbomba, izquierda.position, Quaternion.identity);
+                        Rigidbody2D rigidbomba = clon.GetComponentInChildren<Rigidbody2D>();
+                        rigidbomba.AddForce(new Vector2(-10f, 2f), ForceMode2D.Impulse);
+                    }
+                    else
+                    {
+                        GameObject clon = Instantiate(prefabbomba, derecha.position, Quaternion.identity);
+                        Rigidbody2D rigidbomba = clon.GetComponentInChildren<Rigidbody2D>();
+                        rigidbomba.AddForce(new Vector2(10f, 2f), ForceMode2D.Impulse);
+
+                    }
+                }
+            }
+
+
         }
 
     }
 
-    void camaratiembla() {
+    void camaratiembla()
+    {
         if (temblar)
         {
+            if (!sonidotiembla)
+            {
+                au[1].Play();
+                sonidotiembla = true;
+            }
             Vector3 posini = rect.position;
             if (tiempocamara > 0f)
             {
                 Vector2 vector = Random.insideUnitSphere * vibracion;
                 rect.position = new Vector3(rect.position.x + vector.x, rect.position.y + vector.y, -10f);
-                tiempocamara -= Time.deltaTime;
+                tiempocamara -= Time.fixedDeltaTime;
             }
             else
             {
                 rect.position = posini;
                 tiempocamara = 0.6f;
                 temblar = false;
+                sonidotiembla = false;
             }
         }
     }
 
-    
 
 
 
-    public void uno() {
+
+    public void uno()
+    {
         pol[0].enabled = true;
         pol[3].enabled = false;
     }
 
-    public void dos() {
+    public void dos()
+    {
         pol[1].enabled = true;
         pol[0].enabled = false;
 
     }
 
-    public void tres() {
+    public void tres()
+    {
         pol[2].enabled = true;
         pol[1].enabled = false;
 
     }
 
-    public void cuatro() {
+    public void cuatro()
+    {
         pol[3].enabled = true;
         pol[2].enabled = false;
 

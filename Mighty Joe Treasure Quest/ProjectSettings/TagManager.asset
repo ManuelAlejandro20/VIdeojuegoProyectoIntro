@@ -16,6 +16,7 @@ TagManager:
   - Plataforma
   - SueloInclinado
   - Musica lvl3
+  - Bomba
   layers:
   - Default
   - TransparentFX

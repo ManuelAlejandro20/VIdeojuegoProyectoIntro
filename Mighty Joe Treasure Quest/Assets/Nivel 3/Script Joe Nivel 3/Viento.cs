@@ -5,7 +5,7 @@ using UnityEngine;
 public class Viento : MonoBehaviour {
 
     Rigidbody2D rigid;
-    public int direccionviento;
+    int direccionviento;
     public float tiempo;
     public float cantidad;
 	public float tiempolimite;

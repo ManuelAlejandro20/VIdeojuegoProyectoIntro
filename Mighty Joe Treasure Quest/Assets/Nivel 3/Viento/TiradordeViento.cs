@@ -26,7 +26,7 @@ public class TiradordeViento : MonoBehaviour {
     RectTransform recttranabajoiz;
 
     float tiempos;
-
+    int direccionviento;
 	AudioSource au;
 
     Viento scriptviento;
@@ -51,6 +51,7 @@ public class TiradordeViento : MonoBehaviour {
 
 
         tiempos += Time.deltaTime;
+        direccionviento = scriptviento.getdireccionviento();
 
         if (!moverse) {
 
@@ -59,7 +60,7 @@ public class TiradordeViento : MonoBehaviour {
         }
         
 
-        if (scriptviento.getdireccionviento() == 2)
+        if (direccionviento == 2)
         {
             if (arribabool)
             {
@@ -86,7 +87,7 @@ public class TiradordeViento : MonoBehaviour {
                 }
             }
         }
-        else if(scriptviento.getdireccionviento() == 1)
+        else if(direccionviento == 1)
         {
             if (arribabool)
             {
@@ -115,7 +116,7 @@ public class TiradordeViento : MonoBehaviour {
 
         }
 
-        if (scriptviento.getdireccionviento() == 0) {
+        if (direccionviento == 0) {
             moverse = false;
         }
         
@@ -129,7 +130,7 @@ public class TiradordeViento : MonoBehaviour {
         GameObject[] vientos = GameObject.FindGameObjectsWithTag("Viento");
         int cuenta = vientos.Length;
        
-        if (tiempos>=0.2f && cuenta < 6 && scriptviento.getdireccionviento()!=0)
+        if (tiempos>=0.2f && cuenta < 6 && direccionviento!=0)
         {
             int num = Random.Range(0, 5);
 			if (!au.isPlaying) {
@@ -140,14 +141,14 @@ public class TiradordeViento : MonoBehaviour {
 
 
             clon = Instantiate(vientoprefab, new Vector3(transform.position.x, transform.position.y, -9f), Quaternion.identity) as GameObject;
-            if (scriptviento.getdireccionviento() == 2)
+            if (direccionviento == 2)
             {
                 
                 clon.GetComponent<Rigidbody2D>().velocity = new Vector2(-vel[num], GetComponent<Rigidbody2D>().velocity.y);
                
             }
 
-            else if(scriptviento.getdireccionviento() == 1)
+            else if(direccionviento == 1)
             {
 
 
@@ -166,11 +167,11 @@ public class TiradordeViento : MonoBehaviour {
 
         if (nombre.Equals("Lanzaviento arriba"))
         {
-            if (scriptviento.getdireccionviento() == 2)
+            if (direccionviento == 2)
             {
                 recttran.position = recttranarribader.position;
             }
-            else if (scriptviento.getdireccionviento() == 1)
+            else if (direccionviento == 1)
             {
                 recttran.position = recttranarribaiz.position;
             }
@@ -180,11 +181,11 @@ public class TiradordeViento : MonoBehaviour {
         else
         {
 
-            if (scriptviento.getdireccionviento() == 2)
+            if (direccionviento == 2)
             {
                 recttran.position = recttranabajoder.position;
             }
-            else if (scriptviento.getdireccionviento() == 1)
+            else if (direccionviento == 1)
             {
                 recttran.position = recttranabajoiz.position;
             }
