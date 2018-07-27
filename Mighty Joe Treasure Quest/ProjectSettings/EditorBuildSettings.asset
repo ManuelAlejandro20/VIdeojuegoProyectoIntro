@@ -51,9 +51,6 @@ EditorBuildSettings:
     path: Assets/Nivel 3/Escenas Nivel 3/Escena 5 Nivel 3.unity
     guid: 12c86fa28c5d4784697a1d58f5a4c973
   - enabled: 1
-    path: Assets/Nivel 3/Escenas Nivel 3/Escena 6 Nivel 3.unity
-    guid: 10b05869052d7fa40bcb8a5ee5ca3974
-  - enabled: 1
     path: Assets/Nivel Final/escenas nivel final/escena 1 nivel final/escena 1 nivel
       final.unity
     guid: d5d7e70fb4935ce40a2c9606adbad2ca

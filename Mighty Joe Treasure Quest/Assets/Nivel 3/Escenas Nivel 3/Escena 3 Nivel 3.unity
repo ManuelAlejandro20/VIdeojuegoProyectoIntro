@@ -21101,6 +21101,7 @@ MonoBehaviour:
   maxX: 172
   minX: 40
   x: 1.3
+  minY: 22
   maxY: 22
   y: 2
 --- !u!1001 &924376585
@@ -25851,7 +25852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17f6cf5b41431244a480f813e6d169e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direccionviento: 0
   tiempo: 0
   cantidad: 0.4
   tiempolimite: 5

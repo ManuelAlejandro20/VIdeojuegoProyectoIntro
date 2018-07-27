@@ -5,6 +5,7 @@ using UnityEngine;
 public class VidaFT : MonoBehaviour {
 
     public float vida;
+    public GameObject suelobarco;
     VidaJoe scriptvida;
     GameObject jugador;
     Animator animator;

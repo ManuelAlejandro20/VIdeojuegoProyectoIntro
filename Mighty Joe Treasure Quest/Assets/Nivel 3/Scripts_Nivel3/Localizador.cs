@@ -9,10 +9,12 @@ public class Localizador : MonoBehaviour {
     static bool activo2;
     AudioSource[] au;
     GameObject sonidos;
+    bool muertos;
     bool sonido = false;
 	void Awake () {
         sonidos = GameObject.Find("Sonidos");
         au = sonidos.GetComponents<AudioSource>();
+        muertos = VidaFT.muerto;
 	}
 
 	
@@ -32,7 +34,7 @@ public class Localizador : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && !muertos)
         {
             FlyingTroopers.SetActive(true);
         }

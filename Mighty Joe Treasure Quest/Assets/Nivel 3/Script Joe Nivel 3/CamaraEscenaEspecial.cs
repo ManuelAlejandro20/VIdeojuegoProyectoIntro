@@ -10,6 +10,7 @@ public class CamaraEscenaEspecial : MonoBehaviour {
 	public float maxX;
 	public float minX;
 	public float x;
+    public float minY;
 	public float maxY;
 	public float y;
 	void Start()
@@ -28,7 +29,7 @@ public class CamaraEscenaEspecial : MonoBehaviour {
 		pos.x = Mathf.Clamp(pos.x, -minX, x * maxX);
 		transform.position = pos;
 		Vector3 posy = transform.position;
-		posy.y = Mathf.Clamp(pos.y, y * -maxY, maxY);
+		posy.y = Mathf.Clamp(pos.y, y * -minY, maxY);
 		transform.position = posy;
 	}
 }

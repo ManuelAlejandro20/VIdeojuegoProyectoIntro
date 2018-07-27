@@ -132,10 +132,10 @@ public class VidaJoe : MonoBehaviour {
                     {
                         SceneManager.LoadScene(4);
                     }
-                    else if (escenaactual >= 10 && escenaactual <= 15) {
+                    else if (escenaactual >= 10 && escenaactual <= 14) {
                         SceneManager.LoadScene(10);
                     }
-                    else if (escenaactual >= 16 && escenaactual <= 17) {
+                    else if (escenaactual >= 15 && escenaactual <= 16) {
                         SceneManager.LoadScene(16);
                     }
 

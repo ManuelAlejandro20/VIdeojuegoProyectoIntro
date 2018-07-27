@@ -11,7 +11,7 @@ public class MusicaNivel3 : MonoBehaviour {
 	void Awake(){
 
 		int escena = SceneManager.GetActiveScene ().buildIndex;
-		if(escena <= 15 && escena >= 10 ){
+		if(escena <= 14 && escena >= 10 ){
 			jugador = GameObject.FindGameObjectWithTag ("Player");	
 			vida = jugador.GetComponent<VidaJoe> ();
 			DontDestroyOnLoad (gameObject);
