@@ -1390,13 +1390,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 198161497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -278.9, y: -212.6, z: 1.41}
+  m_LocalPosition: {x: -278.9, y: -212.6, z: 2.25}
   m_LocalScale: {x: 5.9719954, y: 6.5539484, z: 0.72625}
   m_Children:
   - {fileID: 906291609}
   - {fileID: 1240771612}
   - {fileID: 137104816}
   - {fileID: 1391620794}
+  - {fileID: 276405554}
   m_Father: {fileID: 995432189}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1843,7 +1844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0565907b668449442be3f762d1bcead8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 1500
+  vida: 2000
   explosiones: {fileID: 1240771611}
 --- !u!82 &198161508
 AudioSource:
@@ -1854,7 +1855,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a5c4339a7ea25454797a1af67cc1a300, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 02b2446db7aa8174aa94c0a5727005fc, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.84
   m_Pitch: 1
@@ -2512,6 +2513,60 @@ RectTransform:
   m_AnchoredPosition: {x: -199.2508, y: -124.625}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &276405553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 276405554}
+  - component: {fileID: 276405555}
+  m_Layer: 0
+  m_Name: SueloBarco
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &276405554
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276405553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 198161498}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &276405555
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276405553}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.086508095, y: -0.77500224}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.5278453, y: 0.06738305}
+  m_EdgeRadius: 0
 --- !u!1 &298661674
 GameObject:
   m_ObjectHideFlags: 0

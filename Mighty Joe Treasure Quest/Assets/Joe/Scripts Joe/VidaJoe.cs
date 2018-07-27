@@ -207,6 +207,15 @@ public class VidaJoe : MonoBehaviour {
         
     }
 
+    public void OnTriggerEnter2D(Collider2D colo) {
+        if (colo.name == "SueloBarco") {
+            vidajoe -= 100f;
+        }
+
+
+    }
+
+
     //se retorna la vida de joe
     public float getvida() {
         return vidajoe;

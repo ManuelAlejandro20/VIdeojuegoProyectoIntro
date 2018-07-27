@@ -19,7 +19,7 @@ public class SubJefe : MonoBehaviour
     float tiempocamara = 0.6f;
     Rigidbody2D rigid;
     Rigidbody2D rigidjug;
-    PolygonCollider2D[] pol;
+    /*PolygonCollider2D[] pol;*/
     GameObject ft;
     GameObject camara;
     GameObject jugador;
@@ -44,7 +44,7 @@ public class SubJefe : MonoBehaviour
         camara = GameObject.Find("Main Camera");
         rect = camara.GetComponent<RectTransform>();
         ft = GameObject.Find("FlyingTroopers");
-        pol = ft.GetComponents<PolygonCollider2D>();
+        /*pol = ft.GetComponents<PolygonCollider2D>();*/
         rigid = ft.GetComponent<Rigidbody2D>();
         jugador = GameObject.FindGameObjectWithTag("Player");
         rigidjug = jugador.GetComponent<Rigidbody2D>();
@@ -231,7 +231,7 @@ public class SubJefe : MonoBehaviour
 
 
 
-    public void uno()
+    /*public void uno()
     {
         pol[0].enabled = true;
         pol[3].enabled = false;
@@ -257,4 +257,5 @@ public class SubJefe : MonoBehaviour
         pol[2].enabled = false;
 
     }
+    */
 }

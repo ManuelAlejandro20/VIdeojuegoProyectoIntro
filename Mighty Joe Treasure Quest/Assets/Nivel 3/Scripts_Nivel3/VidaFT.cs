@@ -12,6 +12,7 @@ public class VidaFT : MonoBehaviour {
     float tiempo;
     bool muerte = false;
     bool sonidomuerte = false;
+    public static bool muerto = false;
     AudioSource[] au;
 
 
@@ -62,6 +63,7 @@ public class VidaFT : MonoBehaviour {
             if (vida <= 0)
             {
                 muerte = true;
+                muerto = muerte;
                 
             }
 
@@ -76,6 +78,7 @@ public class VidaFT : MonoBehaviour {
         }
 
     }
+
 
 
 }

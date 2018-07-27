@@ -18,6 +18,9 @@ public class FlyingTroopers : MonoBehaviour {
     Rigidbody2D rigidinicio;
     Rigidbody2D rigidfinal;
 
+    bool muertos;
+
+
     SpriteRenderer sprite;
 
     bool haciafinal;
@@ -29,6 +32,10 @@ public class FlyingTroopers : MonoBehaviour {
         rigidinicio = principio.GetComponent<Rigidbody2D>();
         rigidfinal = final.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        muertos = VidaFT.muerto;
+        if (muertos) {
+            gameObject.SetActive(false);
+        }
     }
     
 
