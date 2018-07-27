@@ -49,13 +49,13 @@ public class VidaFT : MonoBehaviour {
             au[3].Play();
         }
 
-        
     }
 
-    public void OnTriggerEnter2D(Collider2D col)
-    {
 
-        if (col.tag == "Bullet" || col.tag == "Uppercut")
+    public void OnTriggerEnter2D(Collider2D colo)
+    {
+        
+        if (colo.tag == "Bullet" || colo.tag == "Uppercut")
         {
             au[3].Play();
             vida -= Patada.daño;
@@ -67,11 +67,10 @@ public class VidaFT : MonoBehaviour {
 
         }
 
-        if (col.gameObject.name == "ExplosionBomba")
+        if (colo.name == "ExplosionBomba")
         {
 
             au[4].Play();
-            Debug.Log("xddddd");
             vida -= 85f;
 
         }
