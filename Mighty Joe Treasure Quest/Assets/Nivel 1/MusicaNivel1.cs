@@ -18,7 +18,11 @@ public class MusicaNivel1 : MonoBehaviour {
 			vida = jugador.GetComponent<VidaJoe> ();
 			aus = GetComponents<AudioSource> ();
 			DontDestroyOnLoad (gameObject);
-		}
+            if (FindObjectsOfType(GetType()).Length > 1)
+            {
+                Destroy(gameObject);
+            }
+        }
 
 
 		

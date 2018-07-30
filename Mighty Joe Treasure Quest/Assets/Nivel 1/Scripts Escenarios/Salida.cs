@@ -7,9 +7,10 @@ using UnityEngine.UI;
 
 public class Salida : MonoBehaviour {
 
-	GuardaTesoros script;
-	Canvas imagen;
-	GameObject sistemacofres;
+	AdminTesoros at;
+    GameObject admintesoros;
+    Canvas imagen;
+	//GameObject sistemacofres;
 	GameObject mensaje;
 
 	public Text texto;
@@ -20,10 +21,10 @@ public class Salida : MonoBehaviour {
 	void Awake(){
 
 		mensaje = GameObject.Find ("NivelSuperado");
-		imagen = mensaje.GetComponent<Canvas>();
+        admintesoros = GameObject.Find("AdminTesoros");
+        at = admintesoros.GetComponent<AdminTesoros>();
+        imagen = mensaje.GetComponent<Canvas>();
 		imagen.enabled = false;
-		sistemacofres = GameObject.Find ("Cofres");
-		script = sistemacofres.GetComponent<GuardaTesoros>();
 		texto.text = "$" + 0;
 	}
 
@@ -49,7 +50,7 @@ public class Salida : MonoBehaviour {
 					SceneManager.LoadScene (10);
 				
 				}
-			
+			   
 			
 			}
 		}
@@ -61,9 +62,9 @@ public class Salida : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.UpArrow))
 		{
-			if (script.getcontador() == 3) {
-				texto.text = "$" + script.getcantidadtotal ();
-				if (script.getcantidadtotal () < 400000) {
+			if (at.getnuminv() == 3) {
+				texto.text = "$" + at.valorfinal ();
+				if (at.valorfinal () < 400000) {
 						escena4 = true;
 					} 
 

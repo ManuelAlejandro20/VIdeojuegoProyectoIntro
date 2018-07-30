@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f72d27dcc183544b15802e976dc86a, type: 3}
+  m_Name: DatabaseTesoros
+  m_EditorClassIdentifier: 
+  items:
+  - nombre: brazalete
+    valor: 25000
+    imagen: {fileID: 1925452077950280, guid: 90a0c3d0d95192d48b96ea7efcb1dc05, type: 2}
+    mensaje: {fileID: 1799421286676498, guid: 946fe1c37579faf4abe6e842fba5ac15, type: 2}
+  - nombre: moneda
+    valor: 35000
+    imagen: {fileID: 1165566117236378, guid: 9976721525759ed4390f90dd7f93918a, type: 2}
+    mensaje: {fileID: 1120762344693730, guid: 42c1fcc509235fa42b0462cf3a44be88, type: 2}
+  - nombre: ocarina
+    valor: 80000
+    imagen: {fileID: 1442506647689638, guid: cf76e3f3bbc96ae478741d4d234f24a8, type: 2}
+    mensaje: {fileID: 1045902915266994, guid: 47100cf0aff62534ca92f7166a7424fa, type: 2}
+  - nombre: pluma
+    valor: 90000
+    imagen: {fileID: 1734534827683804, guid: 9dde565029053544daee3544786ef8e2, type: 2}
+    mensaje: {fileID: 1767640311852108, guid: b9aa1f0bf8f2f494883e653a29355d39, type: 2}
+  - nombre: tronco
+    valor: 300000
+    imagen: {fileID: 1403434433541778, guid: 66a3262f524db1541a9966a4aeb42fa4, type: 2}
+    mensaje: {fileID: 1982105411608572, guid: 29127f1dc4484064fb463e1ae6531678, type: 2}
+  - nombre: reloj
+    valor: 350000
+    imagen: {fileID: 1068020932552434, guid: 0eb30126fa2fb3b46afc87dddd377d4a, type: 2}
+    mensaje: {fileID: 1669335975994916, guid: 625e37abdb369914a96658ade1a3b11a, type: 2}

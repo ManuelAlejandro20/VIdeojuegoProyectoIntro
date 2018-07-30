@@ -65,4 +65,12 @@ using UnityEngine;
 
     
     }
+
+    public bool estadopau() {
+        return this.pausa;
+    }
+
+    public bool estadodespau() {
+        return this.despausa;
+    }
  }

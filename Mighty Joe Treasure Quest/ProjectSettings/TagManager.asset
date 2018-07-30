@@ -17,6 +17,7 @@ TagManager:
   - SueloInclinado
   - Musica lvl3
   - Bomba
+  - Cofre
   layers:
   - Default
   - TransparentFX
