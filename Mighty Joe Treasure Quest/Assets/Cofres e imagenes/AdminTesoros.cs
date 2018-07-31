@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class AdminTesoros : MonoBehaviour {
 
-    public Canvas inventariocanvas;
     public RectTransform[] panelesinventario;
 
     GameObject jugador;

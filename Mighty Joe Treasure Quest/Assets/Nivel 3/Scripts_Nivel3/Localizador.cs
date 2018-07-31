@@ -9,12 +9,19 @@ public class Localizador : MonoBehaviour {
     static bool activo2;
     AudioSource[] au;
     GameObject sonidos;
+    public GameObject cofre;
     bool muertos;
     bool sonido = false;
+    CofreHacha scriptcofre;
 	void Awake () {
         sonidos = GameObject.Find("Sonidos");
         au = sonidos.GetComponents<AudioSource>();
         muertos = VidaFT.muerto;
+        scriptcofre = cofre.GetComponent<CofreHacha>();
+        if (muertos) {
+            cofre.transform.position = scriptcofre.getpossuelo();
+            cofre.SetActive(true);
+        }
 	}
 
 	

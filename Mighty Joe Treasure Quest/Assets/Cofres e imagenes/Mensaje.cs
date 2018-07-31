@@ -27,7 +27,8 @@ public class Mensaje : MonoBehaviour {
 
         }
         else {
-            au = GetComponent<AudioSource>();
+            
+            au = gomusica.GetComponent<AudioSource>();
             aunvl1 = null;
 
         }

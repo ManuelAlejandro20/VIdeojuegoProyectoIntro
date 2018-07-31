@@ -12,6 +12,7 @@ public class SubJefe : MonoBehaviour
     public GameObject prefabbomba;
     public Transform izquierda;
     public Transform derecha;
+    
 
 
     public float tiemposuelo;

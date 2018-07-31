@@ -10,10 +10,13 @@ public class VidaFT : MonoBehaviour {
     GameObject jugador;
     Animator animator;
     public GameObject explosiones;
+    public GameObject cofre;
+
     float tiempo;
     bool muerte = false;
     bool sonidomuerte = false;
     public static bool muerto = false;
+
     AudioSource[] au;
 
 
@@ -23,6 +26,7 @@ public class VidaFT : MonoBehaviour {
         scriptvida = jugador.GetComponent<VidaJoe>();
         animator = GetComponent<Animator>();
         au = GetComponents<AudioSource>();
+
     }
 	
 	
@@ -37,6 +41,8 @@ public class VidaFT : MonoBehaviour {
             explosiones.SetActive(true);
             tiempo += Time.deltaTime;
             if (tiempo >= 4f) {
+                cofre.transform.position = transform.position;
+                cofre.SetActive(true);
                 Destroy(gameObject);
             }
 
