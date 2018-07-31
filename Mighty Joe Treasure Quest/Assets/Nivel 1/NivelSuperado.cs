@@ -45,7 +45,7 @@ public class NivelSuperado : MonoBehaviour {
         }
         else
         {
-            au_gameobject_musica2 = GetComponent<AudioSource>();
+            au_gameobject_musica2 = gameobject_musica.GetComponent<AudioSource>();
             au_gameobject_musica = null;
 
         }
@@ -58,11 +58,12 @@ public class NivelSuperado : MonoBehaviour {
 	void Update () {
 
 		if (canvas.enabled && sonido) {
+            at.eliminartesoros();
+            scriptvida.setvida(100f);
+            au.Play();
             if (au_gameobject_musica2 == null)
             {
-                at.eliminartesoros();
-                scriptvida.setvida(100f);
-                au.Play();
+                
                 if (au_gameobject_musica[0].isPlaying)
                 {
                     au_gameobject_musica[0].Pause();

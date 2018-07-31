@@ -5964,7 +5964,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1269466530}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be9f84035e3683943a4f90dfbcb6552d, type: 3}
   m_Name: 
@@ -8552,7 +8552,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54dd8e44c405bdc4a972a1e4b57f7710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventariocanvas: {fileID: 111670590}
   panelesinventario:
   - {fileID: 225366957}
   - {fileID: 589180460}
