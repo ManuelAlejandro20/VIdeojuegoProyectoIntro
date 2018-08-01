@@ -10,19 +10,24 @@ public class MusicaNivel1 : MonoBehaviour {
 	GameObject jugador;
 	AudioSource[] aus;
 	bool loop = false;
+
+    public int escena;
 	void Awake(){
 
-		int escena = SceneManager.GetActiveScene ().buildIndex;
-		if(escena <= 3 && escena >= 1 ){
-			jugador = GameObject.FindGameObjectWithTag ("Player");	
-			vida = jugador.GetComponent<VidaJoe> ();
-			aus = GetComponents<AudioSource> ();
-			DontDestroyOnLoad (gameObject);
+		escena = SceneManager.GetActiveScene ().buildIndex;
+        if (escena <= 3 && escena >= 1)
+        {
+            jugador = GameObject.FindGameObjectWithTag("Player");
+            vida = jugador.GetComponent<VidaJoe>();
+            aus = GetComponents<AudioSource>();
+            DontDestroyOnLoad(gameObject);
             if (FindObjectsOfType(GetType()).Length > 1)
             {
                 Destroy(gameObject);
             }
         }
+
+ 
 
 
 		
@@ -33,6 +38,19 @@ public class MusicaNivel1 : MonoBehaviour {
 
 	void Start () {
 	}
+
+
+    void Update() {
+
+        escena = SceneManager.GetActiveScene().buildIndex;
+        if (escena > 3)
+        {
+            Debug.Log("XDDDD");
+            Destroy(gameObject);
+        }
+
+
+    }
 
 	void FixedUpdate () {
 
@@ -46,6 +64,8 @@ public class MusicaNivel1 : MonoBehaviour {
 			Destroy (gameObject);
 
 		}
+
+       
 		
 			
 	}

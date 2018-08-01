@@ -7,25 +7,29 @@ public class Localizador : MonoBehaviour {
     public GameObject FlyingTroopers;
     static bool activoft;
     static bool activo2;
+
     AudioSource[] au;
     GameObject sonidos;
     public GameObject cofre;
     bool muertos;
     bool sonido = false;
     CofreHacha scriptcofre;
-	void Awake () {
+    AdminTesoros adm;
+    GameObject admintesoros;
+    void Awake () {
         sonidos = GameObject.Find("Sonidos");
         au = sonidos.GetComponents<AudioSource>();
+        admintesoros = GameObject.Find("AdminTesoros");
+        adm = admintesoros.GetComponent<AdminTesoros>();
         muertos = VidaFT.muerto;
         scriptcofre = cofre.GetComponent<CofreHacha>();
-        if (muertos) {
+        if (muertos && adm.getnuminv() < 3) {
             cofre.transform.position = scriptcofre.getpossuelo();
             cofre.SetActive(true);
         }
 	}
 
 	
-	// Update is called once per frame
 	void Update () {
         if (FlyingTroopers == null && !sonido ) {
 

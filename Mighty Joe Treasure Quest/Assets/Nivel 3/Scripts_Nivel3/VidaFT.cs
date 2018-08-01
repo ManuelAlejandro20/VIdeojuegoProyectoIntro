@@ -19,10 +19,14 @@ public class VidaFT : MonoBehaviour {
 
     AudioSource[] au;
 
+    AdminTesoros adm;
+    GameObject admintesoros;
 
     void Awake()
     {
         jugador = GameObject.FindGameObjectWithTag("Player");
+        admintesoros = GameObject.Find("AdminTesoros");
+        adm = admintesoros.GetComponent<AdminTesoros>();
         scriptvida = jugador.GetComponent<VidaJoe>();
         animator = GetComponent<Animator>();
         au = GetComponents<AudioSource>();
@@ -41,8 +45,11 @@ public class VidaFT : MonoBehaviour {
             explosiones.SetActive(true);
             tiempo += Time.deltaTime;
             if (tiempo >= 4f) {
-                cofre.transform.position = transform.position;
-                cofre.SetActive(true);
+                if (adm.getnuminv() < 3)
+                {
+                    cofre.transform.position = transform.position;
+                    cofre.SetActive(true);
+                }
                 Destroy(gameObject);
             }
 

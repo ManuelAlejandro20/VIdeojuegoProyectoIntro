@@ -97,7 +97,6 @@ public class Salida : MonoBehaviour {
                     {
                         escena15 = true;
                     }
-
                 }
             }
 		}

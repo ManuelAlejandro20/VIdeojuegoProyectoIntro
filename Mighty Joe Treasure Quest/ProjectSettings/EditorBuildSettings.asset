@@ -40,10 +40,10 @@ EditorBuildSettings:
     guid: 9ff5b6f56e2c9fb4c8d61757cd1ebbcb
   - enabled: 1
     path: Assets/Nivel 3/Escenas Nivel 3/Escena 2 Nivel 3.unity
-    guid: 6c280d9cf90a78a4da59d01cbc83ce7a
+    guid: 459dad85785463e48842a0ae9a694b32
   - enabled: 1
     path: Assets/Nivel 3/Escenas Nivel 3/Escena 3 Nivel 3.unity
-    guid: b151a2e144b67fd4f821ae94d61c57ca
+    guid: 7455d1b9003463c4cb2685b9b36517d8
   - enabled: 1
     path: Assets/Nivel 3/Escenas Nivel 3/Escena 4 Nivel 3.unity
     guid: dc56a2689bcad994b8c9975d29679fbb

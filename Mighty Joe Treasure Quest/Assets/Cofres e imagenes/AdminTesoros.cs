@@ -28,6 +28,8 @@ public class AdminTesoros : MonoBehaviour {
 
     CofrePrueba[] cp;
 
+    bool max = true;
+
     void Awake() {
         Time.timeScale = 1;
         jugador = GameObject.FindGameObjectWithTag("Player");
@@ -46,11 +48,14 @@ public class AdminTesoros : MonoBehaviour {
         
         for (int i = 0; i < cp.Length; i++) {
             bool cofreabierto = cp[i].getabierto();
-            if (cofreabierto && !abierto[i]) {
+            if (cofreabierto && !abierto[i] && max) {
                 int indice = listaitem.IndexOf(data.buscaritem(cp[i].gettesoro()));
                 abierto[indice] = true;
                 inventario[numinvstatico] = indice;
                 numinvstatico++;
+                if (numinvstatico == 3) {
+                    max = false;
+                }
             }
 
             cp[i].setbool(abierto[i]);
@@ -65,6 +70,7 @@ public class AdminTesoros : MonoBehaviour {
 
 
         if (scriptvida.getvida1up() == 0) {
+            max = false;
             eliminartesoros();
         }
 
@@ -110,7 +116,11 @@ public class AdminTesoros : MonoBehaviour {
             }
         }
 
+      
+
     }
+
+    
 
     public int getnuminv() {
         numinv = numinvstatico;
@@ -128,12 +138,19 @@ public class AdminTesoros : MonoBehaviour {
     }
 
     public void eliminartesoros() {
-        inventario = new int[3] { -1, -1, -1 };
-        for (int i = 0; i < listaitem.Capacity; i++)
+        //inventario = new int[3] { -1, -1, -1 };
+        for (int i=0; i<3; i++) {
+            inventario[i] = -1;
+        }
+
+        for (int i = 0; i < abierto.Count; i++)
         {
             abierto[i] = false;
         }
+
         numinvstatico = 0;
+       
+        
     }
 
 }
