@@ -45,7 +45,6 @@ public class MusicaNivel1 : MonoBehaviour {
         escena = SceneManager.GetActiveScene().buildIndex;
         if (escena > 3)
         {
-            Debug.Log("XDDDD");
             Destroy(gameObject);
         }
 

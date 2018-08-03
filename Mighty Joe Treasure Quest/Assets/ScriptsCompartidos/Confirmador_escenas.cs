@@ -76,7 +76,7 @@ public class Confirmador_escenas : MonoBehaviour {
                 if (escena_actual == 1)
                 {
 
-                    rigid.position = new Vector2(44.293f, 2.903742f);
+                    rigid.position = new Vector2(40.37843f, 2.903742f);
                     camara.transform.position = new Vector3(28.6f, 2.86374f, -10f);
 
                 }
