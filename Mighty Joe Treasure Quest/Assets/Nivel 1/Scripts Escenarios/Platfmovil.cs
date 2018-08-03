@@ -6,7 +6,7 @@ public class Platfmovil : MonoBehaviour {
     public Transform objetivo;
     public float speed;
     private Vector3 principio, fin;
-	// Use this for initialization
+	// el objetivo se hace de clase hijo de la Platmovil
 	void Start () {
         if (objetivo != null)
         {
@@ -20,6 +20,8 @@ public class Platfmovil : MonoBehaviour {
 	void Update () {
 		
 	}
+    // cada vez que la plataforma llegue al objetivo este modifica su posicion a la inicial de la plataforma
+    // para que asi la plataforma tenga un movimiento ciclico
     private void FixedUpdate()
     {
         float Fixedspeed = speed * Time.deltaTime;

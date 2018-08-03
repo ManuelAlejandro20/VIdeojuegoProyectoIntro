@@ -4,10 +4,10 @@ using UnityEngine;
 
 
 public class MoJoe : MonoBehaviour {
-
+ 
     [SerializeField] bool ensuelo = true;
     [SerializeField] Transform chequearsuelo;
-
+    
     bool disparo = false;
     float podersalto = 18f;
     float velocidad = 7f;
@@ -26,8 +26,7 @@ public class MoJoe : MonoBehaviour {
     public GameObject proyectilprefab;
     public GameObject puñoprefab;
     public GameObject uppercutprefab;
-
-
+    
     void Awake() {
 
         sprite = GetComponent<SpriteRenderer>();
@@ -66,6 +65,7 @@ public class MoJoe : MonoBehaviour {
         {
             ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculosuelo, capasuelo);
             anim.SetBool("auxiliar caminando/salto", ensuelo);
+          
         }
 
         ensuelo = Physics2D.OverlapCircle(chequearsuelo.position, radiocirculosuelo, capasuelo);
@@ -75,6 +75,7 @@ public class MoJoe : MonoBehaviour {
         {
 
             anim.SetBool("caer", true);
+           
 
         }
 

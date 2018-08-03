@@ -18,6 +18,7 @@ TagManager:
   - Musica lvl3
   - Bomba
   - Cofre
+  - PlatMovil
   layers:
   - Default
   - TransparentFX

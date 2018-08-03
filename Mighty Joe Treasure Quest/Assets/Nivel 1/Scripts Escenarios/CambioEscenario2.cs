@@ -11,7 +11,8 @@ public class CambioEscenario2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+	//El trigger detecta un game object el cual si tiene el tag player y se pulsa la tecla de la flecha hacia arriba
+    //se utiliza la fuincion del scene management para cargar la siguiente escena
 	}
     void OnTriggerStay2D(Collider2D other)
     {

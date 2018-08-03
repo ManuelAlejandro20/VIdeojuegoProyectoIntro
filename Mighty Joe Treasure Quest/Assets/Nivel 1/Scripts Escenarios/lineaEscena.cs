@@ -18,9 +18,11 @@ public class lineaEscena : MonoBehaviour {
     private void OnDrawGizmosSelected()
     {
         if (desde != null && hasta != null)
-        {
+        { 
+    // se dibuja una linea en la escena
             Gizmos.color = Color.cyan;
             Gizmos.DrawLine(desde.position, hasta.position);
+    // dibujo de esferas en cada extremo de la linea para mas comodidad
             Gizmos.DrawSphere(desde.position, 1f);
             Gizmos.DrawSphere(hasta.position, 1f);
         }
