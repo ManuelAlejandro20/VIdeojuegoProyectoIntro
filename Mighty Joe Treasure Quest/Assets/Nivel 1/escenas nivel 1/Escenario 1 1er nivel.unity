@@ -2195,7 +2195,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &452948131
 Transform:
   m_ObjectHideFlags: 0
@@ -6441,7 +6441,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1437559402
 Transform:
   m_ObjectHideFlags: 0
@@ -6473,7 +6473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1437852756
 Transform:
   m_ObjectHideFlags: 0
@@ -8319,7 +8319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1762064426
 Transform:
   m_ObjectHideFlags: 0
@@ -9405,7 +9405,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1941092281
 Transform:
   m_ObjectHideFlags: 0
@@ -10314,6 +10314,7 @@ GameObject:
   - component: {fileID: 2050635994}
   - component: {fileID: 2050635988}
   - component: {fileID: 2050635992}
+  - component: {fileID: 2050635995}
   m_Layer: 0
   m_Name: Swordpng_1
   m_TagString: Enemy
@@ -10541,7 +10542,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2050635986}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b93e01c4969d82b4cb5417b8d3d85c71, type: 3}
   m_Name: 
@@ -10552,6 +10553,18 @@ MonoBehaviour:
   localizador: {fileID: 1565145032}
   distanciaacercamiento: 7
   "da\xF1o": 15
+--- !u!114 &2050635995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2050635986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5021307694cf76b44a7ab58f26cf2fa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 3
 --- !u!1001 &2067961707
 Prefab:
   m_ObjectHideFlags: 0
