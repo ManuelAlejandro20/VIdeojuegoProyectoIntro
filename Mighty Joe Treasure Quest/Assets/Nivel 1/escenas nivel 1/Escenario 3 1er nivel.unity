@@ -9746,6 +9746,7 @@ GameObject:
   - component: {fileID: 1971486495}
   - component: {fileID: 1971486491}
   - component: {fileID: 1971486498}
+  - component: {fileID: 1971486500}
   - component: {fileID: 1971486499}
   m_Layer: 0
   m_Name: Joe
@@ -10149,6 +10150,23 @@ PolygonCollider2D:
       - {x: 0.00010931973, y: 0.17358953}
       - {x: -0.083050296, y: 0.16737741}
       - {x: -0.092326045, y: 0.13499218}
+--- !u!114 &1971486500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1971486488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355aa321babd66b4cac9027b23d66495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  total: 5
+  prefabbala: {fileID: 1013921552940090, guid: 7af06a27a85f8734fb3607fecb824895, type: 2}
+  prefabpatada: {fileID: 1799162757971188, guid: aa4f1537f377acd43b7b58ff072f4eba,
+    type: 2}
+  balas: []
+  patadas: []
 --- !u!4 &2006105764 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4668972231072246, guid: 7238eb8541239d3428e919344bdc73c0,

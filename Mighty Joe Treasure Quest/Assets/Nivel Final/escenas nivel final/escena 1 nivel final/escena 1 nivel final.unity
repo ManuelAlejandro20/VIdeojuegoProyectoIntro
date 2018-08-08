@@ -6969,6 +6969,7 @@ GameObject:
   - component: {fileID: 750929581}
   - component: {fileID: 750929580}
   - component: {fileID: 750929579}
+  - component: {fileID: 750929586}
   m_Layer: 0
   m_Name: Joe
   m_TagString: Player
@@ -7137,6 +7138,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &750929586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 750929578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355aa321babd66b4cac9027b23d66495, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  total: 5
+  prefabbala: {fileID: 1013921552940090, guid: 7af06a27a85f8734fb3607fecb824895, type: 2}
+  prefabpatada: {fileID: 1799162757971188, guid: aa4f1537f377acd43b7b58ff072f4eba,
+    type: 2}
+  balas: []
+  patadas: []
 --- !u!4 &752131846 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4945135238358104, guid: 83951185fe9b55b4f93fb73bfe88a247,
