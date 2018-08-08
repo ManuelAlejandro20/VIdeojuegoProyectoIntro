@@ -70,7 +70,7 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0
-    functionName: "pu\xF1o"
+    functionName: "pu\xF1oproyectil"
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

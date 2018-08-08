@@ -22,7 +22,8 @@ public class EnemyHealth : MonoBehaviour {
 
         if (col.tag == "Bullet" || col.tag == "Uppercut") {
 
-            vidaenemigo -= Patada.daño;
+            Proyectil proyectil = col.gameObject.GetComponent<Proyectil>();
+            vidaenemigo -= proyectil.getdaño();
 			au.clip = efectos [0];
 			if (!au.isPlaying) {
 				au.Play ();

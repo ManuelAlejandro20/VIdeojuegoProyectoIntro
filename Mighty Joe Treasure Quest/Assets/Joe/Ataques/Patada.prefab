@@ -21,12 +21,12 @@ GameObject:
   - component: {fileID: 4777717439383680}
   - component: {fileID: 95362098099245338}
   - component: {fileID: 212020062472563628}
-  - component: {fileID: 114571686404456858}
+  - component: {fileID: 114733912393083162}
   - component: {fileID: 50979171970823156}
   - component: {fileID: 58608004838026884}
   - component: {fileID: 82686425997302142}
   m_Layer: 0
-  m_Name: Proyectil patada
+  m_Name: Patada
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5c8c3924038501a4c9f3367cfdba582d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -177,7 +177,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114571686404456858
+--- !u!114 &114733912393083162
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -185,12 +185,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799162757971188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be32cdcdb3022c44aab90faab387f73, type: 3}
+  m_Script: {fileID: 11500000, guid: d69292d0b960a524f9318672e481d44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletspeed: 30
+  "da\xF1o": 40
+  velocidad: 30
   duracion: 0.25
-  "da\xF1oref": 40
 --- !u!212 &212020062472563628
 SpriteRenderer:
   m_ObjectHideFlags: 1
