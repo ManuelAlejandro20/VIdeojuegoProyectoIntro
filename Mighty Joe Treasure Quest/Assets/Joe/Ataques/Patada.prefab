@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "da\xF1o": 40
   velocidad: 30
-  duracion: 0.25
+  duracion: 0.15
 --- !u!212 &212020062472563628
 SpriteRenderer:
   m_ObjectHideFlags: 1
