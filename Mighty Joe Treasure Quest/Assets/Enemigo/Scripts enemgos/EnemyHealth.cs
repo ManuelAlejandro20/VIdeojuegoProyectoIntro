@@ -9,9 +9,16 @@ public class EnemyHealth : MonoBehaviour {
 	public AudioClip[] efectos;
 	AudioSource au;
 
-	void Awake(){
-	
-		au = GetComponent<AudioSource> ();
+    GameObject jugador;
+    ProyectilComportamiento scriptcomportamiento;
+
+
+    void Awake(){
+
+        jugador = GameObject.FindGameObjectWithTag("Player");
+        scriptcomportamiento = jugador.GetComponent<ProyectilComportamiento>();
+
+        au = GetComponent<AudioSource> ();
 	
 	}
 
@@ -22,6 +29,8 @@ public class EnemyHealth : MonoBehaviour {
 
         if (col.tag == "Bullet" || col.tag == "Uppercut") {
 
+            col.transform.position = new Vector3(-1000, -1000, -6f);
+            scriptcomportamiento.agregar(col.gameObject);
             Proyectil proyectil = col.gameObject.GetComponent<Proyectil>();
             vidaenemigo -= proyectil.getdaño();
 			au.clip = efectos [0];

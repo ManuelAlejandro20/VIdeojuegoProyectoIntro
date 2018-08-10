@@ -42,13 +42,7 @@ public class ProyectilComportamiento : MonoBehaviour
         Proyectil scriptproyectil = proyectil.GetComponent<Proyectil>();
         yield return new WaitForSeconds(scriptproyectil.getduracion());
         proyectil.transform.position = new Vector3(-1000, -1000, -6f);
-        if (proyectil.name == "Puño(Clone)")
-        {
-            balas.Add(proyectil);
-        }
-        else {
-            patadas.Add(proyectil);
-        }
+        agregar(proyectil);
         
     }
 
@@ -89,6 +83,17 @@ public class ProyectilComportamiento : MonoBehaviour
 
         }
 
+    }
+
+    public void agregar(GameObject proyectil) {
+        if (proyectil.name == "Puño(Clone)")
+        {
+            balas.Add(proyectil);
+        }
+        else
+        {
+            patadas.Add(proyectil);
+        }
     }
 
 

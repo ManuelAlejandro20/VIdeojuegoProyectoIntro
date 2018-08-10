@@ -8,6 +8,12 @@ public class Proyectil : MonoBehaviour {
     public float velocidad;
     public float duracion;
 
+    
+
+    void Awake() {
+        
+    }
+
     public float getdaño() {
         return this.daño;
     }
@@ -19,4 +25,5 @@ public class Proyectil : MonoBehaviour {
     public float getvelocidad() {
         return this.velocidad;
     }
+
 }
