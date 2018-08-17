@@ -262,6 +262,33 @@ public class EnemigoSuelo : Enemigo {
 
 public class EnemigoVolador : Enemigo {
 
+    float velocidadflote = 1f;
+    enum estados { mirar, prepararse, atacar }
+    estados estadoactual;
+    float distancia;
+
+    Rigidbody2D rigidenemigo;
+    Rigidbody2D rigid;
+
+    Vector2 posinicial;
+    Vector2 poselevada;
+
+    Animator anim;
+
+    void Awake() {
+        estadoactual = estados.mirar;
+        GameObject jugador = GameObject.FindGameObjectWithTag("Player");
+        rigid = jugador.GetComponent<Rigidbody2D>();
+        rigidenemigo = GetComponent<Rigidbody2D>();
+        posinicial = rigidenemigo.position;
+        poselevada = posinicial + new Vector2(0f, 6f);
+        anim = GetComponent<Animator>();
+    }
+
+    void Update() {
+        IA_moviemiento();
+    }
+
     public override void inicializar(float vida, float daño, GameObject enemigo)
     {
         base.inicializar(vida, daño, enemigo);
@@ -271,7 +298,29 @@ public class EnemigoVolador : Enemigo {
 
     public override void IA_moviemiento()
     {
-        Debug.Log("AAAAAAAAAAAAAA");
+        distancia = Vector2.Distance(rigid.position, rigidenemigo.position);
+        switch (estadoactual) {
+            case estados.mirar:
+                if (distancia < 8f) {
+                    estadoactual = estados.prepararse;
+                }
+                break;
+            case estados.prepararse:
+                anim.SetBool("Normal",false);
+                anim.SetTrigger("Ataque");
+                rigidenemigo.position = Vector2.MoveTowards(rigidenemigo.position, poselevada, velocidadflote);
+                if (rigidenemigo.position == poselevada) {
+                    estadoactual = estados.atacar;
+                }
+                break;
+            case estados.atacar:
+                anim.SetTrigger("Ataque2");
+                break;
+            default:
+                break;
+            
+        }
+
     }
 
 }
