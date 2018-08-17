@@ -69,7 +69,10 @@ public class ProyectilComportamiento : MonoBehaviour
         AudioSource au = proyectil.GetComponent<AudioSource>();
         au.Play();
         SpriteRenderer spritebala = proyectil.GetComponent<SpriteRenderer>();
-        rb.position = rigid.position;
+        if (rigid != null)
+        {
+            rb.position = rigid.position;
+        }
         if (!sprite.flipX)
         {
             spritebala.flipX = false;

@@ -22,6 +22,12 @@ public class EnemyHealth : MonoBehaviour {
 	
 	}
 
+    void Update()
+    {
+
+
+    }
+
 
 
     /*Se detecta cuando el enemigo recibe un golpe o el Uppercut*/

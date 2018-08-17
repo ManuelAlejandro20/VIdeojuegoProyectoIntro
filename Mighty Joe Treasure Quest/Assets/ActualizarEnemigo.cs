@@ -1,23 +1,83 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-public class MovEne : MonoBehaviour
-{
 
-    public float velocidad;
+public class ActualizarEnemigo : MonoBehaviour {
+    AudioSource au;
 
+    void Awake() {
+        au = GetComponent<AudioSource>();
+    }
+    public void sonido()
+    {
+        au.Play();
+    }
+
+}
+
+public abstract class Enemigo : MonoBehaviour {
+
+    [SerializeField]protected float vida;
+    [SerializeField]protected float daño;
+    [SerializeField]protected GameObject enemigo;
+
+
+    public abstract void IA_moviemiento();
+
+    public virtual void inicializar(float vida, float daño, GameObject enemigo) {
+        this.vida = vida;
+        this.daño = daño;
+        this.enemigo = enemigo;
+    }
+
+    void FixedUpdate() {
+
+        if (vida <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public float getvida() {
+        return this.vida;
+    }
+
+    public float getdaño() {
+        return this.daño;
+    }
+
+    public void OnTriggerEnter2D(Collider2D col)
+    {
+        GameObject jugador = GameObject.FindGameObjectWithTag("Player");
+        ProyectilComportamiento proycomp = jugador.GetComponent<ProyectilComportamiento>();
+        if (col.tag == "Bullet")
+        {
+            col.transform.position = new Vector3(-1000, -1000, -6f);
+            proycomp.agregar(col.gameObject);
+            GameObject sonidos = GameObject.Find("AdminEnemigo");
+            AudioSource au = sonidos.GetComponent<AudioSource>();
+            Proyectil proyectil = col.gameObject.GetComponent<Proyectil>();
+            this.vida -= proyectil.getdaño();
+            au.Play();
+
+        }
+    }
+
+}
+
+public class EnemigoSuelo : Enemigo {
+
+    [SerializeField] float velocidad = 5f;
     enum states { patrullar, acercarce, atacar, mirar }
     states estadoactual;
-    GameObject jugador;
 
+    GameObject jugador;
     Rigidbody2D rigidenemigo;
     Rigidbody2D rigid;
     SpriteRenderer sprite;
-    //AudioClip[] efectos;
-    //EnemyHealth script;
-    //AudioSource au;
+
+
 
     Animator anim;
 
@@ -30,11 +90,14 @@ public class MovEne : MonoBehaviour
     float distancia;
     float tiempoataque;
 
+    public override void inicializar(float vida, float daño, GameObject enemigo)
+    {
+        base.inicializar(vida, daño, enemigo);
+      
+    }
+
     void Awake()
     {
-        //au = GetComponent<AudioSource>();
-        //script = GetComponent<EnemyHealth>();
-        //efectos = script.getefectos();
         jugador = GameObject.FindGameObjectWithTag("Player");
         rigidenemigo = GetComponent<Rigidbody2D>();
         rigid = jugador.GetComponent<Rigidbody2D>();
@@ -45,32 +108,24 @@ public class MovEne : MonoBehaviour
         estadoactual = states.patrullar;
     }
 
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-        IA();
+    void Update() {
+        IA_moviemiento();
     }
 
 
-    void IA()
+    public override void IA_moviemiento()
     {
-
         if (rigid != null && rigidenemigo != null)
         {
-            distancia = Vector2.Distance(new Vector2(rigidenemigo.position.x, 0f), new Vector2(rigid.position.x,0f));
-
+            //distancia = Vector2.Distance(new Vector2(rigidenemigo.position.x, 0f), new Vector2(rigid.position.x, 0f));
+            distancia = Vector2.Distance(rigid.position, rigidenemigo.position);
             switch (estadoactual)
             {
 
                 case states.acercarce:
 
                     anim.SetTrigger("Caminata");
-                    
+
                     rigidenemigo.position = Vector2.MoveTowards(rigidenemigo.position, rigid.position, velocidad * Time.deltaTime);
                     if (rigid.position.x > rigidenemigo.position.x)
                     {
@@ -86,7 +141,8 @@ public class MovEne : MonoBehaviour
                         estadoactual = states.atacar;
                     }
 
-                    else if (distancia > 10f) {
+                    else if (distancia > 10f)
+                    {
                         if (rigidenemigo.position.x > posicioninicial.x)
                         {
                             sprite.flipX = true;
@@ -94,25 +150,26 @@ public class MovEne : MonoBehaviour
                             moverseinicio = false;
                         }
 
-                        else {
+                        else
+                        {
 
                             sprite.flipX = false;
                             moversefinal = false;
                             moverseinicio = true;
 
                         }
-                        
+
                         estadoactual = states.patrullar;
                     }
-                      
+
 
                     break;
 
                 case states.atacar:
                     anim.SetTrigger("Ataque");
                     tiempoataque += Time.deltaTime;
-                 
-                    if (tiempoataque >= 1.5f)
+
+                    if (tiempoataque >= 1f)
                     {
                         estadoactual = states.mirar;
                         tiempoataque = 0f;
@@ -146,7 +203,7 @@ public class MovEne : MonoBehaviour
                         }
                     }
 
-                   
+
                     if (distancia <= 10f)
                     {
                         estadoactual = states.acercarce;
@@ -166,7 +223,8 @@ public class MovEne : MonoBehaviour
 
                     }
 
-                    else {
+                    else
+                    {
                         if (rigidenemigo.position.x > posicioninicial.x)
                         {
                             sprite.flipX = true;
@@ -195,19 +253,28 @@ public class MovEne : MonoBehaviour
             }
 
         }
-
-
     }
 
-    public void setvelocidad(float velocidad) {
-        this.velocidad = velocidad;
-    }
+    
 
-    /*public void sonidoataqueespada() {
-        au.clip = efectos[1];
-        au.Play();
-    }*/
-
- 
 
 }
+
+public class EnemigoVolador : Enemigo {
+
+    public override void inicializar(float vida, float daño, GameObject enemigo)
+    {
+        base.inicializar(vida, daño, enemigo);
+
+    }
+
+
+    public override void IA_moviemiento()
+    {
+        Debug.Log("AAAAAAAAAAAAAA");
+    }
+
+}
+
+
+

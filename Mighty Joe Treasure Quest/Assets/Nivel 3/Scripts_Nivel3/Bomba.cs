@@ -68,6 +68,9 @@ public class Bomba : MonoBehaviour {
             scriptvida.setvida(scriptvida.getvida() - 5f);
         }
 
+        if (col.gameObject.name == "SueloBarco") {
+            tiempo = 5f;
+        }
 
     }
 
@@ -90,6 +93,10 @@ public class Bomba : MonoBehaviour {
         }
 
 
+    }
+
+    public void settiempo(float tiempo) {
+        this.tiempo = tiempo;
     }
 
 }

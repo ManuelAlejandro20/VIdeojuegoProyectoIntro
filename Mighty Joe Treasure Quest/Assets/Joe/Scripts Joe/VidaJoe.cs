@@ -21,7 +21,7 @@ public class VidaJoe : MonoBehaviour {
     float tiempo;
 
     GameObject enemigo;
-    Movimientoenemigo scriptenemigo;
+    Enemigo scriptenemigo;
 
     GameObject barrera;
     Barrera barreramuerte;
@@ -180,7 +180,7 @@ public class VidaJoe : MonoBehaviour {
         if (col.gameObject.tag == "Enemy" && vidajoe > 0)
         {
             enemigo = col.gameObject;
-            scriptenemigo = enemigo.GetComponent<Movimientoenemigo>();
+            scriptenemigo = enemigo.GetComponent<Enemigo>();
 			au.clip = efectos [0];
 			au.Play ();
             anim.SetTrigger("daño");
