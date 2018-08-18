@@ -255,7 +255,12 @@ public class EnemigoSuelo : Enemigo {
         }
     }
 
-    
+    public void OnCollisionEnter2D(Collision2D colo) {
+        if (colo.gameObject.name == "Joe") {
+            posicioninicial = rigidenemigo.position;
+            posicionfinal = posicioninicial + new Vector2(-4f,0f);
+        }
+    }
 
 
 }
@@ -289,7 +294,7 @@ public class EnemigoVolador : Enemigo {
         rigidenemigo = GetComponent<Rigidbody2D>();
         posinicial = rigidenemigo.position;
         poselevada = posinicial + new Vector2(0f, 6f);
-        posfinal = poselevada + new Vector2(-9f,0f);
+        posfinal = poselevada + new Vector2(-13f,0f);
         posfinalsuelo = posfinal + new Vector2(0f, -6f);
         puntocontrol = posfinal + new Vector2(4f,-10f);
         sprite = GetComponent<SpriteRenderer>();
@@ -316,7 +321,7 @@ public class EnemigoVolador : Enemigo {
             switch (estadoactual)
             {
                 case estados.mirar:
-                    if (distancia < 8f)
+                    if (distancia < 12f)
                     {
                         anim.SetBool("Normal", false);
                         anim.SetBool("Alerta",true);

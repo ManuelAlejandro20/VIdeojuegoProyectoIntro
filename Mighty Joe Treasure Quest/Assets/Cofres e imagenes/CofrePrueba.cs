@@ -76,6 +76,20 @@ public class CofrePrueba : MonoBehaviour {
     {
         if (col.tag == "Player" && Input.GetKeyDown(KeyCode.UpArrow) && !abierto)
         {
+            GameObject jugador = col.gameObject;
+            VidaJoe scriptvida = jugador.GetComponent<VidaJoe>();
+            if (this.gameObject.name == "Cofre Hacha") {
+                scriptvida.setvida(100f);
+            }
+
+            else if (scriptvida.getvida() >= 70f)
+            {
+                scriptvida.setvida(100f);
+            }
+            else
+            {
+                scriptvida.setvida(scriptvida.getvida() + 30f);
+            }
             anim.SetBool("Abierto", true);
             abierto = true;
             mensaje = Instantiate(data.buscaritem(gettesoro()).mensaje, transform.position, Quaternion.identity);
