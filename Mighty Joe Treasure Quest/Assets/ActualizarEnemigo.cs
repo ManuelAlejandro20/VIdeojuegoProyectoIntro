@@ -298,29 +298,34 @@ public class EnemigoVolador : Enemigo {
 
     public override void IA_moviemiento()
     {
-        distancia = Vector2.Distance(rigid.position, rigidenemigo.position);
-        switch (estadoactual) {
-            case estados.mirar:
-                if (distancia < 8f) {
-                    estadoactual = estados.prepararse;
-                }
-                break;
-            case estados.prepararse:
-                anim.SetBool("Normal",false);
-                anim.SetTrigger("Ataque");
-                rigidenemigo.position = Vector2.MoveTowards(rigidenemigo.position, poselevada, velocidadflote);
-                if (rigidenemigo.position == poselevada) {
-                    estadoactual = estados.atacar;
-                }
-                break;
-            case estados.atacar:
-                anim.SetTrigger("Ataque2");
-                break;
-            default:
-                break;
-            
-        }
+        if (rigid != null && rigidenemigo != null)
+        {
+            distancia = Vector2.Distance(rigid.position, rigidenemigo.position);
+            switch (estadoactual)
+            {
+                case estados.mirar:
+                    if (distancia < 8f)
+                    {
+                        estadoactual = estados.prepararse;
+                    }
+                    break;
+                case estados.prepararse:
+                    anim.SetBool("Normal", false);
+                    anim.SetTrigger("Ataque");
+                    rigidenemigo.position = Vector2.MoveTowards(rigidenemigo.position, poselevada, velocidadflote);
+                    if (rigidenemigo.position == poselevada)
+                    {
+                        estadoactual = estados.atacar;
+                    }
+                    break;
+                case estados.atacar:
+                    anim.SetTrigger("Ataque2");
+                    break;
+                default:
+                    break;
 
+            }
+        }
     }
 
 }
