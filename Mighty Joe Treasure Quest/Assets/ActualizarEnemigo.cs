@@ -262,16 +262,22 @@ public class EnemigoSuelo : Enemigo {
 
 public class EnemigoVolador : Enemigo {
 
-    float velocidadflote = 1f;
-    enum estados { mirar, prepararse, atacar }
+    float velocidadflote = 6f;
+    enum estados { mirar, prepararse, atacar, descender }
     estados estadoactual;
     float distancia;
 
     Rigidbody2D rigidenemigo;
     Rigidbody2D rigid;
+    SpriteRenderer sprite;
 
     Vector2 posinicial;
     Vector2 poselevada;
+    Vector2 posfinal;
+    Vector2 posfinalsuelo;
+    Vector2 puntocontrol;
+
+    float count = 0.0f;
 
     Animator anim;
 
@@ -283,6 +289,10 @@ public class EnemigoVolador : Enemigo {
         rigidenemigo = GetComponent<Rigidbody2D>();
         posinicial = rigidenemigo.position;
         poselevada = posinicial + new Vector2(0f, 6f);
+        posfinal = poselevada + new Vector2(-9f,0f);
+        posfinalsuelo = posfinal + new Vector2(0f, -6f);
+        puntocontrol = posfinal + new Vector2(4f,-10f);
+        sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
     }
 
@@ -308,21 +318,65 @@ public class EnemigoVolador : Enemigo {
                 case estados.mirar:
                     if (distancia < 8f)
                     {
+                        anim.SetBool("Normal", false);
+                        anim.SetBool("Alerta",true);
                         estadoactual = estados.prepararse;
                     }
                     break;
                 case estados.prepararse:
-                    anim.SetBool("Normal", false);
-                    anim.SetTrigger("Ataque");
-                    rigidenemigo.position = Vector2.MoveTowards(rigidenemigo.position, poselevada, velocidadflote);
+                    
+                    rigidenemigo.position = Vector2.MoveTowards(rigidenemigo.position, poselevada, velocidadflote * Time.deltaTime);
                     if (rigidenemigo.position == poselevada)
                     {
+                        anim.SetBool("Ataque", true);
+                        anim.SetBool("Alerta", false);
                         estadoactual = estados.atacar;
                     }
                     break;
                 case estados.atacar:
-                    anim.SetTrigger("Ataque2");
+                    if (count < 1.0f)
+                    {
+                        count += 1.0f * Time.deltaTime;
+
+                        Vector2 m1 = Vector2.Lerp(poselevada, puntocontrol, count);
+                        Vector2 m2 = Vector2.Lerp(puntocontrol, posfinal, count);
+                        rigidenemigo.position = Vector2.Lerp(m1, m2, count);
+                    }
+                    if (rigidenemigo.position == posfinal) {
+                        count = 0f;
+                        estadoactual = estados.descender;
+                        anim.SetBool("Ataque", false);
+                        anim.SetBool("Alerta", true);
+                    }
+
                     break;
+
+                case estados.descender:
+                    rigidenemigo.position = Vector2.MoveTowards(rigidenemigo.position, posfinalsuelo, velocidadflote * Time.deltaTime);
+                    if (rigidenemigo.position == posfinalsuelo) {
+                        anim.SetBool("Normal", true);
+                        anim.SetBool("Alerta", false);
+                        if (sprite.flipX)
+                        {
+                            sprite.flipX = false;
+                        }
+                        else
+                        {
+                            sprite.flipX = true;
+                        }
+                        Vector2 aux = posfinalsuelo;
+                        posfinalsuelo = posinicial;
+                        posinicial = aux;
+                        aux = posfinal;
+                        posfinal = poselevada;
+                        poselevada = aux;
+                        estadoactual = estados.mirar;
+
+
+                    }
+
+                    break;
+
                 default:
                     break;
 
