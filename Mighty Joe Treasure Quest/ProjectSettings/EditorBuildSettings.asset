@@ -31,10 +31,10 @@ EditorBuildSettings:
     guid: 04db98776d88b6948bbcb66b1b461092
   - enabled: 1
     path: Assets/Nivel 2/Escenas/Escenario 5 2do nivel.unity
-    guid: ac05338c8d1613a4dafb2a3b79ad43a9
+    guid: 79ef21634bc62eb4d9dcde7431c6a631
   - enabled: 1
     path: Assets/Nivel 2/Escenas/Escenario 6 2do nivel.unity
-    guid: 7ac5446c3978bf34d86369e2f5e2f2c3
+    guid: 52eddb8e87580e44e920dd3a65b02da0
   - enabled: 1
     path: Assets/Nivel 3/Escenas Nivel 3/Escena 1 Nivel 3.unity
     guid: 9ff5b6f56e2c9fb4c8d61757cd1ebbcb
