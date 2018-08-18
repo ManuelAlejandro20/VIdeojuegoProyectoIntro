@@ -262,33 +262,6 @@ public class EnemigoSuelo : Enemigo {
 
 public class EnemigoVolador : Enemigo {
 
-    float velocidadflote = 1f;
-    enum estados { mirar, prepararse, atacar }
-    estados estadoactual;
-    float distancia;
-
-    Rigidbody2D rigidenemigo;
-    Rigidbody2D rigid;
-
-    Vector2 posinicial;
-    Vector2 poselevada;
-
-    Animator anim;
-
-    void Awake() {
-        estadoactual = estados.mirar;
-        GameObject jugador = GameObject.FindGameObjectWithTag("Player");
-        rigid = jugador.GetComponent<Rigidbody2D>();
-        rigidenemigo = GetComponent<Rigidbody2D>();
-        posinicial = rigidenemigo.position;
-        poselevada = posinicial + new Vector2(0f, 6f);
-        anim = GetComponent<Animator>();
-    }
-
-    void Update() {
-        IA_moviemiento();
-    }
-
     public override void inicializar(float vida, float daño, GameObject enemigo)
     {
         base.inicializar(vida, daño, enemigo);
@@ -298,6 +271,7 @@ public class EnemigoVolador : Enemigo {
 
     public override void IA_moviemiento()
     {
+<<<<<<< HEAD
         if (rigid != null && rigidenemigo != null)
         {
             distancia = Vector2.Distance(rigid.position, rigidenemigo.position);
@@ -326,6 +300,9 @@ public class EnemigoVolador : Enemigo {
 
             }
         }
+=======
+        Debug.Log("AAAAAAAAAAAAAA");
+>>>>>>> parent of 43f1595... Commit
     }
 
 }
