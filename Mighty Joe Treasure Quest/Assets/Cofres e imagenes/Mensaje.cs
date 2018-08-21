@@ -20,7 +20,7 @@ public class Mensaje : MonoBehaviour {
         //auimagen = GetComponent<AudioSource>();
         gomusica = GameObject.Find("Música");
         escena_actual = SceneManager.GetActiveScene().buildIndex;
-        if (escena_actual >= 1 && escena_actual <= 3)
+        if (escena_actual >= 1 && escena_actual <= 3 || escena_actual <=7 && escena_actual >= 4)
         {
             aunvl1 = gomusica.GetComponents<AudioSource>();
             au = null;

@@ -27,13 +27,6 @@ public class MusicaNivel1 : MonoBehaviour {
             }
         }
 
- 
-
-
-		
-		
-
-		
 	}
 
 	void Start () {
