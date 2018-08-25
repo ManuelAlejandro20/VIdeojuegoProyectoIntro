@@ -9275,7 +9275,6 @@ GameObject:
   - component: {fileID: 463223282}
   - component: {fileID: 463223281}
   - component: {fileID: 463223280}
-  - component: {fileID: 463223279}
   - component: {fileID: 463223278}
   m_Layer: 0
   m_Name: Main Camera
@@ -9297,27 +9296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personaje: {fileID: 1493234135}
   margen: 4
-  maxX: 172
+  maxX: 171.1
   minX: 40
   x: 1.3
   minY: 22
-  maxY: 22
-  y: 2
---- !u!114 &463223279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 463223277}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e5950e8c013534fb9040b7d9754a37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  personaje: {fileID: 1493234135}
-  margen: 4
-  maxX: 100
-  x: 1.3
   maxY: 22
   y: 2
 --- !u!81 &463223280
