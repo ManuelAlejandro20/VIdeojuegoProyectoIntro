@@ -7157,8 +7157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8f243d6e2de124fbae880672eb0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 509185320}
-  speed: 7
+  velocidad: 0
+  principio: {x: 0, y: 0, z: 0}
+  fin: {x: 0, y: 0, z: 0}
+  distancia: 0
 --- !u!61 &710190296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7327,8 +7329,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8f243d6e2de124fbae880672eb0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 49718111}
-  speed: 14
+  velocidad: 0
+  principio: {x: 0, y: 0, z: 0}
+  fin: {x: 0, y: 0, z: 0}
+  distancia: 0
 --- !u!61 &712106346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8909,8 +8913,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8f243d6e2de124fbae880672eb0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 409210718}
-  speed: 8
+  velocidad: 0
+  principio: {x: 0, y: 0, z: 0}
+  fin: {x: 0, y: 0, z: 0}
+  distancia: 0
 --- !u!114 &834607563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8925,6 +8931,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objetivo: {fileID: 409210717}
   velocidad: 8
+  plat: 0
 --- !u!61 &834607564
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13488,8 +13495,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8f243d6e2de124fbae880672eb0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 404191236}
-  speed: 14
+  velocidad: 0
+  principio: {x: 0, y: 0, z: 0}
+  fin: {x: 0, y: 0, z: 0}
+  distancia: 0
 --- !u!61 &1262912980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17378,8 +17387,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8f243d6e2de124fbae880672eb0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 1972810570}
-  speed: 8
+  velocidad: 0
+  principio: {x: 0, y: 0, z: 0}
+  fin: {x: 0, y: 0, z: 0}
+  distancia: 0
 --- !u!61 &1604967806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18460,8 +18471,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8f243d6e2de124fbae880672eb0f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetivo: {fileID: 1715914383}
-  speed: 10
+  velocidad: 0
+  principio: {x: 0, y: 0, z: 0}
+  fin: {x: 0, y: 0, z: 0}
+  distancia: 0
 --- !u!61 &1724095521
 BoxCollider2D:
   m_ObjectHideFlags: 0
