@@ -12,7 +12,7 @@ public class TrampaPlataformas : MonoBehaviour
     public bool direccion;
     public GameObject objetivo;
 
-    bool moverse;
+    public bool moverse;
 
     void Awake()
     {
