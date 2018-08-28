@@ -12,7 +12,7 @@ public class Pmovil : MonoBehaviour {
 
 	GameObject jugador;
 
-	bool plat;
+	public bool plat;
 
 	void Awake()
 	{
@@ -38,7 +38,7 @@ public class Pmovil : MonoBehaviour {
 
 		if (rigid != null)
 		{
-			rigid.position = Vector3.MoveTowards(rigid.position, rigid_objetivo.position, velocidad);
+			rigid.position = Vector2.MoveTowards(rigid.position, rigid_objetivo.position, velocidad);
 
 
 

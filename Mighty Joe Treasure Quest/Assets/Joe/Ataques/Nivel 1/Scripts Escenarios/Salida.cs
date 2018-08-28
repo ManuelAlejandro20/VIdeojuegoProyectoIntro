@@ -45,6 +45,7 @@ public class Salida : MonoBehaviour {
 			if (Input.GetKeyDown ("x")) {
 				imagen.enabled = false;
 				Time.timeScale = 1;
+
                 if (escena4) {
                     SceneManager.LoadScene(4);
 

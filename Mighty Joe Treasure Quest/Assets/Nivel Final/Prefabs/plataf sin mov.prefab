@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212718229062206508}
   - component: {fileID: 50894895003679310}
   - component: {fileID: 61770427662946686}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: plataf sin mov
   m_TagString: Untagged
   m_Icon: {fileID: 0}

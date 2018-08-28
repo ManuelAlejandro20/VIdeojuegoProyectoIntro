@@ -57,9 +57,10 @@ public class NivelSuperado : MonoBehaviour {
 
 	void Update () {
 
-		if (canvas.enabled && sonido) {
+        if (canvas.enabled && sonido) {
             at.eliminartesoros();
             scriptvida.setvida(100f);
+            scriptvida.setvida1up(scriptvida.getvida1up() + 1);
             au.Play();
             if (au_gameobject_musica2 == null)
             {
