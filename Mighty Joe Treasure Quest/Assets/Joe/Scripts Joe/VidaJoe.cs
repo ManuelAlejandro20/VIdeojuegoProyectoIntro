@@ -162,7 +162,7 @@ public class VidaJoe : MonoBehaviour
         if (Physics2D.GetIgnoreLayerCollision(0, 0))
         {
             tiempobox += Time.deltaTime;
-            if (tiempobox >= 2.0f)
+            if (tiempobox >= 1.2f)
             {
                 Physics2D.IgnoreLayerCollision(0, 0, false);
                 tiempobox = 0f;
@@ -209,12 +209,25 @@ public class VidaJoe : MonoBehaviour
                 vidajoe -= scriptenemigo.getdaño();
             }
         }
-        //la barra de vida sera reducida segun el daño
-        else if (col.gameObject.tag == "Barrera" && vidajoe > 0)
+        //la barra de vida será reducida según el daño
+        if (col.gameObject.tag == "Barrera" && vidajoe > 0)
         {
             barrera = col.gameObject;
             barreramuerte = barrera.GetComponent<Barrera>();
             vidajoe -= barreramuerte.getdaño();
+        }
+
+        if (col.gameObject.name == "Proyectil(Clone)") {
+            GameObject proyectil = col.gameObject;
+            Proyectil scriptproyectil = proyectil.GetComponent<Proyectil>();
+            vidajoe -= scriptproyectil.getdaño();
+        }
+
+        if (col.gameObject.name == "Hueso")
+        {
+            GameObject proyectil = col.gameObject;
+            VidaJefeFinal script = proyectil.GetComponentInParent<VidaJefeFinal>();
+            vidajoe -= script.getDañoHueso();
         }
 
     }

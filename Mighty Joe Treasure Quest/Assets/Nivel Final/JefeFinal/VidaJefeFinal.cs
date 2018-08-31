@@ -12,7 +12,6 @@ public class VidaJefeFinal : MonoBehaviour {
     [SerializeField] GameObject lanzaproyectiles;
 
     Rigidbody2D rigid;
-    GameObject jugador;
     Animator anim;
     JefeFinal scriptjf;
 
@@ -21,7 +20,6 @@ public class VidaJefeFinal : MonoBehaviour {
     public List<GameObject> Proyectil = new List<GameObject>();
 
     void Awake () {
-        jugador = GameObject.FindGameObjectWithTag("Player");
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         scriptjf = GetComponent<JefeFinal>();
@@ -47,7 +45,7 @@ public class VidaJefeFinal : MonoBehaviour {
         if (col.gameObject.tag == "Player") {
             GameObject jugador = col.gameObject;
             VidaJoe scriptvida = jugador.GetComponent<VidaJoe>();
-            scriptvida.setvida(scriptvida.getvida() - 30f);
+            scriptvida.setvida(scriptvida.getvida() - 20f);
 
         }
     }
@@ -62,7 +60,8 @@ public class VidaJefeFinal : MonoBehaviour {
             proycomp.agregar(colo.gameObject);
             Proyectil proyectil = colo.gameObject.GetComponent<Proyectil>();
             vida -= proyectil.getdaño();
-
+            ParticleSystem particleSystem = GetComponent<ParticleSystem>();
+            particleSystem.Play();
             if (vida < 0) {
                 Destroy(this.gameObject);
             }
@@ -103,5 +102,9 @@ public class VidaJefeFinal : MonoBehaviour {
         //rb.position = Vector2.MoveTowards(rb.position, jugador.GetComponent<Rigidbody2D>().position, scriptproyectil.getvelocidad());
 
 
+    }
+
+    public float getDañoHueso() {
+        return this.dañohueso;
     }
 }

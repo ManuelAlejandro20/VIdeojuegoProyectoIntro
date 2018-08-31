@@ -126,7 +126,6 @@ GameObject:
   - component: {fileID: 44114606}
   - component: {fileID: 44114605}
   - component: {fileID: 44114609}
-  - component: {fileID: 44114611}
   - component: {fileID: 44114610}
   m_Layer: 0
   m_Name: Jefe
@@ -146,6 +145,7 @@ Transform:
   m_LocalScale: {x: 18.226828, y: 16.947227, z: 1}
   m_Children:
   - {fileID: 1450429543}
+  - {fileID: 1588404062}
   m_Father: {fileID: 444954980}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -291,31 +291,6 @@ MonoBehaviour:
   total: 5
   lanzaproyectiles: {fileID: 1450429542}
   Proyectil: []
---- !u!61 &44114611
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 44114603}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.565}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 0.96, y: 1.04}
-    newSize: {x: 0.1, y: 0.13}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.96, y: 1.13}
-  m_EdgeRadius: 0
 --- !u!4 &61608591 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4547435799584280, guid: d4306cd0825e1964fa569a1cbfd60440,
@@ -2035,7 +2010,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1450429542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.405, y: 0.286, z: 0}
+  m_LocalPosition: {x: -0.464, y: 0.148, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 44114604}
@@ -2113,6 +2088,50 @@ RectTransform:
   m_AnchoredPosition: {x: -283.52, y: -174.88}
   m_SizeDelta: {x: 22.42, y: 71.89}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1588404061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1588404062}
+  - component: {fileID: 1588404063}
+  m_Layer: 0
+  m_Name: Hueso
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1588404062
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588404061}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.44, y: 0.918, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 44114604}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &1588404063
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1588404061}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &1618522153
 GameObject:
   m_ObjectHideFlags: 0

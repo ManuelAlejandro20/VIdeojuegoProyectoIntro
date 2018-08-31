@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f6060417cfb639d4fb7edcf6673db0d0
-timeCreated: 1535736609
+timeCreated: 1535742090
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -880,9 +880,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 793
-        y: 1530
-        width: 7
-        height: 7
+        y: 1528
+        width: 33
+        height: 19
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -904,41 +904,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Final_boss_45
-      rect:
-        serializedVersion: 2
-        x: 878
-        y: 1533
-        width: 7
-        height: 7
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
       name: Final_boss_46
       rect:
         serializedVersion: 2
-        x: 887
+        x: 878
         y: 1528
-        width: 27
+        width: 36
         height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_47
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 1539
-        width: 4
-        height: 5
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -949,24 +921,10 @@ TextureImporter:
       name: Final_boss_48
       rect:
         serializedVersion: 2
-        x: 928
+        x: 925
         y: 1526
-        width: 33
+        width: 39
         height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_49
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 1539
-        width: 4
-        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -977,10 +935,10 @@ TextureImporter:
       name: Final_boss_50
       rect:
         serializedVersion: 2
-        x: 990
+        x: 975
         y: 1523
-        width: 8
-        height: 8
+        width: 32
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -991,10 +949,10 @@ TextureImporter:
       name: Final_boss_51
       rect:
         serializedVersion: 2
-        x: 1035
+        x: 1017
         y: 1522
-        width: 8
-        height: 8
+        width: 35
+        height: 21
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1033,10 +991,10 @@ TextureImporter:
       name: Final_boss_54
       rect:
         serializedVersion: 2
-        x: 1143
+        x: 1127
         y: 1527
-        width: 11
-        height: 9
+        width: 27
+        height: 20
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1104,9 +1062,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1315
-        y: 1528
-        width: 5
-        height: 6
+        y: 1524
+        width: 37
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1117,96 +1075,12 @@ TextureImporter:
       name: Final_boss_60
       rect:
         serializedVersion: 2
-        x: 1388
-        y: 1534
-        width: 5
-        height: 7
+        x: 1360
+        y: 1523
+        width: 33
+        height: 18
       alignment: 7
       pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_61
-      rect:
-        serializedVersion: 2
-        x: 1388
-        y: 1534
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_62
-      rect:
-        serializedVersion: 2
-        x: 793
-        y: 1530
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_63
-      rect:
-        serializedVersion: 2
-        x: 990
-        y: 1523
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_64
-      rect:
-        serializedVersion: 2
-        x: 1143
-        y: 1527
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_65
-      rect:
-        serializedVersion: 2
-        x: 1315
-        y: 1528
-        width: 5
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Final_boss_66
-      rect:
-        serializedVersion: 2
-        x: 1035
-        y: 1522
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
