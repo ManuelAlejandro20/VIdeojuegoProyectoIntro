@@ -102,4 +102,12 @@ public class JefeFinal : MonoBehaviour {
                 break;
         }
     }
+
+    public void setVelocidad(float velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public float getVelocidad() {
+        return this.velocidad;
+    }
 }
