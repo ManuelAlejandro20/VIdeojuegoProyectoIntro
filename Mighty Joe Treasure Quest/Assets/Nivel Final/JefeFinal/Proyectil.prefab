@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d69292d0b960a524f9318672e481d44e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "da\xF1o": 35
-  velocidad: 10
+  "da\xF1o": 15
+  velocidad: 18
   duracion: 1
 --- !u!212 &212816747428064198
 SpriteRenderer:

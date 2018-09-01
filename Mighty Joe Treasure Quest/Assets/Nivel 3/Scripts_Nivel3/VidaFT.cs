@@ -77,7 +77,7 @@ public class VidaFT : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D colo)
     {
 
-        if (colo.tag == "Bullet" || colo.tag == "Uppercut")
+        if (colo.tag == "Bullet")
         {
             au[3].Play();
             jugador = GameObject.FindGameObjectWithTag("Player");
@@ -96,6 +96,19 @@ public class VidaFT : MonoBehaviour
 
             }
 
+        }
+
+        if (colo.tag == "Uppercut") {
+            GameObject sonidos = GameObject.Find("Sonidos");
+            AudioSource[] au = sonidos.GetComponents<AudioSource>();
+            au[2].Play();
+            vida -= 100f;
+            if (vida <= 0)
+            {
+                muerte = true;
+                muerto = muerte;
+
+            }
         }
 
         if (colo.name == "ExplosionBomba")

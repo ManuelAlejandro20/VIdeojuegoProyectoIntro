@@ -20,12 +20,11 @@ public class MoJoe : MonoBehaviour {
     AnimatorStateInfo animatorInfo;
     Rigidbody2D rigid;
     Animator anim;
-
+    float tiempobox;
 
     public LayerMask capasuelo;
     public GameObject proyectilprefab;
     public GameObject puñoprefab;
-    public GameObject uppercutprefab;
     
     void Awake() {
 
@@ -251,12 +250,25 @@ public class MoJoe : MonoBehaviour {
         Instantiate(puñoprefab, transform.position, Quaternion.identity);
     }
 
-    void uppercut()
-    { 
-        Instantiate(uppercutprefab, transform.position, Quaternion.identity);
-    }
-		
+    void Uppercut()
+    {
+        if (Physics2D.GetIgnoreLayerCollision(0, 0))
+        {
+            tiempobox += Time.deltaTime;
+            if (tiempobox >= 0.5f)
+            {
+                Physics2D.IgnoreLayerCollision(0, 0, false);
+                tiempobox = 0f;
+            }
+        }
 
-		
+        else
+        {
+            Physics2D.IgnoreLayerCollision(0, 0);
+        }
+    }
+
+
+
 
 }

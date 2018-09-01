@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AdminEnemigos : MonoBehaviour {
 
+    public List<AudioClip> audios = new List<AudioClip>();
+
     public List<GameObject> go_enemigos = new List<GameObject>();
     public List<EnemigoSuelo> lista_enemigos = new List<EnemigoSuelo>();
     public List<EnemigoVolador> lista_enemigosvoladores = new List<EnemigoVolador>();
@@ -31,4 +33,9 @@ public class AdminEnemigos : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public List<AudioClip> getAudios()
+    {
+        return this.audios;
+    }
 }

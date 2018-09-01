@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 public class ActualizarEnemigo : MonoBehaviour {
+
     AudioSource au;
 
     void Awake() {
@@ -13,6 +14,8 @@ public class ActualizarEnemigo : MonoBehaviour {
     {
         au.Play();
     }
+
+    
 
 }
 
@@ -51,17 +54,27 @@ public abstract class Enemigo : MonoBehaviour {
     {
         GameObject jugador = GameObject.FindGameObjectWithTag("Player");
         ProyectilComportamiento proycomp = jugador.GetComponent<ProyectilComportamiento>();
+        GameObject sonidos = GameObject.Find("AdminEnemigo");
+        AdminEnemigos scriptadmin = sonidos.GetComponent<AdminEnemigos>();
+        AudioSource au = sonidos.GetComponent<AudioSource>();
         if (col.tag == "Bullet")
         {
             col.transform.position = new Vector3(-1000, -1000, -6f);
             proycomp.agregar(col.gameObject);
-            GameObject sonidos = GameObject.Find("AdminEnemigo");
-            AudioSource au = sonidos.GetComponent<AudioSource>();
+
             Proyectil proyectil = col.gameObject.GetComponent<Proyectil>();
             this.vida -= proyectil.getdaño();
+            au.clip = scriptadmin.getAudios()[0];
             au.Play();
 
         }
+
+        if (col.tag == "Uppercut") {
+            au.clip = scriptadmin.getAudios()[1];
+            au.Play();
+            this.vida -= 80f;
+        }
+
     }
 
 }

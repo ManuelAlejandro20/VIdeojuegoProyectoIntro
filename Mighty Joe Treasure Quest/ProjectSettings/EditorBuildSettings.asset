@@ -9,14 +9,14 @@ EditorBuildSettings:
     path: Assets/MainScene.unity
     guid: e7b1ae171306a8641b8c44efb5c8da36
   - enabled: 1
-    path: Assets/Joe/Ataques/Nivel 1/escenas nivel 1/Escenario 1 1er nivel.unity
-    guid: 77a7538f893beae409683cb185b60983
+    path: Assets/Nivel 1/escenas nivel 1/Escenario 1 1er nivel.unity
+    guid: 25c808b7a58de5d48a5b23373b7e4168
   - enabled: 1
-    path: Assets/Joe/Ataques/Nivel 1/escenas nivel 1/Escenario 2 1er nivel.unity
-    guid: bd63159968b3d6c4f807e2c2498cc780
+    path: Assets/Nivel 1/escenas nivel 1/Escenario 2 1er nivel.unity
+    guid: 33ad71f8f6be96449a02172f2f071ad0
   - enabled: 1
-    path: Assets/Joe/Ataques/Nivel 1/escenas nivel 1/Escenario 3 1er nivel.unity
-    guid: 4e72c03bf7cc6624096a2d984969ce72
+    path: Assets/Nivel 1/escenas nivel 1/Escenario 3 1er nivel.unity
+    guid: 852b35dafbe90754d930b61d82cc8f2d
   - enabled: 1
     path: Assets/Nivel 2/Escenas/Escenario 1 2do nivel.unity
     guid: 5d99e4e443b3c864188639a20c7c68f3

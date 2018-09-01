@@ -16,10 +16,12 @@ public class VidaJefeFinal : MonoBehaviour {
     JefeFinal scriptjf;
 
     bool aux = false;
+    float vidaini;
 
     public List<GameObject> Proyectil = new List<GameObject>();
 
     void Awake () {
+        vidaini = vida;
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         scriptjf = GetComponent<JefeFinal>();
@@ -34,7 +36,7 @@ public class VidaJefeFinal : MonoBehaviour {
     }
 	
 	void Update () {
-        if (vida < 50f && !aux) {
+        if (vida < (vidaini / 2) && !aux) {
             scriptjf.setVelocidad(scriptjf.getVelocidad() * 2);
             anim.speed = 3f;
             aux = true;
@@ -51,7 +53,7 @@ public class VidaJefeFinal : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D colo) {
-        if (colo.tag == "Bullet" || colo.tag == "Uppercut")
+        if (colo.tag == "Bullet")
         {
             GameObject jugador = GameObject.FindGameObjectWithTag("Player");
             ProyectilComportamiento proycomp = jugador.GetComponent<ProyectilComportamiento>();
@@ -63,6 +65,15 @@ public class VidaJefeFinal : MonoBehaviour {
             ParticleSystem particleSystem = GetComponent<ParticleSystem>();
             particleSystem.Play();
             if (vida < 0) {
+                Destroy(this.gameObject);
+            }
+
+        }
+
+        if (colo.tag == "Uppercut") {
+            vida -= 100f;
+            if (vida < 0)
+            {
                 Destroy(this.gameObject);
             }
 
