@@ -17,8 +17,12 @@ public class JefeFinal : MonoBehaviour {
     int num = -1;
     int ataque;
     float tiempoataque = 0f;
+    VidaJefeFinal scriptvida;
 
 	void Awake () {
+
+        Time.timeScale = 1;
+        scriptvida = GetComponent<VidaJefeFinal>();
         anim = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         inicio = rigid.position;
@@ -45,8 +49,15 @@ public class JefeFinal : MonoBehaviour {
                 }
                 rigid.position = Vector2.MoveTowards(rigid.position, posicionesfin[num], velocidad * Time.deltaTime);
                 if (rigid.position == posicionesfin[num]) {
-                    ataque = Random.Range(0, 4);
-                    if (ataque == 0)
+                    if (scriptvida.getVida() <= (scriptvida.getVidaIni() / 2))
+                    {
+                        ataque = Random.Range(0, 6);
+                    }
+                    else {
+                        ataque = Random.Range(0, 4);
+                    }
+                    
+                    if (ataque != 1 && ataque != 2)
                     {
                         estado = estados.haciainicio;
                     }
@@ -62,8 +73,15 @@ public class JefeFinal : MonoBehaviour {
                 rigid.position = Vector2.MoveTowards(rigid.position, inicio, velocidad * Time.deltaTime);
                 if (rigid.position == inicio) {
                     num = -1;
-                    ataque = Random.Range(0, 4);
-                    if (ataque == 0)
+                    if (scriptvida.getVida() <= scriptvida.getVidaIni() / 2)
+                    {
+                        ataque = Random.Range(0, 6);
+                    }
+                    else
+                    {
+                        ataque = Random.Range(0, 4);
+                    }
+                    if (ataque != 1 && ataque != 2)
                     {
                         estado = estados.haciafinal;
                     }

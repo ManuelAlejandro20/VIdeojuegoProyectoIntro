@@ -56,11 +56,6 @@ public class VidaJoe : MonoBehaviour
         textovidas.text = "x " + (vidas - 1);
         canvasgameover = terminojuego.GetComponent<Canvas>();
         escenaactual = SceneManager.GetActiveScene().buildIndex;
-        /*if (SceneManager.GetActiveScene().buildIndex == 3) {
-            NS = GameObject.Find("NivelSuperado");
-            scriptNS = NS.GetComponent<NivelSuperado>();
-            canvasNS = scriptNS.GetComponent<Canvas>();
-        }*/
 
     }
 
@@ -94,9 +89,12 @@ public class VidaJoe : MonoBehaviour
 
                 rigid.AddForce(new Vector2(36f, 6f), ForceMode2D.Impulse);
             }
+
+            Destroy(box);
             Destroy(rigid);
             Destroy(script);
-            Destroy(box);
+            
+
         }
 
 
@@ -265,5 +263,23 @@ public class VidaJoe : MonoBehaviour
 
         vidas = numvidas;
 
+    }
+
+    void Uppercut()
+    {
+        if (Physics2D.GetIgnoreLayerCollision(0, 0))
+        {
+            tiempobox += Time.deltaTime;
+            if (tiempobox >= 0.5f)
+            {
+                Physics2D.IgnoreLayerCollision(0, 0, false);
+                tiempobox = 0f;
+            }
+        }
+
+        else
+        {
+            Physics2D.IgnoreLayerCollision(0, 0);
+        }
     }
 }

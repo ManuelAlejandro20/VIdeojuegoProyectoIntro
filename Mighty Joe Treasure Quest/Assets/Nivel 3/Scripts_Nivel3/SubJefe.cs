@@ -228,35 +228,4 @@ public class SubJefe : MonoBehaviour
         }
     }
 
-
-
-
-
-    /*public void uno()
-    {
-        pol[0].enabled = true;
-        pol[3].enabled = false;
-    }
-
-    public void dos()
-    {
-        pol[1].enabled = true;
-        pol[0].enabled = false;
-
-    }
-
-    public void tres()
-    {
-        pol[2].enabled = true;
-        pol[1].enabled = false;
-
-    }
-
-    public void cuatro()
-    {
-        pol[3].enabled = true;
-        pol[2].enabled = false;
-
-    }
-    */
 }

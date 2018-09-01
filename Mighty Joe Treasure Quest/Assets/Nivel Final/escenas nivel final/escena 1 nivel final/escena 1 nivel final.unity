@@ -718,6 +718,10 @@ Prefab:
       propertyPath: m_Size.y
       value: 1.2705843
       objectReference: {fileID: 0}
+    - target: {fileID: 1965047505754844, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
   m_IsPrefabParent: 0
@@ -2085,6 +2089,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1279472936765482, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61985485736084244, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
@@ -3101,7 +3109,7 @@ GameObject:
   - component: {fileID: 641760492}
   - component: {fileID: 641760491}
   - component: {fileID: 641760490}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BarreraDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3322,6 +3330,10 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 9.619618
       objectReference: {fileID: 0}
+    - target: {fileID: 1965047505754844, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
   m_IsPrefabParent: 0
@@ -3395,6 +3407,10 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 1.2627853
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965047505754844, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
@@ -3660,7 +3676,7 @@ GameObject:
   - component: {fileID: 752468556}
   - component: {fileID: 752468555}
   - component: {fileID: 752468554}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BarreraIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3799,7 +3815,7 @@ GameObject:
   - component: {fileID: 757819046}
   - component: {fileID: 757819045}
   - component: {fileID: 757819044}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BarreraAbajo
   m_TagString: Barrera
   m_Icon: {fileID: 0}
@@ -4232,6 +4248,10 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 1.2832164
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965047505754844, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
@@ -5706,6 +5726,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1279472936765482, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61985485736084244, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
@@ -6898,6 +6922,10 @@ Prefab:
       propertyPath: m_FlipY
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1965047505754844, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
   m_IsPrefabParent: 0
@@ -7944,6 +7972,10 @@ Prefab:
         type: 2}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1965047505754844, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0bea44bcf28bf94dba1656668c36e10, type: 2}
@@ -9334,6 +9366,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1279472936765482, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61985485736084244, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
@@ -9524,6 +9560,10 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1279472936765482, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61985485736084244, guid: 83951185fe9b55b4f93fb73bfe88a247, type: 2}

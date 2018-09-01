@@ -72,18 +72,19 @@ public class ProyectilComportamiento : MonoBehaviour
         if (rigid != null)
         {
             rb.position = rigid.position;
-        }
-        if (!sprite.flipX)
-        {
-            spritebala.flipX = false;
-            rb.velocity = new Vector2(scriptproyectil.getvelocidad(), rigid.velocity.y);
-        }
-        else
-        {
 
-            spritebala.flipX = true;
-            rb.velocity = new Vector2(-scriptproyectil.getvelocidad(), rigid.velocity.y);
+            if (!sprite.flipX)
+            {
+                spritebala.flipX = false;
+                rb.velocity = new Vector2(scriptproyectil.getvelocidad(), rigid.velocity.y);
+            }
+            else
+            {
 
+                spritebala.flipX = true;
+                rb.velocity = new Vector2(-scriptproyectil.getvelocidad(), rigid.velocity.y);
+
+            }
         }
 
     }

@@ -14,6 +14,7 @@ public class VidaJefeFinal : MonoBehaviour {
     Rigidbody2D rigid;
     Animator anim;
     JefeFinal scriptjf;
+    AudioSource au;
 
     bool aux = false;
     float vidaini;
@@ -25,6 +26,7 @@ public class VidaJefeFinal : MonoBehaviour {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         scriptjf = GetComponent<JefeFinal>();
+        
 
         for (int i = 0; i < total; i++)
         {
@@ -37,7 +39,7 @@ public class VidaJefeFinal : MonoBehaviour {
 	
 	void Update () {
         if (vida < (vidaini / 2) && !aux) {
-            scriptjf.setVelocidad(scriptjf.getVelocidad() * 2);
+            scriptjf.setVelocidad(scriptjf.getVelocidad() + 5);
             anim.speed = 3f;
             aux = true;
         }
@@ -53,8 +55,11 @@ public class VidaJefeFinal : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D colo) {
+        GameObject sonidos = GameObject.Find("Sonidos");
+        AudioSource[] au = sonidos.GetComponents<AudioSource>();
         if (colo.tag == "Bullet")
         {
+            au[1].Play();
             GameObject jugador = GameObject.FindGameObjectWithTag("Player");
             ProyectilComportamiento proycomp = jugador.GetComponent<ProyectilComportamiento>();
 
@@ -62,8 +67,6 @@ public class VidaJefeFinal : MonoBehaviour {
             proycomp.agregar(colo.gameObject);
             Proyectil proyectil = colo.gameObject.GetComponent<Proyectil>();
             vida -= proyectil.getdaño();
-            ParticleSystem particleSystem = GetComponent<ParticleSystem>();
-            particleSystem.Play();
             if (vida < 0) {
                 Destroy(this.gameObject);
             }
@@ -71,6 +74,9 @@ public class VidaJefeFinal : MonoBehaviour {
         }
 
         if (colo.tag == "Uppercut") {
+           
+            
+            au[0].Play();
             vida -= 100f;
             if (vida < 0)
             {
@@ -78,6 +84,9 @@ public class VidaJefeFinal : MonoBehaviour {
             }
 
         }
+
+        ParticleSystem particleSystem = GetComponent<ParticleSystem>();
+        particleSystem.Play();
     }
 
     void UsarProyectil() {
@@ -101,6 +110,7 @@ public class VidaJefeFinal : MonoBehaviour {
 
     void proyectil_comportamiento(GameObject proyectil)
     {
+        au = proyectil.GetComponent<AudioSource>();
         Rigidbody2D rb = proyectil.GetComponent<Rigidbody2D>();
         Proyectil scriptproyectil = proyectil.GetComponent<Proyectil>();
         
@@ -111,11 +121,19 @@ public class VidaJefeFinal : MonoBehaviour {
         }
         rb.velocity = new Vector2(-scriptproyectil.getvelocidad() - 5f, -scriptproyectil.getvelocidad() + 5f);
         //rb.position = Vector2.MoveTowards(rb.position, jugador.GetComponent<Rigidbody2D>().position, scriptproyectil.getvelocidad());
-
+        au.Play();
 
     }
 
     public float getDañoHueso() {
         return this.dañohueso;
+    }
+
+    public float getVidaIni() {
+        return this.vidaini;
+    }
+
+    public float getVida() {
+        return this.vida;
     }
 }
