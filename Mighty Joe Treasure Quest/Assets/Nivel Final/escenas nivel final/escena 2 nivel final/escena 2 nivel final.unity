@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c187114d0a07c7428825080d0b97352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 2500
+  vida: 2000
   "da\xF1ohueso": 35
   prefabproyectil: {fileID: 1680664807215434, guid: 46e981474669b7e4abbd79a737142710,
     type: 2}
@@ -5573,7 +5573,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 93dbb75152f545245ac6e2c75e1076f7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.55
+  m_Volume: 0.32
   m_Pitch: 1
   Loop: 1
   Mute: 0

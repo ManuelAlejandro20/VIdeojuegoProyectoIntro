@@ -61,14 +61,6 @@ public class AdminTesoros : MonoBehaviour {
             cp[i].setbool(abierto[i]);
         }
 
-        /*if (inventario[2] != -1) {
-            for (int i=0; i<3; i++) {
-                Debug.Log(inventario[i]);
-            }
-        }*/
-
-
-
         if (scriptvida.getvida1up() == 0) {
             max = false;
             eliminartesoros();
@@ -90,7 +82,6 @@ public class AdminTesoros : MonoBehaviour {
 
             }
 
-            
             if (Time.timeScale == 0)
             {
                 for (int i = 0; i < 3; i++)

@@ -66,7 +66,7 @@ public class VidaJefeFinal : MonoBehaviour {
             colo.transform.position = new Vector3(-1000, -1000, -6f);
             proycomp.agregar(colo.gameObject);
             Proyectil proyectil = colo.gameObject.GetComponent<Proyectil>();
-            vida -= proyectil.getdaño();
+            vida -= proyectil.getdaño() * 2;
             if (vida < 0) {
                 Destroy(this.gameObject);
             }
