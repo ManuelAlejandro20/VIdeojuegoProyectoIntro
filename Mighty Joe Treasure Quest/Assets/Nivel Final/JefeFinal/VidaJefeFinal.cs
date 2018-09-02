@@ -10,11 +10,16 @@ public class VidaJefeFinal : MonoBehaviour {
 
     [SerializeField] int total;
     [SerializeField] GameObject lanzaproyectiles;
+    [SerializeField] GameObject puertasalida;
 
+    public List<GameObject> particulas;
     Rigidbody2D rigid;
     Animator anim;
     JefeFinal scriptjf;
     AudioSource au;
+
+    GameObject sonidos;
+    AudioSource[] aus;
 
     bool aux = false;
     float vidaini;
@@ -22,6 +27,8 @@ public class VidaJefeFinal : MonoBehaviour {
     public List<GameObject> Proyectil = new List<GameObject>();
 
     void Awake () {
+        sonidos = GameObject.Find("Sonidos");
+        aus = sonidos.GetComponents<AudioSource>();
         vidaini = vida;
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -43,6 +50,13 @@ public class VidaJefeFinal : MonoBehaviour {
             anim.speed = 3f;
             aux = true;
         }
+
+        if (vida < 0 && !aus[2].isPlaying) {
+            aus[2].Play();
+        }
+
+       
+
 	}
 
     public void OnCollisionEnter2D(Collision2D col) {
@@ -55,11 +69,9 @@ public class VidaJefeFinal : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D colo) {
-        GameObject sonidos = GameObject.Find("Sonidos");
-        AudioSource[] au = sonidos.GetComponents<AudioSource>();
         if (colo.tag == "Bullet")
         {
-            au[1].Play();
+            aus[1].Play();
             GameObject jugador = GameObject.FindGameObjectWithTag("Player");
             ProyectilComportamiento proycomp = jugador.GetComponent<ProyectilComportamiento>();
 
@@ -67,21 +79,29 @@ public class VidaJefeFinal : MonoBehaviour {
             proycomp.agregar(colo.gameObject);
             Proyectil proyectil = colo.gameObject.GetComponent<Proyectil>();
             vida -= proyectil.getdaño() * 2;
-            if (vida < 0) {
-                Destroy(this.gameObject);
-            }
 
         }
 
         if (colo.tag == "Uppercut") {
            
             
-            au[0].Play();
+            aus[0].Play();
             vida -= 100f;
-            if (vida < 0)
-            {
-                Destroy(this.gameObject);
+
+
+        }
+
+        if (vida < 0) {
+            
+            GameObject musica = GameObject.Find("Música");
+            Destroy(musica);
+            puertasalida.SetActive(true);
+            Destroy(scriptjf);
+            Destroy(anim);
+            foreach (GameObject gm in particulas) {
+                gm.SetActive(true);
             }
+            StartCoroutine(Muerte());
 
         }
 
@@ -123,6 +143,12 @@ public class VidaJefeFinal : MonoBehaviour {
         //rb.position = Vector2.MoveTowards(rb.position, jugador.GetComponent<Rigidbody2D>().position, scriptproyectil.getvelocidad());
         au.Play();
 
+    }
+
+    IEnumerator Muerte() {
+        yield return new WaitForSeconds(3f);
+        aus[3].Play();
+        Destroy(this.gameObject);
     }
 
     public float getDañoHueso() {

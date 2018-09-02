@@ -33,6 +33,10 @@ public class Confirmador_escenas : MonoBehaviour {
 
         escena_actual = SceneManager.GetActiveScene().buildIndex;
 
+        if (escena_actual == 0)
+        {
+            Destroy(this.gameObject);
+        }
 
         if (jugador == null) {
             jugador = GameObject.FindGameObjectWithTag("Player");
@@ -58,6 +62,8 @@ public class Confirmador_escenas : MonoBehaviour {
         {
             cambiar_escena = false;
         }
+
+        
 
         posicionjoe();
 

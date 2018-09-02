@@ -19,6 +19,7 @@ public class AdminTesoros : MonoBehaviour {
     string[] lineas;
 
     static List<bool> abierto = new List<bool>();
+    List<bool> abiertoaux = new List<bool>();
     public GameObject[] tesorosencontrados;
     public GameObject imagentesoro;
     static int[] inventario = new int[3] { -1, -1, -1 };
@@ -41,6 +42,8 @@ public class AdminTesoros : MonoBehaviour {
             
             abierto.Add(false);
         }
+
+        abiertoaux = abierto;
     }
 
     void Update()
@@ -98,6 +101,7 @@ public class AdminTesoros : MonoBehaviour {
         }
 
         if (numinvstatico == 3) {
+
             if (transform.childCount > 0)
             {
                 foreach (Transform child in transform)
@@ -129,15 +133,12 @@ public class AdminTesoros : MonoBehaviour {
     }
 
     public void eliminartesoros() {
-        //inventario = new int[3] { -1, -1, -1 };
+
         for (int i=0; i<3; i++) {
             inventario[i] = -1;
         }
 
-        for (int i = 0; i < abierto.Count; i++)
-        {
-            abierto[i] = false;
-        }
+        abierto = abiertoaux;
 
         numinvstatico = 0;
        
