@@ -727,12 +727,12 @@ RectTransform:
   - {fileID: 648929771}
   - {fileID: 2106075677}
   - {fileID: 618944590}
-  - {fileID: 1996437850}
   - {fileID: 1514551189}
+  - {fileID: 1996437850}
   - {fileID: 1143886568}
   - {fileID: 1309001466}
-  - {fileID: 796343691}
   - {fileID: 2082940271}
+  - {fileID: 796343691}
   - {fileID: 1306302528}
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -8552,6 +8552,7 @@ GameObject:
   - component: {fileID: 651628797}
   - component: {fileID: 651628799}
   - component: {fileID: 651628798}
+  - component: {fileID: 651628800}
   m_Layer: 8
   m_Name: Techo
   m_TagString: Untagged
@@ -8661,6 +8662,32 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.73, y: 0.21304235}
   m_EdgeRadius: 0
+--- !u!68 &651628800
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 651628795}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: ac42b93f8b072f349ba3a651c08c35fb, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.8596033, y: 0.15294038}
+  - {x: -0.8591776, y: 0.11958858}
+  - {x: -0.8187689, y: 0.121410616}
+  - {x: -0.81786495, y: 0.08027069}
+  - {x: -0.7647277, y: 0.075703345}
+  - {x: -0.7897066, y: 0.04796488}
+  - {x: -0.7854129, y: -0.010054925}
+  - {x: -0.7119793, y: -0.041955847}
+  - {x: 0.15610088, y: -0.04902313}
+  - {x: 0.8635238, y: -0.048790008}
+  - {x: 0.8649969, y: -0.0000026226044}
 --- !u!4 &652730820 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4950072650578684, guid: 6ea17b122d3710c479fbdf9f9c993c86,
@@ -8677,6 +8704,7 @@ GameObject:
   - component: {fileID: 676820421}
   - component: {fileID: 676820420}
   - component: {fileID: 676820419}
+  - component: {fileID: 676820422}
   m_Layer: 8
   m_Name: Techo (5)
   m_TagString: Untagged
@@ -8786,6 +8814,39 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!68 &676820422
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 676820417}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: ac42b93f8b072f349ba3a651c08c35fb, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.8685011, y: -0.04085772}
+  - {x: -0.6379575, y: -0.053115036}
+  - {x: 0.65014213, y: -0.049934145}
+  - {x: 0.6590579, y: -0.039026484}
+  - {x: 0.6766398, y: -0.04277484}
+  - {x: 0.72466886, y: -0.04291901}
+  - {x: 0.7289599, y: -0.02818017}
+  - {x: 0.7532293, y: -0.030281337}
+  - {x: 0.7606788, y: -0.020527016}
+  - {x: 0.7873289, y: -0.020714128}
+  - {x: 0.7987778, y: 0.0064077913}
+  - {x: 0.7966205, y: 0.050750073}
+  - {x: 0.77962977, y: 0.059783556}
+  - {x: 0.7837973, y: 0.08105595}
+  - {x: 0.82441884, y: 0.082108065}
+  - {x: 0.82450557, y: 0.11768373}
+  - {x: 0.8634743, y: 0.11949656}
+  - {x: 0.8624837, y: 0.15702616}
 --- !u!1 &706639480
 GameObject:
   m_ObjectHideFlags: 0
