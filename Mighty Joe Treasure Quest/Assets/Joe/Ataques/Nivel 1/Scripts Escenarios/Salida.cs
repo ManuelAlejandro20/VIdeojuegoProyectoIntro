@@ -52,7 +52,7 @@ public class Salida : MonoBehaviour {
 
                 if (escena4)
                 {
-                    SceneManager.LoadScene(4);
+                    SceneManager.LoadScene(10);
 
 
                 }
