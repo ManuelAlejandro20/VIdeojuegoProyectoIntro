@@ -4059,6 +4059,11 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 12.437232
       objectReference: {fileID: 0}
+    - target: {fileID: 61521267260595344, guid: d710164b762c0694ba843054e18b11e9,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d710164b762c0694ba843054e18b11e9, type: 2}
   m_IsPrefabParent: 0
@@ -14584,7 +14589,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0035231411, y: 0.13400087}
+  m_Offset: {x: 0.0035231411, y: 0.14288965}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14595,7 +14600,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.36430615, y: 0.28078574}
+  m_Size: {x: 0.4401095, y: 0.2985633}
   m_EdgeRadius: 0
 --- !u!1001 &1999793798
 Prefab:
