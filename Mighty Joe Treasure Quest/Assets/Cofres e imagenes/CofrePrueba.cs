@@ -19,9 +19,13 @@ public class CofrePrueba : MonoBehaviour {
     public bool abierto;
     bool destello = false;
     bool sonido;
+    VidaJoe vidaJoe;
+    GameObject jugador;
 
-	void Awake () {
+    void Awake() {
         anim = GetComponent<Animator>();
+        jugador = GameObject.FindGameObjectWithTag("Player");
+        vidaJoe = jugador.GetComponent<VidaJoe>();
         au = GetComponent<AudioSource>();
         admintesoros = GameObject.Find("AdminTesoros");
         at = admintesoros.GetComponent<AdminTesoros>();
@@ -46,7 +50,14 @@ public class CofrePrueba : MonoBehaviour {
 
         }
         anim.SetBool("Abierto", abierto);
-	}
+
+        if (vidaJoe.getvida1up() == 0) {
+            abierto = false;
+            
+            anim.SetBool("Abierto", false);
+        }
+
+    }
 
 
     void destellosube() {
@@ -108,4 +119,6 @@ public class CofrePrueba : MonoBehaviour {
     public void setbool(bool nuevoestadocofre) {
         this.abierto = nuevoestadocofre;
     }
+
+  
 }
