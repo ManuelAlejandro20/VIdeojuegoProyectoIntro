@@ -27,7 +27,7 @@ public class AdminTesoros : MonoBehaviour {
     static int numinvstatico;
     int numinv;
 
-    CofrePrueba[] cp;
+    public CofrePrueba[] cp;
 
     bool max = true;
 
@@ -38,17 +38,35 @@ public class AdminTesoros : MonoBehaviour {
         scriptvida = jugador.GetComponent<VidaJoe>();
         cp = GetComponentsInChildren<CofrePrueba>(true);
 
-        for(int i=0; i<listaitem.Capacity; i++) {
-            
-            abierto.Add(false);
+        if (!abierto.Any())
+        {
+            for (int i = 0; i < listaitem.Capacity; i++)
+            {
+
+                abierto.Add(false);
+                abiertoaux.Add(false);
+            }
         }
 
-        abiertoaux = abierto;
+        if (!abiertoaux.Any()) {
+            for (int i = 0; i < listaitem.Capacity; i++)
+            {
+
+                abiertoaux.Add(false);
+            }
+        }
+
+    
     }
 
     void Update()
     {
-        
+        if (scriptvida.getvida1up() == 0)
+        {
+            max = false;
+            eliminartesoros();
+        }
+
         for (int i = 0; i < cp.Length; i++) {
             bool cofreabierto = cp[i].getabierto();
             if (cofreabierto && !abierto[i] && max) {
@@ -59,15 +77,15 @@ public class AdminTesoros : MonoBehaviour {
                 if (numinvstatico == 3) {
                     max = false;
                 }
+
+                
             }
 
             cp[i].setbool(abierto[i]);
+
         }
 
-        if (scriptvida.getvida1up() == 0) {
-            max = false;
-            eliminartesoros();
-        }
+        
 
 
 
@@ -139,6 +157,10 @@ public class AdminTesoros : MonoBehaviour {
         }
 
         abierto = abiertoaux;
+
+        for (int i = 0; i < listaitem.Capacity; i++) {
+            cp[i].setbool(abierto[i]);
+        }
 
         numinvstatico = 0;
        
